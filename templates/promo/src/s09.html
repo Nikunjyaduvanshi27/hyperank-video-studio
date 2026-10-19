@@ -1,0 +1,57 @@
+<!--
+{
+ "lead": 0.3, "tail": 0.5, "cam0": "HOLD",
+ "cues": {"wipe": "0.2", "push": "0.45", "l1": "w(0, 'named') - 0.1", "back": "w(0, 'anything') - 0.45", "l2": "w(0, 'wrong') - 0.2", "x": "w(0, CT['strike']) - 0.1"},
+ "supers": [{"t": "0.3", "text": "@"}],
+ "sfx": [["whoosh", "wipe", 0.22], ["roll", "l1", 0.2], ["whoosh", "back", 0.16], ["roll", "l2", 0.2], ["tick", "x + 0.3", 0.16]]
+}
+-->
+{{LAPTOP_OPEN}}
+<div class="pg" data-page="ans"><img src="assets/img/site/screen-answers-__CUT__.png" alt="" /></div>
+<div class="pg" data-page="cc"><img src="assets/img/site/screen-cc-__CUT__.png" alt="" /></div>
+{{LAPTOP_CLOSE}}
+<div class="lifts"><div class="lift" id="SOV"><img src="assets/img/site/sov-__CUT__.png" alt="" /></div></div>
+<div class="claimW" id="CL"><div class="claim">
+  <div class="hd"><img src="assets/img/logos/chatgpt.svg" alt="" /><span>ChatGPT said</span><em>Accuracy check</em></div>
+  <div class="cq"><span class="t"></span><i class="x"></i></div>
+  <div class="ft"><span class="pill">Outdated</span><span class="f"></span></div>
+</div></div>
+<div class="supers"></div>
+<style>
+  .claimW { position: absolute; left: 470px; top: 330px; width: 980px; }
+  .claim { border-radius: 28px; padding: 34px 44px 32px; background: #fff;
+    box-shadow: inset 0 0 0 1px rgba(23, 22, 28, 0.07), 0 60px 110px -44px rgba(44, 32, 120, 0.5), 0 16px 32px -16px rgba(26, 23, 20, 0.2); }
+  .claim .hd { display: flex; align-items: center; gap: 14px; font-size: 26px; font-weight: 600; letter-spacing: -0.015em; }
+  .claim .hd img { width: 40px; height: 40px; }
+  .claim .hd em { margin-left: auto; font-style: normal; font-size: 22px; font-weight: 500; color: #6e6a79; height: 36px; line-height: 36px; padding: 0 14px; border-radius: 999px; background: rgba(23, 22, 28, 0.05); }
+  .claim .cq { position: relative; display: inline-block; margin: 26px 0 22px; font-size: 40px; line-height: 50px; font-weight: 560; letter-spacing: -0.025em; color: var(--ink); }
+  .claim .cq .x { position: absolute; left: -4px; right: -4px; top: 27px; height: 4px; border-radius: 2px; background: #d2543f; transform-origin: 0 50%; transform: scaleX(0); }
+  .claim .ft { display: flex; align-items: center; gap: 18px; }
+  .claim .pill { height: 44px; line-height: 44px; padding: 0 18px; border-radius: 12px; background: #fff3dc; color: #a35f00; font-size: 24px; font-weight: 600; }
+  .claim .f { font-size: 27px; font-weight: 480; color: var(--ink2); letter-spacing: -0.012em; }
+</style>
+<script>
+    const { tl, q, qa, C } = S, R = __RECTS__, CT = DATA.CT, M = 28;
+    q("#CL .t").textContent = "“" + CT.cc.claim + ".”";
+    q("#CL .f").textContent = CT.cc.fact;
+
+    // ---------- the Control Center for yourbrand.com; the camera leans in ----------
+    S.page(C.wipe, "cc", 0.6);
+    const sv = R["screen-cc"].sov, from = { x: sv.x - M, y: sv.y - M, w: sv.w + 2 * M, h: sv.h + 2 * M };
+    S.cam(C.push, { r: sv, cap: 1.2, cy: 560 }, 1.1, "power2.inOut");
+    // who gets named instead, and your share of voice
+    const L = S.lift(C.l1, q("#SOV"), from, { cx: 960, cy: 585, w: 1060 }, { tilt: 6, rest: 2 });
+    S.dof(C.l1 + 0.2, 3, 0.6);
+    S.dim(C.l1 + 0.2, 0.1, 0.6);
+    tl.to(q("#SOV"), { y: L.y - 8, duration: C.back - C.l1 - 1, ease: "sine.inOut" }, C.l1 + 0.95);
+    S.drop(C.back, q("#SOV"), from, 0.6);
+    // and anything AI gets wrong
+    S.cam(C.back, "HOLD", 1.2, "power2.inOut");
+    S.dof(C.l2 - 0.1, 6, 0.6);
+    S.dim(C.l2 - 0.1, 0.14, 0.6);
+    tl.fromTo(q("#CL"), { opacity: 0, y: 60, rotationX: 10, transformPerspective: 1600, transformOrigin: "50% 0%" }, { opacity: 1, y: 0, rotationX: 2, duration: 0.95, ease: "back.out(1.2)", immediateRender: true }, C.l2);
+    tl.to(q("#CL .x"), { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, C.x);
+    tl.to(q("#CL .t"), { color: "#9a96a6", duration: 0.4 }, C.x + 0.2);
+    tl.fromTo(q("#CL .ft"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, ease: "back.out(1.2)", immediateRender: true }, C.x + 0.35);
+    tl.to(q("#CL"), { y: -8, duration: S.D - C.l2 - 1, ease: "sine.inOut" }, C.l2 + 0.95);
+</script>

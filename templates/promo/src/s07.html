@@ -1,0 +1,78 @@
+<!--
+{
+ "lead": 0.95, "holds": {"0": 0.45}, "tail": 0.6, "cam0": "RISE",
+ "cues": {"draw": "0.25", "fill": "w(0, 'hyperrank') - 0.3", "sweep": "w(0, 'hyperrank') + 0.25", "up": "E[0] - 0.08", "rise": "E[0] + 0.2",
+          "c1": "w(1, 'mentioned') - 0.12", "c2": "w(1, 'cited') - 0.1"},
+ "supers": [{"t": "E[0] + 0.36", "text": "@"}],
+ "sfx": [["swell", "rise - 2.45", 0.5], ["sparkle", "fill + 0.25", 0.28], ["whoosh", "rise + 0.05", 0.26], ["roll", "c1", 0.2], ["roll", "c2", 0.18], ["tick", "c1 + 0.6", 0.13], ["tick", "c2 + 0.6", 0.13]]
+}
+-->
+{{LAPTOP_OPEN}}
+<div class="pg" data-page="top"><img src="assets/img/site/top.png" alt="" /></div>
+{{LAPTOP_CLOSE}}
+<div class="mark"><svg class="trace" viewBox="0 0 856 804"></svg><img class="fill" src="assets/img/hyperank-mark.png" alt="" /><div class="spec"></div></div>
+<div class="sweep"></div>
+<div class="lifts">
+  <div class="lift chipL" id="L1"><div class="halo"></div><img src="assets/img/site/chip-chatgpt.png" alt="" /><img class="you" src="assets/img/site/chip-chatgpt-you.png" alt="" /></div>
+  <div class="lift chipL" id="L2"><div class="halo"></div><img src="assets/img/site/chip-claude.png" alt="" /><img class="you" src="assets/img/site/chip-claude-you.png" alt="" /></div>
+</div>
+<div class="supers"></div>
+<style>
+  .mark { position: absolute; left: 779px; top: 320px; width: 362px; height: 340px; }
+  .mark .trace { position: absolute; left: 0; top: 0; width: 362px; height: 340px; overflow: visible; }
+  .mark .fill { position: absolute; left: 0; top: 0; width: 362px; height: 340px; opacity: 0; filter: drop-shadow(0 0 34px rgba(94, 75, 246, 0.55)) drop-shadow(0 18px 30px rgba(72, 54, 224, 0.28)); }
+  .mark .spec { position: absolute; left: 0; top: 0; width: 362px; height: 340px; opacity: 0;
+    background: linear-gradient(105deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 60%); background-size: 300% 100%; background-position: 100% 0;
+    -webkit-mask: url("assets/img/hyperank-mark.png") center / 100% 100% no-repeat; mask: url("assets/img/hyperank-mark.png") center / 100% 100% no-repeat; }
+  .sweep { position: absolute; left: -900px; top: -300px; width: 700px; height: 1700px; transform: rotate(18deg); opacity: 0; pointer-events: none;
+    background: linear-gradient(90deg, rgba(160, 146, 255, 0) 0%, rgba(160, 146, 255, 0.16) 34%, rgba(255, 255, 255, 0.75) 50%, rgba(160, 146, 255, 0.16) 66%, rgba(160, 146, 255, 0) 100%); }
+  .chipL { border-radius: 0; filter: drop-shadow(0 40px 50px rgba(44, 32, 120, 0.32)) drop-shadow(0 10px 16px rgba(26, 23, 20, 0.12)); }
+  .chipL > img { position: absolute; inset: 0; }
+  .chipL .you { clip-path: inset(0 100% 0 0); }
+  .chipL .halo { position: absolute; left: 6%; top: 10%; width: 88%; height: 80%; border-radius: 40px; opacity: 0;
+    background: radial-gradient(closest-side, rgba(94, 75, 246, 0.42), rgba(94, 75, 246, 0)); filter: blur(18px); }
+</style>
+<script>
+    const { tl, q, qa, C } = S, R = __RECTS__, MK = __MARK__;
+
+    // ---------- the mark draws itself: three outlines trace in, then the fill blooms with a violet glow ----------
+    const svg = q(".mark .trace");
+    svg.innerHTML = MK.paths.map((d) => '<path d="' + d + '" fill="none" stroke="#6a57ff" stroke-width="7" stroke-linejoin="round" vector-effect="non-scaling-stroke" style="filter: drop-shadow(0 0 8px rgba(106,87,255,0.6))" />').join("");
+    svg.setAttribute("viewBox", "0 0 " + MK.w + " " + MK.h);
+    qa(".mark .trace path").forEach((p, i) => {
+      const L = p.getTotalLength();
+      gsap.set(p, { strokeDasharray: L, strokeDashoffset: L });
+      tl.to(p, { strokeDashoffset: 0, duration: 0.85, ease: "power2.inOut" }, C.draw + i * 0.14);
+    });
+    tl.fromTo(q(".mark .fill"), { opacity: 0, scale: 0.97 }, { opacity: 1, scale: 1, duration: 0.7, ease: "power2.out", immediateRender: false }, C.fill);
+    tl.to(q(".mark .trace"), { opacity: 0, duration: 0.5, ease: "power1.inOut" }, C.fill + 0.25);
+    // a gentle light sweep crosses the frame and glints off the mark
+    tl.fromTo(q(".sweep"), { x: 0, opacity: 0 }, { x: 3000, opacity: 1, duration: 1.5, ease: "power1.inOut", immediateRender: false }, C.sweep);
+    tl.set(q(".mark .spec"), { opacity: 1 }, C.sweep + 0.35);
+    tl.fromTo(q(".mark .spec"), { backgroundPosition: "100% 0" }, { backgroundPosition: "0% 0", duration: 0.6, ease: "power1.inOut", immediateRender: false }, C.sweep + 0.35);
+    tl.set(q(".mark .spec"), { opacity: 0 }, C.sweep + 0.96);
+    // the mark recedes into the light and hands over to the line
+    tl.to(q(".mark"), { y: -90, scale: 0.62, opacity: 0, filter: "blur(10px)", duration: 0.5, ease: "power2.in" }, C.up);
+
+    // ---------- the laptop rises and settles; a specular sweep crosses the lid ----------
+    S.cam(C.rise - 0.25, "HOLD", 2.4, "sine.inOut");  // the camera leads, the laptop follows
+    S.rise(C.rise, 1.25);
+    S.streak(C.rise + 0.75, 1.7);
+
+    // ---------- the engines that named others now name you ----------
+    const chip = (k) => { const g = R.top[k].group, m = 28; return { x: g.x - m, y: g.y - m, w: g.w + 2 * m, h: g.h + 2 * m }; };
+    function engineLift(el, t, k, cx, cy) {
+      S.lift(t, el, chip(k), { cx, cy, w: 760 }, { tilt: 12, rest: 5 });
+      const you = el.querySelector(".you"), halo = el.querySelector(".halo");
+      const base = el.querySelector("img:not(.you)");
+      gsap.set(base, { clipPath: "inset(0 0 0 0%)" });
+      tl.to(you, { clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power2.inOut" }, t + 0.6);
+      tl.to(base, { clipPath: "inset(0 0 0 100%)", duration: 0.5, ease: "power2.inOut" }, t + 0.6);
+      tl.to(halo, { opacity: 1, duration: 0.6, ease: "power2.out" }, t + 0.7);
+      tl.to(el, { y: "-=10", duration: S.D - t - 1, ease: "sine.inOut" }, t + 0.9);
+    }
+    S.dof(C.c1, 3.5, 0.7);
+    S.dim(C.c1, 0.1, 0.7);
+    engineLift(q("#L1"), C.c1, "ChatGPT", 820, 440);
+    engineLift(q("#L2"), C.c2, "Claude", 1010, 660);
+</script>

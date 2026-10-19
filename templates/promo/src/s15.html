@@ -1,0 +1,60 @@
+<!--
+{
+ "lead": 0.3, "tail": 0.6, "cam0": "HOLD",
+ "cues": {"push": "0.3", "lift": "w(1, 'visits') - 0.2", "g0": "w(1, 'separated') + 0.1", "rep": "w(1, 'report') - 0.3"},
+ "supers": [{"t": "w(0, 'proves') - 0.1", "text": "@"}],
+ "sfx": [["whoosh", "push", 0.18], ["roll", "lift", 0.2], ["tick", "g0", 0.12], ["tick", "g0 + 0.45", 0.12], ["tick", "g0 + 0.9", 0.12], ["tick", "g0 + 1.35", 0.12], ["whoosh", "rep", 0.2], ["impact4", "rep + 0.7", 0.2]]
+}
+-->
+{{LAPTOP_OPEN}}
+<div class="pg" data-page="an"><img src="assets/img/site/screen-analytics-__CUT__.png" alt="" /></div>
+{{LAPTOP_CLOSE}}
+<div class="lifts"><div class="lift" id="RF"><img src="assets/img/site/referrals-__CUT__.png" alt="" /></div></div>
+<div class="repW" id="REP"><div class="rep">
+  <div class="top"><img src="assets/img/hyperank-mark.png" alt="" /><span>hyperank</span><em>yourbrand.com</em></div>
+  <h2>AI visibility report</h2><p>Prepared for the board</p>
+  <div class="bars"></div>
+</div></div>
+<div class="supers"></div>
+<style>
+  .lift .cov { position: absolute; background: #fff; transform-origin: 100% 50%; }
+  .repW { position: absolute; left: 560px; top: 250px; width: 800px; opacity: 0; }
+  .rep { border-radius: 26px; background: #fff; padding: 36px 44px 40px; box-shadow: inset 0 0 0 1px rgba(23, 22, 28, 0.07), 0 70px 120px -48px rgba(44, 32, 120, 0.55), 0 18px 34px -16px rgba(26, 23, 20, 0.22); }
+  .rep .top { display: flex; align-items: center; gap: 12px; font-size: 24px; font-weight: 650; color: var(--ink); letter-spacing: -0.02em; }
+  .rep .top img { width: 34px; height: 32px; }
+  .rep .top em { margin-left: auto; font-style: normal; font-size: 22px; font-weight: 500; color: var(--ink3); }
+  .rep h2 { margin: 30px 0 6px; font-size: 52px; line-height: 58px; font-weight: 660; letter-spacing: -0.04em; color: var(--ink); }
+  .rep p { margin: 0 0 30px; font-size: 27px; color: var(--ink2); }
+  .rep .bars { display: grid; grid-template-columns: 170px 1fr 90px; gap: 14px 18px; align-items: center; }
+  .rep .bars b { font-size: 24px; font-weight: 560; color: var(--ink2); }
+  .rep .bars i { display: block; height: 14px; border-radius: 7px; background: linear-gradient(90deg, #7b6bf8, #5e4bf6); transform-origin: 0 50%; }
+  .rep .bars span { font-size: 24px; font-weight: 600; color: var(--ink); text-align: right; }
+</style>
+<script>
+    const { tl, q, qa, C } = S, R = __RECTS__, M = 28;
+    // ---------- AI visits, separated from direct traffic, engine by engine ----------
+    const ra = R["screen-analytics"], from = { x: ra.x - M, y: ra.y - M, w: ra.w + 2 * M, h: ra.h + 2 * M };
+    S.cam(C.push, { r: ra, cap: 1.2, cy: 560 }, 1.1, "power2.inOut");
+    const L = S.lift(C.lift, q("#RF"), from, { cx: 960, cy: 585, w: 1060 }, { tilt: 6, rest: 2 });
+    S.dof(C.lift + 0.2, 3, 0.6);
+    S.dim(C.lift + 0.2, 0.1, 0.6);
+    // each referral bar is covered until its engine's turn, then grows left to right
+    const k = L.k, parts = R["referral-parts"], rf = R.referrals, lab = parts.slice(0, 4), val = parts.slice(4, 8);
+    lab.forEach((lb, i) => {
+      if (!lb || !val[i]) return;
+      const c = document.createElement("div"); c.className = "cov";
+      const left = lb.x - 30, right = val[i].x + val[i].w + 4, top = lb.y + lb.h + 2;
+      Object.assign(c.style, { left: (M + left) * k + "px", top: (M + top) * k + "px", width: (right - left) * k + "px", height: 22 * k + "px" });
+      q("#RF").appendChild(c);
+      tl.to(c, { scaleX: 0, duration: 0.7, ease: "power3.inOut" }, C.g0 + i * 0.45);
+    });
+    tl.to(q("#RF"), { y: L.y - 8, duration: C.rep - C.lift - 1.1, ease: "sine.inOut" }, C.lift + 0.95);
+    // ---------- in a report for your board ----------
+    S.drop(C.rep, q("#RF"), from, 0.55);
+    S.cam(C.rep, "HOLD", 1.0, "power2.inOut");
+    const data = [["ChatGPT", 1284], ["Perplexity", 612], ["Gemini", 341], ["Claude", 208]];
+    q("#REP .bars").innerHTML = data.map(([n, v]) => "<b>" + n + '</b><i style="width:' + Math.round(v / 1284 * 100) + '%"></i><span>' + v.toLocaleString("en-US") + "</span>").join("");
+    tl.fromTo(q("#REP"), { opacity: 0, y: -170, rotationX: -14, transformPerspective: 1600, transformOrigin: "50% 100%" }, { opacity: 1, y: 0, rotationX: 0, duration: 1.0, ease: "back.out(1.2)", immediateRender: true }, C.rep + 0.2);
+    tl.fromTo(qa("#REP .bars i"), { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power3.out", stagger: 0.12, immediateRender: true }, C.rep + 0.75);
+    tl.to(q("#REP"), { y: -8, duration: S.D - C.rep - 1.3, ease: "sine.inOut" }, C.rep + 1.2);
+</script>

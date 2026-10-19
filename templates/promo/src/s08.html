@@ -1,0 +1,76 @@
+<!--
+{
+ "lead": 0.3, "tail": 0.5, "cam0": "HOLD",
+ "cues": {"ty": "0.15", "send": "B[1] + 0.12", "wipe": "B[1] + 0.3", "push": "B[1] + 0.36", "lift": "w(1, 'real') - 0.05",
+          "e0": "w(1, 'chat') - 0.05", "e1": "w(1, 'claude') - 0.05", "e2": "w(1, 'gemini') - 0.05", "e3": "w(1, 'perplexity') - 0.05",
+          "card": "B[2] - 0.15", "n0": "w(2, CT['say'][0]) - 0.12", "n1": "w(2, CT['say'][1]) - 0.12", "n2": "w(2, CT['say'][2]) - 0.12", "you": "B[3] - 0.05"},
+ "supers": [{"t": "w(0, 'see') - 0.05", "text": "@"}],
+ "typing": [["ty", "ty + 1.75", 0.15]],
+ "sfx": [["click2", "send", 0.3], ["whoosh", "wipe", 0.24], ["roll", "lift", 0.2], ["tick", "e0", 0.1], ["tick", "e1", 0.1], ["tick", "e2", 0.1], ["tick", "e3", 0.1],
+         ["whoosh", "card", 0.22], ["impact4", "you + 0.1", 0.18]]
+}
+-->
+{{LAPTOP_OPEN}}
+<div class="pg" data-page="top"><img src="assets/img/site/top.png" alt="" /></div>
+<div class="pg" data-page="ans"><img src="assets/img/site/screen-answers-__CUT__.png" alt="" /></div>
+{{LAPTOP_CLOSE}}
+<div class="lifts"><div class="lift trk" id="TR"><img src="assets/img/site/tracked-__CUT__.png" alt="" /></div></div>
+<div class="vk" id="Vk">{{CARD:card:known}}</div>
+<div class="vc" id="Vc">{{COMPOSER:cmp:What does AI say about my brand?}}</div>
+<div class="supers"></div>
+<style>
+  .vc, .vk { position: absolute; left: 360px; }
+  .vc { top: 448px; }
+  .vk { top: 268px; }
+  .trk .hl { position: absolute; left: 0; border-radius: 12px; background: rgba(94, 75, 246, 0.07); box-shadow: inset 4px 0 0 #5e4bf6; opacity: 0; }
+</style>
+<script>
+    const { tl, q, qa, C } = S, R = __RECTS__, M = 28;
+    const cmp = S.Composer(q("#cmp")), K = S.Card(q("#card"));
+    // the answer comes back with its names still out of focus; the empty row waits below
+    q("#card").classList.add("blurred");
+    K.full();
+    S.dof(0, 8, 0.01);
+
+    // ---------- the viewer asks ----------
+    S.arrive(0, q("#Vc"), { y: 24 });
+    const te = cmp.type(C.ty, 0, 18);
+    cmp.blink(te + 0.05, C.send);
+    cmp.send(C.send);
+    S.leave(C.send + 0.12, q("#Vc"), { y: -60 });
+
+    // ---------- focus racks to the laptop; every answer, kept ----------
+    S.dof(C.send + 0.05, 0, 0.6);
+    S.page(C.wipe, "ans", 0.65);
+    const tr = R["screen-answers"], from = { x: tr.x - M, y: tr.y - M, w: tr.w + 2 * M, h: tr.h + 2 * M };
+    S.cam(C.push, { r: tr, cap: 1.25, cy: 560 }, 1.0, "power2.inOut");
+    const L = S.lift(C.lift, q("#TR"), from, { cx: 960, cy: 585, w: 1000 }, { tilt: 7, rest: 2 });
+    S.dof(C.lift + 0.2, 3, 0.6);
+    S.dim(C.lift + 0.2, 0.1, 0.6);
+    tl.to(q("#TR"), { y: L.y - 10, duration: C.card - C.lift - 1.2, ease: "sine.inOut" }, C.lift + 0.95);
+    // each prompt row lights as an engine is named (rows split the card below its title)
+    const k = L.k, head = 44, rh = (tr.h - head) / 4;
+    for (let i = 0; i < 4; i++) {
+      const h = document.createElement("div"); h.className = "hl";
+      Object.assign(h.style, { left: (M + 1) * k + "px", top: (M + head + i * rh) * k + "px", width: (tr.w - 2) * k + "px", height: rh * k + "px" });
+      q("#TR").appendChild(h);
+      tl.to(h, { opacity: 1, duration: 0.3, ease: "power2.out" }, C["e" + i]);
+      tl.to(h, { opacity: 0, duration: 0.6, ease: "power2.inOut" }, C["e" + i] + 0.7);
+    }
+
+    // ---------- here, AI names them: the answer returns and its names come into focus ----------
+    S.drop(C.card - 0.55, q("#TR"), from, 0.55);
+    S.cam(C.card - 0.55, "HOLD", 1.0, "power2.inOut");
+    S.dof(C.card, 7, 0.7);
+    S.dim(C.card, 0.16, 0.7);
+    const card = q("#card"), H = card.offsetHeight, you = K.rows[K.rows.length - 1], vis3 = you.offsetTop + q("#card .rows").offsetTop + 6;
+    gsap.set(card, { clipPath: "inset(-120px -140px " + (H - vis3) + "px -140px round 32px)", opacity: 0 });
+    gsap.set(you, { opacity: 0 });
+    S.arrive(C.card, q("#Vk"), { y: 40 });
+    tl.set(card, { opacity: 1 }, C.card);
+    K.names.slice(0, 3).forEach((n, i) => tl.to(n, { filter: "blur(0px)", duration: 0.9, ease: "power2.inOut" }, C["n" + i]));
+    // "not you": the empty row arrives
+    tl.to(card, { clipPath: "inset(-120px -140px -170px -140px round 32px)", duration: 0.6, ease: "power3.out" }, C.you);
+    tl.fromTo(you, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.7, ease: "back.out(1.2)", immediateRender: false }, C.you);
+    tl.fromTo(you.querySelector(".tx"), { borderColor: "rgba(94,75,246,0.7)" }, { borderColor: "rgba(23,22,28,0.13)", duration: 1.2, ease: "power2.out", immediateRender: false }, C.you + 0.35);
+</script>

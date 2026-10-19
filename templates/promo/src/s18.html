@@ -1,0 +1,49 @@
+<!--
+{
+ "lead": 0.4, "tail": 2.5,
+ "cues": {"mk": "0.15", "hl": "B[1] - 0.05", "b1": "w(2, 'book') - 0.12", "b2": "w(2, 'check') - 0.12"},
+ "sfx": [["sparkle", "mk + 0.3", 0.24], ["whoosh", "hl - 0.1", 0.18], ["impact4", "b1", 0.16], ["tick", "b2", 0.14]]
+}
+-->
+<div class="endc">
+  <div class="glow"></div>
+  <img class="mk" src="assets/img/hyperank-mark.png" alt="" />
+  <div class="hl" id="HL"></div>
+  <div class="cta">
+    <div class="ct" id="C1"><span class="b p">Book a call</span><span class="u">hyperank.ai/book</span></div>
+    <div class="ct" id="C2"><span class="b s">Check your brand free</span><span class="u">hyperank.ai</span></div>
+  </div>
+</div>
+<div class="sweep"></div>
+<style>
+  .endc { position: absolute; inset: 0; }
+  .endc .glow { position: absolute; left: 610px; top: 60px; width: 700px; height: 560px; border-radius: 50%; background: radial-gradient(closest-side, rgba(94, 75, 246, 0.26), rgba(94, 75, 246, 0)); opacity: 0; }
+  .endc .mk { position: absolute; left: 870px; top: 170px; width: 180px; height: 169px; filter: drop-shadow(0 0 30px rgba(94, 75, 246, 0.5)) drop-shadow(0 16px 26px rgba(72, 54, 224, 0.25)); opacity: 0; }
+  .endc .hl { position: absolute; left: 0; top: 400px; width: 1920px; text-align: center; font-size: 112px; line-height: 1.1; font-weight: 640; letter-spacing: -0.045em; color: var(--ink); }
+  .endc .hl .w { display: inline-block; opacity: 0; }
+  .endc .hl .w + .w { margin-left: 0.24em; }
+  .endc .hl .v { color: var(--violet); }
+  .endc .cta { position: absolute; left: 0; top: 600px; width: 1920px; display: flex; justify-content: center; gap: 44px; }
+  .endc .ct { display: flex; flex-direction: column; align-items: center; gap: 16px; opacity: 0; }
+  .endc .b { height: 80px; line-height: 80px; padding: 0 44px; border-radius: 22px; font-size: 32px; font-weight: 640; letter-spacing: -0.015em; }
+  .endc .b.p { background: var(--violet); color: #fff; box-shadow: 0 22px 40px -16px rgba(72, 54, 224, 0.75); }
+  .endc .b.s { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1.5px rgba(23, 22, 28, 0.14), 0 18px 34px -18px rgba(44, 32, 120, 0.35); }
+  .endc .u { font-size: 27px; font-weight: 520; color: var(--ink2); }
+  .sweep { position: absolute; left: -900px; top: -300px; width: 700px; height: 1700px; transform: rotate(18deg); opacity: 0; pointer-events: none;
+    background: linear-gradient(90deg, rgba(160, 146, 255, 0) 0%, rgba(160, 146, 255, 0.14) 34%, rgba(255, 255, 255, 0.7) 50%, rgba(160, 146, 255, 0.14) 66%, rgba(160, 146, 255, 0) 100%); }
+</style>
+<script>
+    const { tl, q, qa, C } = S;
+    // the mark, in a soft violet glow
+    tl.fromTo(q(".endc .glow"), { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 1.4, ease: "power2.out", immediateRender: false }, C.mk);
+    tl.fromTo(q(".endc .mk"), { opacity: 0, scale: 0.9, filter: "blur(12px) drop-shadow(0 0 30px rgba(94,75,246,0.5))" }, { opacity: 1, scale: 1, filter: "blur(0px) drop-shadow(0 0 30px rgba(94,75,246,0.5))", duration: 1.0, ease: "expo.out", immediateRender: false }, C.mk);
+    // "be the answer": the line that opened the reveal closes the film
+    const words = "Be the |answer.|".split(" ");
+    q("#HL").innerHTML = words.map((x) => '<span class="w' + (x.includes("|") ? " v" : "") + '">' + x.replace(/\|/g, "") + "</span>").join("");
+    tl.fromTo(qa("#HL .w"), { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out", stagger: 0.08, immediateRender: false }, C.hl);
+    tl.fromTo(q(".sweep"), { x: 0, opacity: 0 }, { x: 3000, opacity: 1, duration: 1.6, ease: "power1.inOut", immediateRender: false }, C.hl + 0.1);
+    // book a call, or check your brand free
+    S.arrive(C.b1, q("#C1"), { y: 30 });
+    S.arrive(C.b2, q("#C2"), { y: 30 });
+    tl.to([q(".endc .mk"), q("#HL"), q(".endc .cta")], { y: -6, duration: S.D - C.b2 - 0.9, ease: "sine.inOut" }, C.b2 + 0.8);
+</script>

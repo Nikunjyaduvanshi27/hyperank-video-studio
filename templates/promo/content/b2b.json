@@ -1,0 +1,260 @@
+{
+ "cut": "b2b",
+ "script": "script.json",
+ "out": "out/promo-b2b.mp4",
+ "typed": [
+  "Best CRM for a small sales team?",
+  "Best cybersecurity firm for a bank?",
+  "Who's the best IT partner for a cloud migration?"
+ ],
+ "cloud": [
+  "Which payroll provider for 200 people?",
+  "Best ERP for a mid-size manufacturer?",
+  "Who should run our SOC 2 audit?",
+  "Best data consultancy for retail?",
+  "Which law firm for a Series B?",
+  "Best HR platform for a remote team?",
+  "Which logistics partner for Europe?",
+  "Best accounting software for agencies?"
+ ],
+ "intro": "For a cloud migration, these three partners stand out:",
+ "rows": [
+  {
+   "name": "Infosys",
+   "why": "Large-scale cloud migration programs",
+   "src": "g2.com"
+  },
+  {
+   "name": "TCS",
+   "why": "Cloud and infrastructure services",
+   "src": "reddit.com/r/sysadmin"
+  },
+  {
+   "name": "Accenture",
+   "why": "Cloud strategy and migration",
+   "src": "clutch.co"
+  }
+ ],
+ "you": "Your brand",
+ "tiles": [
+  [
+   "AI answers about you",
+   "Unknown"
+  ],
+  [
+   "Mentioned by ChatGPT",
+   "Unknown"
+  ]
+ ],
+ "site": {
+  "“best AI visibility platform”": "“who should migrate us to Azure”",
+  "“alternatives to Profound”": "“best IT partner for a cloud migration”",
+  "“how to track ChatGPT mentions”": "“cloud migration partner for a bank”",
+  "“AI visibility platform pricing”": "“Accenture alternatives for cloud”",
+  "4/6 mentioned": "Named",
+  "2/6 mentioned": "Not named",
+  "5/6 mentioned": "Named first",
+  "3/6 mentioned": "Outdated",
+  "Named first: your docs": "Named first: your case study",
+  "Quotes a price you retired: old-pricing-page": "Quotes an old service list: old-services-page",
+  "Best AI visibility platforms in 2026": "Cloud migration for 500-person insurers",
+  "hyperank vs Profound: what to pick": "A specialist or a global SI: who to hire for Azure",
+  "7 signs an AI engine is misquoting you": "Best cloud migration partners for mid-size banks, compared",
+  "Profound": "Infosys",
+  "Otterly": "TCS",
+  "Athena": "Accenture",
+  "reddit.com/r/SaaS": "reddit.com/r/sysadmin",
+  "capterra.com": "clutch.co"
+ },
+ "cc": {
+  "names": {
+   "Lumen": "Your brand",
+   "lumenhq.com": "yourbrand.com",
+   "Northbeam": "Infosys",
+   "Tasklane": "TCS",
+   "Orbitly": "Accenture"
+  },
+  "text": {
+   "Your brand was named in 42% of the answers sampled this week, up from 31% twelve weeks ago.": "Your brand was named in 14% of the answers sampled this week.",
+   "Your brand leads on 4 of 7 engines": "Infosys is named most often",
+   "client portals with approvals": "Azure landing zones for banks",
+   "Gantt charts for small teams, explained": "A cloud migration checklist for banks",
+   "Our 20-person agency outgrew spreadsheets": "Who ran your Azure migration?",
+   "r/agency": "r/sysadmin",
+   "What a 20-person agency learned from its sprint retro": "What we learned moving a bank to the cloud"
+  },
+  "sov": [
+   [
+    "Your brand",
+    9
+   ],
+   [
+    "Infosys",
+    34
+   ],
+   [
+    "TCS",
+    29
+   ],
+   [
+    "Accenture",
+    19
+   ],
+   [
+    "Others",
+    9
+   ]
+  ],
+  "you": [
+   14,
+   11,
+   16,
+   12,
+   9,
+   15,
+   8
+  ],
+  "named": 14,
+  "claim": "Your brand only works with startups",
+  "engine": "ChatGPT",
+  "fact": "Today: teams from 200 people to the enterprise"
+ },
+ "stat1": {
+  "value": 51,
+  "from": 24,
+  "suffix": "%",
+  "land": "half",
+  "source": "Source: G2, The Answer Economy, April 2026. Survey of 1,076 B2B software buyers."
+ },
+ "stat2": {
+  "type": "roll",
+  "value": 69,
+  "land": "69",
+  "label": "A buyer's shortlist",
+  "out": "Planned vendor",
+  "in": "Recommended by AI",
+  "outWord": "different",
+  "inWord": "recommended",
+  "source": "Source: G2, The Answer Economy, April 2026. Survey of 1,076 B2B software buyers."
+ },
+ "losses": [
+  [
+   "Website visits",
+   "No change",
+   "visit"
+  ],
+  [
+   "Form fills",
+   "No change",
+   "form"
+  ],
+  [
+   "CRM",
+   "No record",
+   "crm"
+  ]
+ ],
+ "tts_fix": {
+  "Infosys": "In-fo-sis"
+ },
+ "pages": [
+  [
+   "Roundup",
+   "Best cloud migration partners for mid-size banks, compared"
+  ],
+  [
+   "Comparison",
+   "A specialist or a global SI: who to hire for Azure"
+  ],
+  [
+   "Persona page",
+   "Cloud migration for 500-person insurers"
+  ],
+  [
+   "Listicle",
+   "7 questions to ask a cloud migration partner"
+  ],
+  [
+   "How-to",
+   "How to plan an Azure migration in 90 days"
+  ],
+  [
+   "Article",
+   "What changes when a bank moves to the cloud"
+  ]
+ ],
+ "page": {
+  "title": "Best cloud migration partners for mid-size banks, compared",
+  "answer": "For a mid-size bank, pick a partner with regulated migrations behind it and a fixed plan for cutover.",
+  "facts": "Compare: compliance experience, landing zone, migration plan, support after go-live.",
+  "stat": "Half of B2B software buyers now start their research with an AI chatbot (G2, 2026)."
+ },
+ "reddit": {
+  "sub": "r/sysadmin",
+  "title": "Who should we hire for an Azure migration?",
+  "reply": "We moved our core banking stack with Your brand. Their migration runbook is public.",
+  "cite": "yourbrand.com/azure-runbook"
+ },
+ "linkedin": {
+  "who": "Head of IT, regional bank",
+  "post": "Planning our cloud migration this year. Which partners should we talk to?",
+  "reply": "Worth a look: how Your brand moved a 500-person insurer to Azure.",
+  "cite": "yourbrand.com/case-studies"
+ },
+ "landing": {
+  "head": "Cloud migrations for regulated mid-size firms.",
+  "sub": "Plans, landing zones and cutover, run by one senior team.",
+  "cta": "Book a discovery call",
+  "toast1": "Discovery call booked",
+  "toast2": "New client: regional bank",
+  "via": "Referred by ChatGPT",
+  "nav": [
+   "Services",
+   "Case studies",
+   "About"
+  ],
+  "cta2": "See case studies",
+  "steps": [
+   [
+    "Assess",
+    "A two-week audit of every workload"
+   ],
+   [
+    "Migrate",
+    "Waves planned around your cutover windows"
+   ],
+   [
+    "Run",
+    "One senior team after go-live"
+   ]
+  ]
+ },
+ "clients": [
+  [
+   "Harbor Credit Union",
+   "H",
+   "#2f7d6b"
+  ],
+  [
+   "Meridian Insurance",
+   "M",
+   "#c0622f"
+  ],
+  [
+   "Atlas Logistics",
+   "A",
+   "#3a6fd8"
+  ]
+ ],
+ "win_why": "Cloud migrations for regulated mid-size firms",
+ "say": [
+  "infosys",
+  "tcs",
+  "accenture"
+ ],
+ "s14": {
+  "book": "book",
+  "cl": "client"
+ },
+ "strike": "outdated"
+}

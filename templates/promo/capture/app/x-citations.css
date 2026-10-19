@@ -1,0 +1,8 @@
+.-space-x-2>:not([hidden])~:not([hidden]){--tw-space-x-reverse:0;margin-right:calc(-.5rem * var(--tw-space-x-reverse));margin-left:calc(-.5rem * calc(1 - var(--tw-space-x-reverse)))}
+.min-w-\[720px\]{min-width:720px}
+.min-w-\[1300px\]{min-width:1300px}
+.w-\[54\%\]{width:54%}
+.gap-x-8{column-gap:2rem}
+.max-w-\[380px\]{max-width:380px}
+.min-w-\[150px\]{min-width:150px}
+.min-w-\[58px\]{min-width:58px}

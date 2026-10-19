@@ -1,0 +1,104 @@
+{
+  "name": "Robots.txt Checker",
+  "url": "https://www.hyperank.ai/tools/technical-seo/robots-txt-checker",
+  "css": "capture/try-github.com_search/hyperank.css",
+  "result": "capture/try-github.com_search/result-sec.html",
+  "inputs": [
+    "https://github.com/search"
+  ],
+  "engines": [
+    [
+      "chatgpt",
+      "GPTBot"
+    ],
+    [
+      "perplexity",
+      "PerplexityBot"
+    ],
+    [
+      "claude",
+      "ClaudeBot"
+    ]
+  ],
+  "spans": {
+    "mBots": "User-agent: GPTBot\nUser-agent: OAI-SearchBot\nUser-agent: ClaudeBot\nUser-agent: anthropic-ai\nUser-agent: PerplexityBot"
+  },
+  "marks": {
+    "mFile": {
+      "text": "robots.txt content:",
+      "up": 2
+    },
+    "mVerdict": {
+      "text": "This URL is BLOCKED by robots.txt.",
+      "up": 0
+    }
+  },
+  "beats": [
+    {
+      "type": "hook",
+      "super": "Allowed, or |blocked?|",
+      "vo": "One small text file decides which pages crawlers may fetch."
+    },
+    {
+      "type": "name",
+      "super": "Robots.txt |Checker|",
+      "vo": "Meet the Robots.txt Checker, from hyperank.",
+      "tts": "Meet the Robots dot t-x-t Checker, from Hyper-rank."
+    },
+    {
+      "type": "type",
+      "super": "Paste any |page.|",
+      "vo": "Paste a full page address. Here, GitHub's search page."
+    },
+    {
+      "type": "press",
+      "super": "One |press.|",
+      "vo": "It fetches the site's robots.txt and tests your page against it.",
+      "tts": "It fetches the site's robots dot t-x-t, and tests your page against it."
+    },
+    {
+      "type": "result",
+      "super": "The real |file.|",
+      "vo": "First, the file itself, exactly as GitHub serves it.",
+      "push": "mFile"
+    },
+    {
+      "type": "read",
+      "super": "Rules for AI |bots.|",
+      "vo": "GitHub opens with a group of rules just for AI crawlers.",
+      "tts": "GitHub opens with a group of rules just for A-I crawlers.",
+      "lifts": [
+        {
+          "mark": "mBots",
+          "label": "Named AI crawlers",
+          "scale": 2.0,
+          "fit": true
+        }
+      ]
+    },
+    {
+      "type": "read",
+      "super": "|Blocked.|",
+      "vo": "Then the verdict. This page is blocked by robots.txt.",
+      "tts": "Then the verdict. This page is blocked by robots dot t-x-t.",
+      "lifts": [
+        {
+          "mark": "mVerdict",
+          "label": "Verdict",
+          "scale": 2.6,
+          "fit": true
+        }
+      ]
+    },
+    {
+      "type": "read",
+      "super": "Check before you |ship.|",
+      "vo": "Test any page before you count on a crawler reaching it.",
+      "push": "mVerdict"
+    },
+    {
+      "type": "close",
+      "vo": "Free to run. Hyper-rank dot A-I."
+    }
+  ]
+}

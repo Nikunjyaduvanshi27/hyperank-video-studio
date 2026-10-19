@@ -1,0 +1,132 @@
+{
+ "scenes": [
+  {
+   "id": "s01",
+   "act": "Problem: the new shortlist",
+   "vo": "Right now, a buyer is asking AI which tool to choose in your category.",
+   "tts": "Right now, a buyer is asking A-I which tool to choose in your category.",
+   "super": "The new |shortlist.|",
+   "visual": "BRIGHT Apple-light stage with real depth (soft white space, layered planes, depth of field). Frame 1 is already moving. The illustrative question types itself in a large glass composer: 'Which project management tool should our team use?'. The official engine marks float on different focal planes, sharpening as they cross the focus plane: ChatGPT, Claude, Gemini, Perplexity, Copilot, Google AI Overviews, Meta AI. Never Grok. SFX: soft key ticks, low air."
+  },
+  {
+   "id": "s02",
+   "act": "Problem: the new shortlist",
+   "vo": "In seconds, they get a shortlist. Three names. Is yours one of them?",
+   "tts": "In seconds, they get a shortlist. Three names. Is yours one of them?",
+   "super": "Three names. |Yours?|",
+   "visual": "THE HERO OBJECT is born here: a frosted glass AI answer card with a soft violet rim light, on the bright stage. It types a ranked shortlist: 1 Competitor A, 2 Competitor B, 3 Competitor C. On 'Is yours one of them?' a fourth row labelled 'You' flickers once and greys out. Camera slowly orbits a few degrees. This same card returns in s09, s12 and s15."
+  },
+  {
+   "id": "s03",
+   "act": "Problem: the stakes",
+   "vo": "In a G2 survey, half of B2B software buyers now start their research with an AI chatbot more often than with Google.",
+   "tts": "In a G-2 survey, half of B-2-B software buyers now start their research with an A-I chatbot more often than with Google.",
+   "super": "|51%| start with AI.",
+   "visual": "The answer card drifts back out of focus. '51%' rises large in violet with a soft depth shadow, count already in motion on frame 1, then holds. Source line bottom-left, small: 'Source: G2, The Answer Economy, April 2026. Survey of 1,076 B2B software buyers.' SFX: soft impact on the final number."
+  },
+  {
+   "id": "s04",
+   "act": "Problem: the stakes",
+   "vo": "And 69 percent chose a different vendor than planned, because a chatbot recommended it.",
+   "tts": "And sixty-nine percent chose a different vendor than planned, because a chatbot recommended it.",
+   "super": "|69%| picked someone else.",
+   "visual": "Match move: the 51 rolls to 69 in place (no cut). Below it, a planned-vendor chip slides out of a buyer's shortlist and a 'Recommended by AI' chip slides in. Same source line."
+  },
+  {
+   "id": "s05",
+   "act": "Problem: the stakes",
+   "vo": "You never see that loss. No visit, no form fill, nothing in your CRM. You can rank first on Google, and still be left out of the answer.",
+   "tts": "You never see that loss. No visit, no form fill, nothing in your C-R-M. You can rank first on Google, and still be left out of the answer.",
+   "super": "The deal you |never| see.",
+   "visual": "Three glass tiles in depth, each flat-lining in turn: 'Website visits, no change', 'Form fills, no change', 'CRM, no record'. Then a clean search results page with your link at position 1 slides aside, and the glass answer card returns in focus, still not naming you. The 'You' row stays grey."
+  },
+  {
+   "id": "s06",
+   "act": "Reveal",
+   "vo": "Meet hyperank. We make your brand the one AI recommends. Run it yourself, or we run it for you.",
+   "tts": "Meet Hyper rank. We make your brand the one A-I recommends. Run it yourself, or we run it for you.",
+   "super": "Be the |answer.|",
+   "visual": "SIGNATURE MOMENT, bright throughout. The stage clears to white, the hyperank mark draws itself at centre with a soft violet glow, then a gentle light sweep crosses the frame and the full silver laptop rises into frame and settles with a slight rotateX, a slow specular sweep crossing the lid. Its screen shows the hyperank.ai hero (site crop hero.png, the visor figure). The 'ChatGPT recommends you', 'Claude recommends you' chips lift off the screen one at a time. SFX: rising swell, soft bloom, settle."
+  },
+  {
+   "id": "s07",
+   "act": "See",
+   "vo": "First, see what AI says. hyperank asks your buyers' real questions across the engines they use, and keeps every answer, word for word.",
+   "tts": "First, see what A-I says. Hyper rank asks your buyers' real questions across the engines they use, and keeps every answer, word for word.",
+   "super": "See what AI |says.|",
+   "visual": "BRIGHT, Celebal grammar: super top centre, full laptop centred, caption bottom. Screen wipes to the site section 'Every answer, kept word for word' (card-answers.png, 2x). Camera pushes in. ONE lift out of the screen: the 'Tracked prompts' card, legible: 'alternatives to Competitor A: not named, Competitor A recommended instead'."
+  },
+  {
+   "id": "s08",
+   "act": "See",
+   "vo": "You see your share of voice, who gets named instead of you, and what AI gets wrong, like a retired price or an old feature list.",
+   "tts": "You see your share of voice, who gets named instead of you, and what A-I gets wrong, like a retired price or an old feature list.",
+   "super": "Know where you |stand.|",
+   "visual": "Screen wipes to the app Control Center (demo brand Lumen). Lift 1, large: Share of voice 31% with the per-engine row. It settles back. Lift 2: one AI claim, 'Plans start at the old price', struck through in place, verdict pill 'Outdated'. Never more than two lifts on screen."
+  },
+  {
+   "id": "s09",
+   "act": "Fix",
+   "vo": "Then, fix what it trusts. AI builds its answer from sources. hyperank shows you which ones decide it, and which ones your rivals win on.",
+   "tts": "Then, fix what it trusts. A-I builds its answer from sources. Hyper rank shows you which ones decide it, and which ones your rivals win on.",
+   "super": "Fix the |sources.|",
+   "visual": "MATCH CUT: the glass answer card from s02 returns, floating above the laptop. Its citation chips drop down and unfold into the site's 'Sources deciding the answer' graph (sources-deciding.png, 2x): g2.com, reddit.com/r/SaaS, capterra.com, each 'also wins Competitor A'. The '+ Add' buttons light in sequence."
+  },
+  {
+   "id": "s10",
+   "act": "Fix",
+   "vo": "Then we create what those sources are missing. Roundups, persona pages, comparisons, listicles, how-tos and articles, each engineered the way AI picks what to cite: a direct answer, clear facts, a sourced stat.",
+   "tts": "Then we create what those sources are missing. Roundups, persona pages, comparisons, listicles, how-tos and articles, each engineered the way A-I picks what to cite: a direct answer, clear facts, a sourced stat.",
+   "super": "Built to be |cited.|",
+   "visual": "Six page cards fan out from the laptop screen in a shallow 3D arc, one per format word, each with a real short title (no grey placeholder lines). On 'a direct answer' the arc collapses into ONE large page; three passages highlight in turn in violet ink, labelled in sentence case: 'Direct answer', 'Clear facts', 'Sourced stat, publisher and year'."
+  },
+  {
+   "id": "s11",
+   "act": "Fix",
+   "vo": "It all publishes on a schedule, to your site and the sites engines read. And our agents join the Reddit and LinkedIn threads where your buyers are already asking.",
+   "tts": "It all publishes on a schedule, to your site and the sites engines read. And our agents join the Reddit and LinkedIn threads where your buyers are already asking.",
+   "super": "Published where engines |look.|",
+   "visual": "The page flies into the site's integrations row (WordPress, Webflow, Ghost, Shopify cards from integrations4.png), each lighting as it lands. Then a Reddit thread card and a LinkedIn post card, side by side, each with a drafted reply that names the brand and cites a source. Official Reddit and LinkedIn marks."
+  },
+  {
+   "id": "s12",
+   "act": "Prove",
+   "vo": "Then, prove it. Weeks later, ask the same question again, and see how the answer has moved. hyperank separates AI visits from direct traffic, engine by engine, in a report for your board.",
+   "tts": "Then, prove it. Weeks later, ask the same question again, and see how the answer has moved. Hyper rank separates A-I visits from direct traffic, engine by engine, in a report for your board.",
+   "super": "|Prove| it's working.",
+   "visual": "PAYOFF of the hero object: the same glass answer card re-asks the s01 question and re-types its shortlist; this time 'Lumen' appears in it, small corner tag 'Illustrative'. Then the site's 'The traffic AI sends you' referral bars (ChatGPT, Perplexity, Gemini, Claude) grow in, and a board report cover lands on the laptop."
+  },
+  {
+   "id": "s13",
+   "act": "Offer",
+   "vo": "Run hyperank yourself, or let our team run it for you. We audit your domain, then every week we fix sources and publish under your name. Not a retainer. An extra team member.",
+   "tts": "Run Hyper rank yourself, or let our team run it for you. We audit your domain, then every week we fix sources and publish under your name. Not a retainer. An extra team member.",
+   "super": "We run it for |you.|",
+   "visual": "A four-week strip with real items, not identical pills: Week 1 'Audit and baseline', Week 2 'Sources fixed', Week 3 'Pages published', Week 4 'Report sent'. On 'An extra team member' the Workspace members card appears and a 'hyperank team' seat slides in, highlighted violet (kept from v2, it worked)."
+  },
+  {
+   "id": "s14",
+   "act": "Offer",
+   "vo": "Running an agency? Run every client from one place, and send reports under your brand.",
+   "tts": "Running an agency? Run every client from one place, and send reports under your brand.",
+   "super": "Your clients. Your |brand.|",
+   "visual": "The laptop shows one workspace switcher; three client workspaces fan out as large cards behind it, each with its own logo placeholder initial and a share-of-voice tile. A report cover re-skins from hyperank to 'Your agency'."
+  },
+  {
+   "id": "s15",
+   "act": "Close",
+   "vo": "Book a call. Bring your domain. In thirty minutes, see what AI says about you, and who it names instead.",
+   "tts": "Book a call. Bring your domain. In thirty minutes, see what A-I says about you, and who it names instead.",
+   "super": "|Book| a call.",
+   "visual": "The glass answer card, bright, with the empty 'You' row from s02, next to a clean calendar card 'Talk to us, 30 min' with a 'Book a call' button and hyperank.ai/book."
+  },
+  {
+   "id": "s16",
+   "act": "Close",
+   "vo": "Your buyers are already asking. Be the answer. Book a call, or check your brand free, at hyperank.ai.",
+   "tts": "Your buyers are already asking. Be the answer. Book a call, or check your brand free, at Hyper rank dot A-I.",
+   "super": "Be the |answer.|",
+   "visual": "End card, bookending the reveal: the hyperank mark with a soft violet bloom, 'Book a call' primary button with hyperank.ai/book, 'Check your brand free' secondary with hyperank.ai. Holds 2.5 s."
+  }
+ ]
+}

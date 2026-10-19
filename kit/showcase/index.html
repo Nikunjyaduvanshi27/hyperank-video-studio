@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #f0eee9; }
+      #root { width: 100%; height: 100%; position: relative; }
+    </style>
+  </head>
+  <body>
+    <!-- hyperank kit showcase: contact frame, then the three kit scenes copied from ../scenes/. -->
+    <div data-hf-id="hf-ow2j" id="root" data-composition-id="main" data-start="0" data-duration="10.8" data-width="1920" data-height="1080">
+      <div data-hf-id="hf-vpy2" id="hr-contact" data-composition-id="hr-contact" data-composition-src="compositions/hr-contact.html" data-start="0" data-duration="1.8" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-c45c" id="hr-engine-fanout" data-composition-id="hr-engine-fanout" data-composition-src="compositions/hr-engine-fanout.html" data-start="1.8" data-duration="4" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-v3vh" id="hr-logo-sting" data-composition-id="hr-logo-sting" data-composition-src="compositions/hr-logo-sting.html" data-start="5.8" data-duration="2" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-98ip" id="hr-cta-endcard" data-composition-id="hr-cta-endcard" data-composition-src="compositions/hr-cta-endcard.html" data-start="7.8" data-duration="3" data-track-index="1" data-width="1920" data-height="1080"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

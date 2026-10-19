@@ -1,0 +1,6 @@
+@media (min-width:640px){.sm\:w-\[180px\]{width:180px}.sm\:w-\[160px\]{width:160px}}
+.grid-cols-\[56px_2fr_1fr_1\.2fr_0\.8fr_0\.7fr_0\.8fr_1\.2fr\]{grid-template-columns:56px 2fr 1fr 1.2fr .8fr .7fr .8fr 1.2fr}
+.border-linkedin-300{--tw-border-opacity:1;border-color:rgb(125 211 252/var(--tw-border-opacity))}
+.w-\[112px\]{width:112px}
+@media (min-width:768px){.md\:w-\[156px\]{width:156px}}
+@media (min-width:1024px){.lg\:w-\[98\%\]{width:98%}}

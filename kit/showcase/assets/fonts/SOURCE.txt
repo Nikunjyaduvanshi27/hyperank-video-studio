@@ -1,0 +1,2 @@
+Instrument Serif, Inter and JetBrains Mono: latin subsets downloaded from Google Fonts (fonts.googleapis.com css2), SIL Open Font License 1.1.
+Inter-var and JetBrainsMono-var are variable fonts (declare font-weight as a range).

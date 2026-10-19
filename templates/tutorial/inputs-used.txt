@@ -1,0 +1,55 @@
+chatgpt-visibility-checker: canva.com
+ai-query-fan-out: best running shoes for flat feet
+llms-txt-checker: cloudflare.com
+robots-txt-checker: https://github.com/search
+ai-bot-crawler-checker: theguardian.com
+ai-brand-visibility-checker: Notion
+llms-txt-generator: stripe.com
+grok-prompt-generator: Summarise this week's X posts about the Switch 2 (X reaction recap, games shop buyer)
+claude-prompt-generator: Turn this week's support tickets into a bug report (XML tags, for engineers)
+ai-prompt-checker: Write a blog post about electric cars. Make it SEO friendly etc. (weak prompt reviewed)
+ai-prompt-optimizer: write a cold email to a gym owner about our booking app, keep it short (before/after rewrite)
+rss-feed-parser: https://www.nasa.gov/feed/
+schema-markup-generator: Article (headline: What is llms.txt? / author: Hyperank / datePublished: 2026-10-08)
+favicon-checker: airbnb.com
+canonical-tag-scanner: https://www.wired.com/
+ssl-tls-checker: mozilla.org
+opengraph-viewer: https://www.duolingo.com
+sitemap-finder: apple.com
+xml-sitemap-validator: https://basecamp.com/sitemap.xml
+sitemap-analytics: https://www.figma.com/sitemap.xml
+xml-sitemap-generator: htmx.org
+sitemap-robots-generator: https://www.allbirds.com/sitemap.xml
+ai-visibility-report: shopify.com
+seo-friendly-url-checker: https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html
+domain-rating-checker: khanacademy.org
+onpage-seo-audit: https://www.bbc.co.uk/food/recipes (keyword recipes)
+sitemap-index-generator: gymshark.com sitemaps (/sitemap_products_1.xml, /sitemap_collections_1.xml, /sitemap_pages_1.xml)
+ai-readiness-audit: https://www.nasa.gov
+broken-link-checker: http://info.cern.ch/hypertext/WWW/TheProject.html
+404-page-checker: https://norvig.com/21-days.html
+ai-prompt-generator: payroll software for restaurants
+llms-txt-validator: shopify.com
+best-ai-prompt-generator: Write a returns policy page for an online furniture store
+chatgpt-prompt-generator: Turn a week of support tickets into a bug summary
+perplexity-prompt-generator: Find studies on four-day work weeks and productivity
+query-fan-out-generator: standing desk
+open-graph-generator: Yosemite National Park / Granite cliffs, waterfalls and giant sequoias. / nps.gov/yose
+xml-sitemap-viewer: raycast.com
+brand-audit: Mailchimp (mailchimp.com)
+noindex-checker: https://yoast.com/sitemap_index.xml
+gemini-visibility-checker: asana.com
+onpage-seo-checker: https://www.nationalgeographic.com/animals/mammals/facts/african-elephant (keyword: african elephant)
+yandex-index-checker: https://www.wikipedia.org/
+ai-seo-audit: https://www.w3.org
+llms-txt-validator: supabase.com (replaces shopify.com above, which ai-visibility-report used first)
+ai-search-query-generator: password manager
+ai-seo-audit: https://www.rottentomatoes.com (replaces w3.org above, which bing-index-checker is capturing)
+ai-reply-generator: Could you speak at our design meetup on May 22? / Decline May, offer June (Email, Professional, Short)
+gemini-prompt-generator: Review a vendor contract and flag risky clauses
+bing-index-checker: https://www.w3.org/
+google-index-checker: https://www.npr.org/
+claude-prompt-generator: Grade a student essay against our rubric / Year 10 history. Score each criterion. (replaces support tickets above, which chatgpt-prompt-generator captured)
+grok-prompt-generator: Summarise recent X posts about the Nintendo Switch 2 / For a games shop buyer. Under 150 words. (replaces the line above)
+ai-answer-generator: Is it safe to charge my phone overnight? (Professional)
+ai-response-generator: You billed us for 12 seats in March. We only have 9 people. / Refund 3 seats this week (Professional, 150 words)

@@ -1,0 +1,186 @@
+<!doctype html>
+<!--
+  hr-cta-endcard: hyperank closing card (~3s, 1920x1080).
+  Left: the site's closing line in serif with its italic violet clause, the
+  violet CTA button, and the free-check microcopy. Right: the orbit motif,
+  the H mark at the centre, six engine names (text only) slowly orbiting.
+  Copy: headline, button and microcopy are verbatim hyperank.ai copy.
+  Variables: button_label (string), micro (string, mono microcopy under the button).
+  Mount: copy to <project>/compositions/, fonts + mark live in <project>/assets/.
+-->
+<html
+  lang="en"
+  data-composition-id="hr-cta-endcard"
+  data-composition-duration="3"
+  data-composition-variables='[
+    { "id": "button_label", "type": "string", "label": "Button label", "default": "Check your brand free" },
+    { "id": "micro", "type": "string", "label": "Microcopy", "default": "Full report with a free account" }
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Instrument Serif"; src: url("assets/fonts/InstrumentSerif-400.woff2") format("woff2"); font-weight: 400; font-style: normal; }
+        @font-face { font-family: "Instrument Serif"; src: url("assets/fonts/InstrumentSerif-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-var.woff2") format("woff2"); font-weight: 100 900; font-style: normal; }
+        @font-face { font-family: "JetBrains Mono"; src: url("assets/fonts/JetBrainsMono-var.woff2") format("woff2"); font-weight: 100 800; font-style: normal; }
+
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size;
+          background: #f0eee9;
+          color: #1f1e1b;
+          font-family: "Inter", sans-serif;
+        }
+        .hre-glow {
+          position: absolute; left: 41cqw; top: -40cqh; width: 72cqw; height: 180cqh;
+          background: radial-gradient(closest-side, rgba(123, 107, 248, 0.26), rgba(123, 107, 248, 0.08) 55%, rgba(123, 107, 248, 0) 100%);
+        }
+        .hre-grain {
+          position: absolute; inset: 0; opacity: 0.35; mix-blend-mode: multiply;
+          background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 0 0.10 0 0 0 0.09 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");
+        }
+
+        .hre-brand {
+          position: absolute; left: 5cqw; top: 8.9cqh;
+          display: flex; align-items: center; gap: 0.6cqw;
+          font-family: "Instrument Serif", serif; font-size: 1.9cqw; letter-spacing: -0.02em; color: #1f1e1b;
+        }
+        .hre-brand img { display: block; width: 1.9cqw; height: auto; }
+
+        .hre-copy { position: absolute; left: 5cqw; top: 0; bottom: 0; width: 49cqw; display: flex; flex-direction: column; justify-content: center; }
+        .hre-head {
+          text-wrap: balance;
+          font-family: "Instrument Serif", serif; font-weight: 400;
+          font-size: 5.4cqw; line-height: 1.02; letter-spacing: -0.02em; color: #1f1e1b;
+        }
+        .hre-w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+        .hre-w span { display: inline-block; }
+        .hre-head em { font-style: italic; color: #5e4bf6; }
+
+        .hre-cta { margin-top: 6.4cqh; display: flex; flex-direction: column; align-items: flex-start; gap: 2.6cqh; }
+        .hre-btn {
+          display: inline-flex; align-items: center; gap: 0.9cqw;
+          padding: 1.35cqw 2.4cqw; border-radius: 12px;
+          background: #5e4bf6; border: 1.5px solid rgba(183, 174, 251, 0.4); color: #ffffff;
+          font-weight: 600; font-size: 1.77cqw; letter-spacing: -0.01em;
+          box-shadow: inset 0 2px 0 rgba(231, 228, 254, 0.45), inset 0 -20px 36px -24px rgba(43, 35, 113, 0.5), 0 20px 56px -12px rgba(43, 35, 113, 0.55);
+        }
+        .hre-btn i { display: block; width: 0.6cqw; height: 0.6cqw; border-radius: 50%; background: #cfc9fc; }
+        .hre-micro {
+          font-family: "JetBrains Mono", monospace; font-weight: 500;
+          font-size: 1.04cqw; letter-spacing: 0.22em; text-transform: uppercase; color: #5a564b;
+        }
+
+        .hre-orbit { position: absolute; left: 59.9cqw; top: 14.8cqh; width: 33.3cqw; height: 59.3cqh; }
+        .hre-ring { position: absolute; left: 50%; top: 50%; border-radius: 50%; border: 1.5px solid #b7aefb; }
+        .hre-ring.r1 { width: 15.6cqw; height: 27.8cqh; margin: -13.9cqh 0 0 -7.8cqw; opacity: 0.8; }
+        .hre-ring.r2 { width: 24.6cqw; height: 43.7cqh; margin: -21.85cqh 0 0 -12.3cqw; opacity: 0.55; }
+        .hre-ring.r3 { width: 33.3cqw; height: 59.3cqh; margin: -29.65cqh 0 0 -16.65cqw; opacity: 0.35; }
+        .hre-core { position: absolute; left: 50%; top: 50%; width: 9cqw; height: 9cqw; margin: -4.5cqw 0 0 -4.5cqw; display: grid; place-items: center; }
+        .hre-core i { display: block; width: 100%; aspect-ratio: 856 / 804; background: url("assets/hyperank-mark.png") center / contain no-repeat; filter: drop-shadow(0 18px 36px rgba(94, 75, 246, 0.4)); }
+        .hre-spin { position: absolute; inset: 0; }
+        .hre-slot { position: absolute; width: 0; height: 0; }
+        .hre-pill-wrap { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+        .hre-pill {
+          display: flex; align-items: center; gap: 0.5cqw; white-space: nowrap;
+          padding: 0.55cqw 1cqw; border-radius: 999px;
+          background: rgba(255, 255, 255, 0.82); border: 1px solid #ffffff;
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 16px 36px -22px rgba(28, 23, 74, 0.55);
+          font-weight: 600; font-size: 1.04cqw; color: #2e2c25;
+        }
+        .hre-pill i { display: block; width: 0.42cqw; height: 0.42cqw; border-radius: 50%; background: #5e4bf6; }
+      </style>
+
+      <div id="root" data-composition-id="hr-cta-endcard" data-width="1920" data-height="1080" data-duration="3">
+        <div class="hre-glow" id="hr-cta-endcard-glow" data-layout-allow-overflow></div>
+        <div class="hre-grain"></div>
+
+        <div class="hre-orbit">
+          <div class="hre-ring r1"></div>
+          <div class="hre-ring r2"></div>
+          <div class="hre-ring r3"></div>
+          <div class="hre-core" id="hr-cta-endcard-core"><i></i></div>
+          <div class="hre-spin" id="hr-cta-endcard-spin"></div>
+        </div>
+
+        <div class="hre-brand" id="hr-cta-endcard-brand"><img src="assets/hyperank-mark.png" alt="" />hyperank.ai</div>
+
+        <div class="hre-copy">
+          <div class="hre-head" id="hr-cta-endcard-head"></div>
+          <div class="hre-cta">
+            <div class="hre-btn" id="hr-cta-endcard-btn"><i></i><span id="hr-cta-endcard-label">Check your brand free</span></div>
+            <div class="hre-micro" id="hr-cta-endcard-micro">Full report with a free account</div>
+          </div>
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+      <script>
+        (function () {
+          var ID = "hr-cta-endcard";
+          var root = document.querySelector('#root[data-composition-id="' + ID + '"]') || document.querySelector('[data-composition-id="' + ID + '"]');
+          var vars = window.__hyperframes && window.__hyperframes.getVariables ? window.__hyperframes.getVariables() : {};
+          root.querySelector("#" + ID + "-label").textContent = vars.button_label || "Check your brand free";
+          root.querySelector("#" + ID + "-micro").textContent = vars.micro || "Full report with a free account";
+
+          // Headline: plain words, then the italic violet clause. Each word rides its own mask.
+          var head = root.querySelector("#" + ID + "-head");
+          var plain = "Before your next buyer asks AI about you,".split(" ");
+          var accent = "ask AI about yourself.".split(" ");
+          plain.concat(accent).forEach(function (w, i) {
+            var mask = document.createElement("span");
+            mask.className = "hre-w";
+            mask.setAttribute("data-layout-allow-overflow", "");
+            var inner = document.createElement(i >= plain.length ? "em" : "span");
+            inner.textContent = w;
+            inner.style.display = "inline-block";
+            mask.appendChild(inner);
+            head.appendChild(mask);
+            head.appendChild(document.createTextNode(" "));
+          });
+          var words = head.querySelectorAll(".hre-w > *");
+
+          // Engines orbit on rings r2 / r3 (pre-calculated angles, upright pills).
+          var spin = root.querySelector("#" + ID + "-spin");
+          var ENGINES = [["ChatGPT", 0.37, 200], ["Gemini", 0.5, 255], ["Claude", 0.37, 320], ["Perplexity", 0.5, 18], ["Grok", 0.37, 80], ["AI Overviews", 0.5, 138]];
+          var wraps = [], pills = [];
+          ENGINES.forEach(function (e) {
+            var a = (e[2] * Math.PI) / 180;
+            var slot = document.createElement("div");
+            slot.className = "hre-slot";
+            slot.style.left = 50 + Math.cos(a) * e[1] * 100 + "%";
+            slot.style.top = 50 + Math.sin(a) * e[1] * 100 + "%";
+            slot.innerHTML = '<div class="hre-pill-wrap"><div class="hre-pill"><i></i><span></span></div></div>';
+            slot.querySelector("span").textContent = e[0];
+            spin.appendChild(slot);
+            wraps.push(slot.firstChild);
+            pills.push(slot.querySelector(".hre-pill"));
+          });
+
+          var SETTLE = "power4.out";
+          var SPIN = 14;
+          var tl = gsap.timeline({ paused: true });
+          tl.fromTo("#" + ID + "-glow", { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "sine.inOut" }, 0);
+          tl.fromTo("#" + ID + "-brand", { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.6, ease: SETTLE }, 0.1);
+          tl.fromTo(words, { yPercent: 110 }, { yPercent: 0, duration: 0.8, ease: SETTLE, stagger: 0.035 }, 0.2);
+          tl.fromTo(root.querySelectorAll(".hre-ring"), { scale: 0.85, opacity: 0 }, { scale: 1, opacity: function (i) { return [0.8, 0.55, 0.35][i]; }, duration: 1.2, ease: SETTLE, stagger: 0.08 }, 0.15);
+          tl.fromTo("#" + ID + "-core", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.7, ease: SETTLE }, 0.3);
+          tl.fromTo(pills, { xPercent: -50, yPercent: -50, scale: 0.6, opacity: 0 }, { xPercent: -50, yPercent: -50, scale: 1, opacity: 1, duration: 0.5, ease: SETTLE, stagger: 0.06 }, 0.5);
+          tl.fromTo("#" + ID + "-btn", { opacity: 0, y: 20, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: SETTLE }, 0.95);
+          tl.fromTo("#" + ID + "-micro", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 1.15);
+          // Ambient: the engines orbit; pills counter-rotate to stay upright.
+          tl.fromTo(spin, { rotation: 0 }, { rotation: SPIN, duration: 3, ease: "none" }, 0);
+          tl.fromTo(wraps, { rotation: 0 }, { rotation: -SPIN, duration: 3, ease: "none" }, 0);
+
+          window.__timelines[ID] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

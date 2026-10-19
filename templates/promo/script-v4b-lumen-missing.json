@@ -1,0 +1,150 @@
+{
+ "example": "A B2B buyer asks AI for a project management tool. Real incumbents (Asana, monday.com, ClickUp) are in the answer; the fictional challenger SaaS product Lumen (lumenhq.com) is not. hyperank gets Lumen mentioned and cited; the buyer clicks and starts a trial. Every simulated AI answer carries a small 'Illustrative' tag. Voice says 'your product', and 'buyer' or 'client', never 'shopper'.",
+ "device": "INTERACTIVE QUESTIONS: each act opens with a question to the viewer typed into the same glass chat composer (blinking cursor, letter by letter), then the voice answers it. The composer is the film's recurring object, along with the AI answer card it produces.",
+ "scenes": [
+  {
+   "id": "s01",
+   "act": "Hook",
+   "vo": "Your next client is asking AI which product to choose. Like this.",
+   "tts": "Your next client is asking A-I which product to choose. Like this.",
+   "super": "They don't search. They |ask.|",
+   "visual": "Bright stage with depth. Frame 1 already moving: the glass chat composer with the official ChatGPT mark types 'What's the best project management tool for a remote team?' letter by letter. Official engine marks (Claude, Gemini, Perplexity, Copilot, Google AI Overviews, Meta AI) float on soft-focus planes behind. Never Grok. SFX: key ticks."
+  },
+  {
+   "id": "s02",
+   "act": "Hook",
+   "vo": "In seconds, AI gives your buyer one answer. Three products, and links to the sources it trusts. That's the whole shortlist.",
+   "tts": "In seconds, A-I gives your buyer one answer. Three products, and links to the sources it trusts. That's the whole shortlist.",
+   "super": "One answer. Three |names.|",
+   "visual": "THE HERO ANSWER CARD streams in below the composer, large and legible: '1. Asana', '2. monday.com', '3. ClickUp', each with a short reason line. Citation chips under it: g2.com, reddit.com/r/projectmanagement, capterra.com. Small corner tag 'Illustrative'. On 'That's the whole shortlist' a soft violet bracket wraps the three names."
+  },
+  {
+   "id": "s03",
+   "act": "Hook",
+   "vo": "Now picture Lumen, a great project management tool that isn't in that answer. Or picture your own product. When your buyers ask, are you in the answer?",
+   "tts": "Now picture Lumen, a great project management tool that isn't in that answer. Or picture your own product. When your buyers ask, are you in the answer?",
+   "super": "Are you in the |answer?|",
+   "visual": "A fourth row slides into the answer card, 'Lumen', then greys out and drops away. The composer clears and types the viewer question: 'Is my product in the answer?'. The cursor blinks and holds on the question mark."
+  },
+  {
+   "id": "s04",
+   "act": "Stakes",
+   "vo": "In a G2 survey, half of B2B software buyers now start their research with an AI chatbot more often than with Google.",
+   "tts": "In a G-2 survey, half of B-2-B software buyers now start their research with an A-I chatbot more often than with Google.",
+   "super": "|51%| start with AI.",
+   "visual": "The answer card drifts back out of focus. '51%' rises large in violet with a soft depth shadow, count already in motion on frame 1, then holds. Source line bottom-left, small: 'Source: G2, The Answer Economy, April 2026. Survey of 1,076 B2B software buyers.'"
+  },
+  {
+   "id": "s05",
+   "act": "Stakes",
+   "vo": "And 69 percent chose a different vendor than planned, because a chatbot recommended it.",
+   "tts": "And sixty-nine percent chose a different vendor than planned, because a chatbot recommended it.",
+   "super": "|69%| picked someone else.",
+   "visual": "The 51 rolls to 69 in place. Below it, a 'Planned vendor' chip slides out of a buyer's shortlist and a 'Recommended by AI' chip slides in. Same source line."
+  },
+  {
+   "id": "s06",
+   "act": "Stakes",
+   "vo": "If you're not in the answer, you never see the loss. No visit, no form fill, nothing in your CRM.",
+   "tts": "If you're not in the answer, you never see the loss. No visit, no form fill, nothing in your C-R-M.",
+   "super": "The sale you |never| see.",
+   "visual": "Three glass tiles in depth, each flat-lining in turn: 'Website visits, no change', 'Form fills, no change', 'CRM, no record'."
+  },
+  {
+   "id": "s07",
+   "act": "Reveal",
+   "vo": "That's what hyperank fixes. We get your brand mentioned and cited in AI answers, so buyers find you first.",
+   "tts": "That's what Hyper rank fixes. We get your brand mentioned and cited in A-I answers, so buyers find you first.",
+   "super": "Be the |answer.|",
+   "visual": "SIGNATURE MOMENT, bright throughout. The stage clears to white, the hyperank mark draws itself with a soft violet glow, a light sweep crosses the frame, and the full silver laptop rises and settles with a slight rotateX and a specular sweep across the lid. Its screen shows the hyperank.ai hero (site crop hero.png, the visor figure). The 'ChatGPT recommends you', 'Claude recommends you' chips lift off the screen one at a time."
+  },
+  {
+   "id": "s08",
+   "act": "See",
+   "vo": "First, we show you what AI says about your product. We ask your buyers' real questions across ChatGPT, Claude, Gemini, Perplexity and more, and keep every answer, word for word.",
+   "tts": "First, we show you what A-I says about your product. We ask your buyers' real questions across Chat G-P-T, Claude, Gemini, Perplexity and more, and keep every answer, word for word.",
+   "super": "What does AI |say?|",
+   "visual": "Viewer question typed in the composer first: 'What does AI say about my product?'. The composer docks above the laptop. Screen wipes to the site section 'Every answer, kept word for word' (card-answers.png, 2x); camera pushes in; ONE lift out of the screen: the Tracked prompts card, with Lumen questions."
+  },
+  {
+   "id": "s09",
+   "act": "See",
+   "vo": "You see who gets named instead of you, your share of voice, and anything AI gets wrong, like an old price or a retired feature.",
+   "tts": "You see who gets named instead of you, your share of voice, and anything A-I gets wrong, like an old price or a retired feature.",
+   "super": "Know where you |stand.|",
+   "visual": "Screen wipes to the app Control Center for lumenhq.com. Lift 1, large: Share of voice, Lumen 9% beside Asana, monday.com and ClickUp. Lift 2: one AI claim 'Lumen has no mobile app' struck through in place, verdict pill 'Outdated'. Never more than two lifts."
+  },
+  {
+   "id": "s10",
+   "act": "Fix",
+   "vo": "Why does AI pick them, and not you? The sources it trusts. Reviews, Reddit threads, comparison pages. hyperank finds the exact sources deciding your answer.",
+   "tts": "Why does A-I pick them, and not you? The sources it trusts. Reviews, Reddit threads, comparison pages. Hyper rank finds the exact sources deciding your answer.",
+   "super": "Why |them?|",
+   "visual": "Viewer question typed first: 'Why does AI pick them?'. MATCH CUT: the hero answer card from s02 returns above the laptop; its citation chips drop and unfold into the site's 'Sources deciding the answer' graph (sources-deciding.png, 2x, rival labels as Asana, monday.com, ClickUp). The '+ Add' buttons light in sequence."
+  },
+  {
+   "id": "s11",
+   "act": "Fix",
+   "vo": "Then we fix them. We create what those sources are missing: roundups, comparisons, persona pages, listicles, how-tos and articles, each engineered the way AI picks what to cite.",
+   "tts": "Then we fix them. We create what those sources are missing: roundups, comparisons, persona pages, listicles, how-tos and articles, each engineered the way A-I picks what to cite.",
+   "super": "Built to be |cited.|",
+   "visual": "Six page cards fan out from the laptop screen in a shallow 3D arc, one per format word, each with a real Lumen title ('Best project management tools for remote teams, compared', 'Lumen vs Asana for agencies', 'Project management for 20-person agencies' ...). On 'engineered' the arc collapses into ONE large page with three passages highlighting in violet ink: 'Direct answer', 'Clear facts', 'Sourced stat'. Use the site's Content Engine graphic (card-content.png) for the publish list."
+  },
+  {
+   "id": "s12",
+   "act": "Fix",
+   "vo": "It publishes to your site and the sites AI reads. And our agents join the Reddit and LinkedIn threads where your buyers are already asking.",
+   "tts": "It publishes to your site and the sites A-I reads. And our agents join the Reddit and LinkedIn threads where your buyers are already asking.",
+   "super": "Published where AI |looks.|",
+   "visual": "The page flies into the site's integrations cards (integrations4.png: WordPress, Webflow, Ghost, Shopify), each lighting as it lands. Then a Reddit thread card ('r/projectmanagement: tool for a remote agency?') with a drafted reply naming Lumen and citing a source, beside a LinkedIn post card. Official Reddit and LinkedIn marks."
+  },
+  {
+   "id": "s13",
+   "act": "Win",
+   "vo": "Weeks later, a buyer asks the same question. This time, AI names Lumen, and links to it.",
+   "tts": "Weeks later, a buyer asks the same question. This time, A-I names Lumen, and links to it.",
+   "super": "So what |changes?|",
+   "visual": "PAYOFF of the hero card. The same composer types the same s01 question. The answer re-streams; this time 'Lumen' is in the list with a violet citation chip 'lumenhq.com'. Corner tag 'Illustrative'. Soft chime."
+  },
+  {
+   "id": "s14",
+   "act": "Win",
+   "vo": "They click. They land on your site. They book a demo. A new client, sent by AI. Now imagine that's your product.",
+   "tts": "They click. They land on your site. They book a demo. A new client, sent by A-I. Now imagine that's your product.",
+   "super": "A client, sent by |AI.|",
+   "visual": "A cursor clicks the lumenhq.com citation; the laptop screen wipes to a clean Lumen landing page (no pricing); a 'Demo booked' toast slides in, then 'New client: 20-person agency'. On 'your product' the Lumen name in the toast re-types to 'Your product'."
+  },
+  {
+   "id": "s15",
+   "act": "Prove",
+   "vo": "And hyperank proves it. AI visits, separated from direct traffic, engine by engine, in a report for your board.",
+   "tts": "And Hyper rank proves it. A-I visits, separated from direct traffic, engine by engine, in a report for your board.",
+   "super": "|Prove| it's working.",
+   "visual": "The site's 'The traffic AI sends you, separated from the traffic it does not' graphic (card-analytics.png, 2x): referral bars for ChatGPT, Perplexity, Gemini, Claude grow in. Then a board report cover lands on the laptop."
+  },
+  {
+   "id": "s16",
+   "act": "Offer",
+   "vo": "No team for this? We run it for you. We audit your domain, then every week we fix sources and publish under your name. Not a retainer. An extra team member. Running an agency? Run every client from one place, under your brand.",
+   "tts": "No team for this? We run it for you. We audit your domain, then every week we fix sources and publish under your name. Not a retainer. An extra team member. Running an agency? Run every client from one place, under your brand.",
+   "super": "No team for |this?|",
+   "visual": "Viewer question typed first: 'No team for this?'. A four-week strip with real items: Week 1 'Audit and baseline', Week 2 'Sources fixed', Week 3 'Pages published', Week 4 'Report sent'. On 'An extra team member' the Workspace members card shows a 'hyperank team' seat sliding in, highlighted violet. On 'agency', three client workspace cards fan out behind it."
+  },
+  {
+   "id": "s17",
+   "act": "Close",
+   "vo": "Want to know what AI tells your buyers about your product right now? Book a call. Bring your domain. In thirty minutes, see your answer, and who it names instead.",
+   "tts": "Want to know what A-I tells your buyers about your product right now? Book a call. Bring your domain. In thirty minutes, see your answer, and who it names instead.",
+   "super": "|Book| a call.",
+   "visual": "Viewer question typed in the composer: 'What does AI say about my product right now?'. Beside it a clean calendar card 'Talk to us, 30 min' with a 'Book a call' button and hyperank.ai/book."
+  },
+  {
+   "id": "s18",
+   "act": "Close",
+   "vo": "Your buyers are already asking. Be the answer. Book a call, or check your brand free, at hyperank.ai.",
+   "tts": "Your buyers are already asking. Be the answer. Book a call, or check your brand free, at Hyper rank dot A-I.",
+   "super": "Be the |answer.|",
+   "visual": "End card bookending the reveal: the hyperank mark with a soft violet glow, 'Book a call' primary button with hyperank.ai/book, 'Check your brand free' secondary with hyperank.ai. Holds 2.5 s."
+  }
+ ]
+}

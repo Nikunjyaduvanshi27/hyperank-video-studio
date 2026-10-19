@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en" class="__variable_646807 __variable_dd5b2f">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <!-- hyperank's own production stylesheet, captured from the live tool page by _premium/capture.py -->
+    <link rel="stylesheet" href="assets/hyperank.css" />
+    <style>
+      @font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 200 800; src: url("assets/fonts/PlusJakartaSans-latin.woff2") format("woff2"); }
+      @font-face { font-family: "Space Grotesk"; font-style: normal; font-weight: 300 700; src: url("assets/fonts/SpaceGrotesk-latin.woff2") format("woff2"); }
+      @font-face { font-family: "Geist"; font-style: normal; font-weight: 100 900; src: url("assets/fonts/Geist-var.woff2") format("woff2"); }
+      @font-face { font-family: "Geist Mono"; font-style: normal; font-weight: 100 900; src: url("assets/fonts/GeistMono-var.woff2") format("woff2"); }
+      @font-face { font-family: "Plus Jakarta Sans Fallback"; src: local("Arial"); ascent-override: 98.88%; descent-override: 21.15%; size-adjust: 104.98%; }
+      @font-face { font-family: "Space Grotesk Fallback"; src: local("Arial"); ascent-override: 89.71%; descent-override: 26.62%; size-adjust: 109.69%; }
+      @font-face { font-family: "Apple Color Emoji"; src: local("Segoe UI Emoji"); }
+      @font-face { font-family: "Segoe UI Emoji"; src: local("Segoe UI Emoji"); }
+      @font-face { font-family: "Segoe UI Symbol"; src: local("Segoe UI Symbol"); }
+      @font-face { font-family: "SFMono-Regular"; src: local("Consolas"); }
+      @font-face { font-family: "Instrument Serif"; src: local("Georgia"); } /* in the live CSS, unused on tool pages */
+      @font-face { font-family: "Instrument Serif Fallback"; src: local("Georgia"); }
+      :root { --ink: #1f1e1b; --violet: #5e4bf6; --ground: #f3f1ec; --font-mono: "Geist Mono", ui-monospace, monospace; }
+      html, body { margin: 0; overflow: hidden; background: var(--ground); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; font-family: "Geist", sans-serif; color: var(--ink); }
+
+      /* ---------- stage ---------- */
+      #ground { position: absolute; inset: 0; background: radial-gradient(120% 95% at 50% 42%, #ffffff 0%, #f7f6f3 40%, #ebe8e2 100%); }
+      #cam { position: absolute; left: 0; top: 0; width: 1760px; height: 1000px; transform-origin: 0 0; }
+      .bloom { position: absolute; border-radius: 50%; pointer-events: none; }
+      #bloomA { left: 80px; top: 40px; width: 1600px; height: 980px; background: radial-gradient(closest-side, rgba(94, 75, 246, 0.24), rgba(94, 75, 246, 0.07) 55%, rgba(94, 75, 246, 0) 100%); }
+      .mote { position: absolute; border-radius: 50%; background: rgba(94, 75, 246, 0.45); }
+
+      /* ---------- laptop (generic, no logo) ---------- */
+      #laptop { position: absolute; left: 0; top: 0; width: 1760px; height: 1000px; }
+      #contact { position: absolute; left: 40px; top: 958px; width: 1680px; height: 70px; border-radius: 50%; background: radial-gradient(closest-side, rgba(38, 30, 80, 0.42), rgba(38, 30, 80, 0.12) 60%, rgba(38, 30, 80, 0)); filter: blur(14px); }
+      #ambient { position: absolute; left: 190px; top: 120px; width: 1380px; height: 840px; border-radius: 40px; box-shadow: 0 90px 160px -50px rgba(52, 40, 130, 0.36), 0 40px 80px -40px rgba(26, 23, 20, 0.28); }
+      .lid { position: absolute; left: 138px; top: 0; width: 1484px; height: 956px; border-radius: 34px; background: linear-gradient(160deg, #f4f5f7 0%, #d4d6da 38%, #b9bcc1 62%, #e2e4e7 100%); }
+      .lid-glass { position: absolute; left: 4px; top: 4px; right: 4px; bottom: 4px; border-radius: 30px; background: #0d0d10; overflow: hidden; }
+      .lid-glass::after { content: ""; position: absolute; inset: 0; border-radius: 30px; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06); }
+      .webcam { position: absolute; left: 738px; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: radial-gradient(circle at 40% 40%, #3a3a48, #101016); }
+      #screen { position: absolute; left: 160px; top: 22px; width: 1440px; height: 900px; overflow: hidden; border-radius: 10px 10px 3px 3px; background: #f6f4f1; isolation: isolate; }
+      #glare { position: absolute; left: 160px; top: 22px; width: 1440px; height: 900px; border-radius: 10px 10px 3px 3px; overflow: hidden; pointer-events: none;
+        background: linear-gradient(118deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.0) 34%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.05) 100%); }
+      #streak { position: absolute; left: 0; top: -200px; width: 260px; height: 1300px; background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0)); opacity: 0; }
+      .hinge { position: absolute; left: 150px; top: 950px; width: 1460px; height: 9px; border-radius: 0 0 6px 6px; background: linear-gradient(#77797e, #2e2f33); }
+      .deck { position: absolute; left: 0; top: 956px; width: 1760px; height: 30px; border-radius: 4px 4px 46px 46px / 4px 4px 26px 26px; background: linear-gradient(180deg, #fbfbfc 0%, #e3e5e8 22%, #c4c7cc 64%, #9da0a6 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9); }
+      .notch { position: absolute; left: 760px; top: 0; width: 240px; height: 10px; border-radius: 0 0 12px 12px; background: linear-gradient(#a9acb1, #d6d8db); }
+
+      /* ---------- the rebuilt tool page: a __VW__px viewport shown at __Z__x on the 1440 x 900 screen ---------- */
+      .pg { position: absolute; left: 0; top: 0; width: 1440px; height: 900px; overflow: hidden; background: var(--color-ground); }
+      #scroller { position: absolute; left: 0; top: 0; width: __VW__px; transform-origin: 0 0; }
+      #scroller .hdr { position: absolute; left: 0; right: 0; top: 20px; z-index: 5; }
+      #scroller .sec { padding-top: 104px !important; padding-bottom: 140px !important; }
+      #p1 nav ol .text-neutral-400 { color: #6c665d; }
+      #p1 nav ol .text-neutral-500, #p1 label .text-neutral-500, #p1 label .text-neutral-400 { color: #69625c; }
+      .inwrap { position: relative; }
+      .inbox { display: flex; align-items: center; height: 48px; }
+      .typed { white-space: pre; }
+      .typed span { opacity: 0; }
+      .ph { position: absolute; left: 16px; top: 0; line-height: 48px; font-size: 15px; font-weight: 500; color: #716a61; pointer-events: none; }
+      .caret { position: absolute; top: 14px; width: 2px; height: 21px; background: #1a1714; opacity: 0; left: 0; }
+      .spin { display: none; width: 16px; height: 16px; margin-right: 2px; }
+      .spin svg { width: 16px; height: 16px; }
+      .hide0 { max-height: 0; overflow: hidden; opacity: 0; }
+      .hide0.over { position: absolute; left: 0; right: 0; max-height: none; overflow: visible; }
+      #gateWrap { position: absolute; inset: 0; z-index: 6; opacity: 0; display: flex; align-items: center; justify-content: center; background: rgba(246, 244, 241, 0.3); font-family: var(--font-sans); }
+      #dim { position: absolute; inset: 0; background: rgb(24, 20, 56); opacity: 0; pointer-events: none; z-index: 20; }
+
+      /* cursor */
+      #cursor { position: absolute; left: 0; top: 0; width: 30px; height: 40px; z-index: 30; }
+      #ripple { position: absolute; left: -26px; top: -26px; width: 52px; height: 52px; border-radius: 50%; border: 2px solid rgba(94, 75, 246, 0.7); background: rgba(94, 75, 246, 0.10); opacity: 0; }
+
+      /* engines around the device (world space) and the fan beat (view space) */
+      .weng { position: absolute; width: 170px; text-align: center; opacity: 0; }
+      .weng .tile, .eng .tile { width: 170px; height: 170px; border-radius: 40px; background: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 30px 60px -26px rgba(44, 32, 120, 0.4), 0 6px 14px -6px rgba(26, 23, 20, 0.14), inset 0 0 0 1px rgba(26, 23, 20, 0.05); }
+      .weng .tile img, .eng .tile img { width: 86px; height: 86px; object-fit: contain; }
+      .weng .tile img.oai, .eng .tile img.oai { width: 136px; height: 136px; }
+      .weng .lb { white-space: nowrap; margin: 18px -80px 0; font-size: 34px; font-weight: 520; color: #3a3530; letter-spacing: -0.01em; }
+      .eng { position: absolute; width: 150px; text-align: center; opacity: 0; }
+      .eng .tile { width: 150px; height: 150px; border-radius: 36px; }
+      .eng .tile img { width: 76px; height: 76px; }
+      .eng .tile img.oai { width: 118px; height: 118px; }
+      .eng .lb { white-space: nowrap; margin: 16px -60px 0; font-size: 27px; font-weight: 520; color: #2f2b27; letter-spacing: -0.01em; }
+      #qlines { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; }
+      .qp { position: absolute; height: 58px; line-height: 58px; padding: 0 26px; border-radius: 16px; background: #fff; font-size: 23px; font-weight: 450; color: var(--ink); letter-spacing: -0.014em; white-space: nowrap; opacity: 0;
+        box-shadow: 0 26px 50px -24px rgba(24, 18, 80, 0.55), 0 3px 10px -4px rgba(26, 23, 20, 0.14); }
+      .qp b { font-family: "Geist Mono", monospace; font-weight: 500; font-size: 15px; color: var(--violet); margin-right: 14px; letter-spacing: 0.06em; }
+      .dot { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--violet); box-shadow: 0 0 16px rgba(94, 75, 246, 0.8); opacity: 0; left: 0; top: 0; }
+
+      /* result cards lifted out of the screen (view space) */
+      #lifts .lift { position: absolute; left: 0; top: 0; transform-origin: 0 0; opacity: 0; font-family: var(--font-sans); border-radius: 14px;
+        box-shadow: 0 50px 90px -30px rgba(44, 32, 120, 0.5), 0 14px 30px -12px rgba(26, 23, 20, 0.25); }
+      .lbl { position: absolute; left: 0; top: 0; opacity: 0; padding: 12px 20px 12px; border-radius: 14px; background: #fff; white-space: nowrap; font-family: "Geist Mono", monospace; font-size: 19px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--violet);
+        box-shadow: 0 24px 50px -24px rgba(24, 18, 80, 0.5), inset 0 0 0 1px rgba(26, 23, 20, 0.05); }
+
+      /* ---------- view space ---------- */
+      #veilT { position: absolute; left: 0; top: 0; width: 1920px; height: 340px; background: linear-gradient(rgba(246, 245, 242, 0.99) 0%, rgba(246, 245, 242, 0.97) 50%, rgba(246, 245, 242, 0)); backdrop-filter: blur(20px); -webkit-mask-image: linear-gradient(#000 64%, transparent); mask-image: linear-gradient(#000 64%, transparent); opacity: 0; }
+      #veilB { position: absolute; left: 0; bottom: 0; width: 1920px; height: 170px; background: linear-gradient(rgba(246, 245, 242, 0), rgba(246, 245, 242, 0.9) 48%, rgba(246, 245, 242, 0.96)); backdrop-filter: blur(16px); -webkit-mask-image: linear-gradient(transparent, #000 48%); mask-image: linear-gradient(transparent, #000 48%); opacity: 0; }
+      .super { position: absolute; left: 0; top: 50px; width: 1920px; text-align: center; font-weight: 620; font-size: 78px; line-height: 1.12; letter-spacing: -0.04em; color: var(--ink); }
+      .super .w { display: inline-block; opacity: 0; }
+      .super .v { color: var(--violet); }
+      .eyebrow { position: absolute; left: 0; top: 26px; width: 1920px; text-align: center; font-family: "Geist Mono", monospace; font-size: 17px; letter-spacing: 0.24em; text-transform: uppercase; color: #6f6862; opacity: 0; }
+      .sub { position: absolute; left: 160px; width: 1600px; bottom: 30px; text-align: center; font-size: 30px; font-weight: 400; letter-spacing: -0.003em; color: #26231f; opacity: 0; }
+      #fine { position: absolute; left: 56px; bottom: 36px; font-family: "Geist Mono", monospace; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase; color: #6b655d; opacity: 0; }
+      #bug { position: absolute; left: 64px; top: 52px; display: flex; align-items: center; gap: 10px; opacity: 0; }
+      #bug img { width: 40px; height: 33px; }
+      #bug span { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 25px; letter-spacing: -0.02em; color: #0f172a; }
+      #end { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      #endFrost { position: absolute; left: 360px; top: 120px; width: 1200px; height: 840px; border-radius: 50%; background: radial-gradient(closest-side, rgba(248, 247, 244, 0.94), rgba(248, 247, 244, 0.82) 55%, rgba(248, 247, 244, 0)); opacity: 0; }
+      #endBloom { position: absolute; left: 610px; top: 150px; width: 700px; height: 560px; border-radius: 50%; background: radial-gradient(closest-side, rgba(94, 75, 246, 0.24), rgba(94, 75, 246, 0)); opacity: 0; }
+      #endMark { position: relative; width: 156px; height: 130px; opacity: 0; }
+      #endSuper { position: relative; margin-top: 34px; font-size: 110px; font-weight: 620; letter-spacing: -0.045em; line-height: 1; opacity: 0; }
+      #endSuper .v { color: var(--violet); }
+      #endSmall { position: relative; margin-top: 26px; font-size: 32px; color: #4d4842; letter-spacing: -0.005em; opacity: 0; }
+      #endUrl { position: relative; margin-top: 38px; font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 48px; letter-spacing: -0.02em; color: #0f172a; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="__D__" data-width="1920" data-height="1080">
+      <div id="ground" data-layout-allow-occlusion></div>
+
+      <!-- ===== world (camera) ===== -->
+      <div id="cam">
+        <div class="bloom" id="bloomA"></div>
+        <div id="motes"></div>
+        <div id="laptop">
+          <div id="contact"></div>
+          <div id="ambient"></div>
+          <div class="lid"><div class="lid-glass"><div class="webcam"></div></div></div>
+          <div id="screen">
+            <!-- the live tool page: markup and stylesheet from hyperank.ai; the result is the recorded run in capture/ -->
+            <div class="pg" id="p1" style="font-family: var(--font-sans)">
+              <div id="scroller">
+__PAGE__
+              </div>
+              __GATE__
+            </div>
+            <div id="dim" data-layout-allow-occlusion></div>
+            <div id="cursor"><div id="ripple"></div><svg width="30" height="40" viewBox="0 0 30 40"><path d="M3 2 L3 30 L10 23.5 L14.6 34.4 L19.2 32.5 L14.6 21.8 L24 21.4 Z" fill="#111" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"></path></svg></div>
+          </div>
+          <div id="glare"><div id="streak"></div></div>
+          <div class="hinge"></div>
+          <div class="deck"><div class="notch"></div></div>
+        </div>
+        <div id="engines">__ENGINES__</div>
+      </div>
+
+      <!-- ===== view space ===== -->
+      <div id="qg"><svg id="qlines"></svg>__FAN__<div id="dots"></div></div>
+      <div id="lifts"><svg id="liftSvg" style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible"></svg></div>
+      <div id="veilT" data-layout-allow-occlusion></div>
+      <div id="veilB" data-layout-allow-occlusion></div>
+      <div id="bug"><img src="assets/img/hyperank-mark.png" alt="" /><span>hyperank.ai</span></div>
+      <div class="eyebrow" id="eb2">hyperank / free tool</div>
+      <div id="supers"></div>
+      <div id="subs"></div>
+      <div id="fine">Sequence shortened</div>
+
+      <div id="end">
+        <div id="endFrost"></div>
+        <div id="endBloom"></div>
+        <img id="endMark" src="assets/img/hyperank-mark.png" alt="" />
+        <div id="endSuper">Free to <span class="v">run.</span></div>
+        <div id="endSmall">Full report with a free account.</div>
+        <div id="endUrl">hyperank.ai</div>
+      </div>
+
+      <!-- ===== audio (generated by _premium/build.py from tool.json and the voice files) ===== -->
+__AUDIO__
+    </div>
+
+    <script>
+      // generated by _premium/build.py: supers, subtitles and every timed action, all in seconds
+      const DATA = __DATA__;
+      const D = DATA.D, Z = DATA.Z, VIOLET = "#5e4bf6";
+      const tl = gsap.timeline({ paused: true });
+      const $ = (s) => document.querySelector(s);
+      const $$ = (s) => Array.from(document.querySelectorAll(s));
+      const SCREEN = { x: 160, y: 22, w: 1440, h: 900 };
+      const HOLD = { s: 0.8, x: 960 - 0.8 * 880, y: 588 - 0.8 * 472 }; // the whole laptop, deck and contact shadow in frame
+      const WIDE0 = { s: 0.47, x: 960 - 0.47 * 880, y: 640 - 0.47 * 500 };
+      const WIDE1 = { s: 0.56, x: 960 - 0.56 * 880, y: 625 - 0.56 * 500 };
+      const MED = { s: 0.5, x: 520 - 0.5 * 880, y: 620 - 0.5 * 495 };
+
+      // ---------- supers and subtitles ----------
+      DATA.supers.forEach(([a, b, txt], i) => {
+        const d = document.createElement("div");
+        d.className = "super"; d.id = "su" + i;
+        d.innerHTML = txt.split(" ").map((w) => '<span class="w' + (w.includes("|") ? " v" : "") + '">' + w.replace(/\|/g, "") + "</span>").join(" ");
+        $("#supers").appendChild(d);
+        const ws = d.querySelectorAll(".w");
+        ws.forEach((w) => w.setAttribute("data-layout-allow-overlap", ""));
+        tl.fromTo(ws, { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.05 }, a);
+        tl.to(ws, { opacity: 0, y: -22, duration: 0.28, ease: "power2.in", stagger: 0.025 }, b);
+      });
+      DATA.subs.forEach(([a, b, txt], i) => {
+        const d = document.createElement("div");
+        d.className = "sub"; d.id = "sb" + i; d.textContent = txt; d.setAttribute("data-layout-allow-overlap", "");
+        $("#subs").appendChild(d);
+        tl.fromTo(d, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.2, ease: "power2.out" }, a - 0.04);
+        tl.to(d, { opacity: 0, duration: 0.16, ease: "power1.in" }, b + 0.1);
+      });
+
+      // ---------- background motes (seeded) ----------
+      let seed = 7;
+      const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+      for (let i = 0; i < 18; i++) {
+        const m = document.createElement("i");
+        m.className = "mote";
+        const r = 4 + rnd() * 7, side = i % 2 ? 1 : -1;
+        const x = side > 0 ? 1640 + rnd() * 640 : -560 + rnd() * 600, y = -80 + rnd() * 1100;
+        m.style.cssText = "left:" + x + "px;top:" + y + "px;width:" + r + "px;height:" + r + "px;opacity:" + (0.18 + rnd() * 0.3);
+        $("#motes").appendChild(m);
+        tl.fromTo(m, { y: 0, x: 0 }, { y: -60 - rnd() * 80, x: side * (10 + rnd() * 30), duration: D, ease: "none" }, 0);
+      }
+      tl.fromTo("#bloomA", { opacity: 0.8, scale: 0.97 }, { opacity: 1, scale: 1.03, duration: D / 2, ease: "sine.inOut", yoyo: true, repeat: 1 }, 0);
+
+      // ---------- geometry: page coords (unzoomed) -> world (laptop) -> view (camera) ----------
+      // page px inside #scroller; an overlay outside it (the gate) is already in screen px
+      function pos(el) { let x = 0, y = 0, n = el; while (n && n.id !== "scroller" && n.id !== "p1") { x += n.offsetLeft; y += n.offsetTop; n = n.offsetParent; } return { x, y, w: el.offsetWidth, h: el.offsetHeight, screen: !!n && n.id === "p1" }; }
+      function world(el, S) { const p = pos(el); if (p.screen) return { x: SCREEN.x + p.x, y: SCREEN.y + p.y, w: p.w, h: p.h }; return { x: SCREEN.x + Z * p.x, y: SCREEN.y + Z * (p.y - S), w: Z * p.w, h: Z * p.h }; }
+      function view(f, r) { return { x: f.x + f.s * r.x, y: f.y + f.s * r.y, w: f.s * r.w, h: f.s * r.h }; }
+      function pad(r, px, py) { return { x: r.x - px, y: r.y - py, w: r.w + 2 * px, h: r.h + 2 * py }; }
+      function union(a, b) { const x = Math.min(a.x, b.x), y = Math.min(a.y, b.y); return { x, y, w: Math.max(a.x + a.w, b.x + b.w) - x, h: Math.max(a.y + a.h, b.y + b.h) - y }; }
+      function clampF(f) {
+        if (f.s * SCREEN.w >= 1920) f.x = Math.min(Math.max(f.x, 1920 - f.s * (SCREEN.x + SCREEN.w)), -f.s * SCREEN.x);
+        if (f.s * SCREEN.h >= 1080) f.y = Math.min(Math.max(f.y, 1080 - f.s * (SCREEN.y + SCREEN.h)), -f.s * SCREEN.y);
+        return f;
+      }
+      function frame(r, cap, cy) { const s = Math.min(cap, 1920 / r.w, 770 / r.h); return clampF({ s, x: 960 - s * (r.x + r.w / 2), y: cy - s * (r.y + r.h / 2) }); }
+      const cam = $("#cam");
+      const el = (k) => (k.startsWith("#") ? $(k) : document.getElementById(DATA.alias[k] || k));
+
+      function build() {
+        // the device screen is product imagery: frosting, scrolling and overlays on it are intended
+        $$("#screen *, #end *, #engines *").forEach((n) => { n.setAttribute("data-layout-allow-occlusion", ""); n.setAttribute("data-layout-allow-overlap", ""); n.setAttribute("data-layout-allow-overflow", ""); }); // the live UI clips its own scroll boxes
+        const scroller = $("#scroller"), cur = $("#cursor");
+        gsap.set(scroller, { scale: Z, y: 0 });
+        const PAGE_H = scroller.offsetHeight + $$(".hide0:not(.over)").reduce((h, n) => h + n.scrollHeight, 0); // as tall as it gets once opened
+        const scrollFor = (k, top) => Math.max(0, Math.min(Math.round(pos(el(k)).y - top / Z), PAGE_H - 900 / Z));
+        let S = 0; // current page scroll (page px), tracked as the actions are laid down in time order
+        const frames = { WIDE0, WIDE1, HOLD, MED };
+        function frameFor(spec) {
+          if (frames[spec]) return frames[spec];
+          const [kind, ...ids] = spec.split(":"), rs = ids.map((k) => world(el(k), S));
+          const r = rs.reduce(union);
+          if (kind === "INPUT") return frame(pad(r, 120, 70), 1.75, 540);
+          if (kind === "PRESS") return frame(pad(r, 110, 60), 1.7, 560);
+          return frame(pad(r, 90, 60), 1.45, 560); // PUSH: a result region
+        }
+        let camF = WIDE0;
+        gsap.set(cam, { x: WIDE0.x, y: WIDE0.y, scale: WIDE0.s, force3D: false });
+        const toScreen = (k, fx, fy) => { const r = world(el(k), S); return { x: r.x - SCREEN.x + r.w * fx, y: r.y - SCREEN.y + r.h * fy }; };
+        gsap.set(cur, { x: 1180, y: 760, opacity: 0 });
+        gsap.set("#res", { opacity: 0 });
+        $$(".hide0.over").forEach((n) => (n.style.top = n.previousElementSibling.offsetTop + "px")); // a second tab panel sits on the first
+
+        function click(t) {
+          tl.to("#cursor svg", { scale: 0.86, duration: 0.06, transformOrigin: "10% 5%" }, t - 0.03);
+          tl.to("#cursor svg", { scale: 1, duration: 0.14 }, t + 0.05);
+          tl.fromTo("#ripple", { opacity: 0.9, scale: 0.2 }, { opacity: 0, scale: 1.25, duration: 0.5, ease: "power2.out", immediateRender: false }, t);
+        }
+        function lift(a) {
+          const src = el(a.mark), r0 = view(camF, world(src, S));
+          const c = src.cloneNode(true);
+          c.removeAttribute("id"); c.querySelectorAll("[id]").forEach((n) => n.removeAttribute("id"));
+          c.classList.add("lift");
+          [c, ...c.querySelectorAll("*")].forEach((n) => n.setAttribute("data-layout-ignore", ""));
+          const cs = getComputedStyle(src); // keep the text look it had inside the page (a <pre> line, a red verdict)
+          ["fontFamily", "fontSize", "lineHeight", "whiteSpace", "color", "fontWeight"].forEach((k) => (c.style[k] = cs[k]));
+          const p = pos(src);
+          if (a.fit) { c.style.width = "max-content"; c.style.padding = "16px 24px"; }
+          else { c.style.width = p.w + "px"; c.style.height = p.h + "px"; }
+          const bg = cs.backgroundColor; // a tinted, see-through card gets a white backing once it leaves the page
+          c.style.background = "linear-gradient(" + bg + ", " + bg + "), #fff";
+          $("#lifts").appendChild(c);
+          const W = c.offsetWidth, H = c.offsetHeight;
+          const k0 = camF.s * Z;
+          const k1 = Math.min(a.scale || 2.0, (a.maxW || 1500 / a.n) / W, (a.maxH || 470) / H);
+          const w1 = k1 * W, h1 = k1 * H;
+          const gap = 60, cx = a.n === 1 ? 960 : 960 + (a.slot - (a.n - 1) / 2) * Math.min(1720 / a.n, w1 + gap);
+          const x1 = cx - w1 / 2, y1 = (a.cy || 560) - h1 / 2;
+          gsap.set(c, { x: r0.x, y: r0.y, scale: k0 });
+          tl.set(c, { opacity: 1 }, a.t0);
+          tl.set(src, { opacity: 0 }, a.t0);
+          tl.to(c, { x: x1, y: y1, scale: k1, duration: 0.7, ease: "power3.out" }, a.t0);
+          tl.to(c, { y: y1 - 8, duration: Math.max(0.3, a.t1 - a.t0 - 1.2), ease: "sine.inOut" }, a.t0 + 0.7);
+          if (a.label) {
+            const lb = document.createElement("div");
+            lb.className = "lbl"; lb.textContent = a.label; lb.setAttribute("data-layout-allow-overlap", "");
+            $("#lifts").appendChild(lb);
+            const ly = y1 - lb.offsetHeight - 22;
+            gsap.set(lb, { x: cx - lb.offsetWidth / 2, y: ly + 14 });
+            tl.fromTo(lb, { opacity: 0, y: ly + 14 }, { opacity: 1, y: ly, duration: 0.45, ease: "power3.out", immediateRender: false }, a.t0 + 0.35);
+            tl.to(lb, { opacity: 0, duration: 0.25 }, a.t1 - 0.5);
+          }
+          // settle back into the page
+          tl.to(c, { x: r0.x, y: r0.y, scale: k0, duration: 0.5, ease: "power2.inOut" }, a.t1 - 0.5);
+          tl.set(src, { opacity: 1 }, a.t1);
+          tl.set(c, { opacity: 0 }, a.t1);
+        }
+        function fan(a) {
+          gsap.set("#qg", { opacity: 1 });
+          const sEdge = MED.x + MED.s * (SCREEN.x + SCREEN.w), gx = 1700, NS = "http://www.w3.org/2000/svg";
+          const engs = $$("#qg .eng"), ne = engs.length, ey = ne === 1 ? [527] : [400, 660];
+          engs.forEach((e, j) => { e.style.left = gx + "px"; e.style.top = ey[j] - 75 + "px"; tl.fromTo(e, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.6)" }, a.t0 + 0.15 + j * 0.12); tl.to(e, { opacity: 0, x: 40, duration: 0.4, ease: "power2.in" }, a.t1 - 0.45); });
+          const qs = $$("#qg .qp"), n = qs.length, step = n > 3 ? 80 : 110, y0 = 532 - ((n - 1) * step) / 2;
+          qs.forEach((q, i) => {
+            const y = y0 + i * step, t0 = a.t0 + 0.35 + i * Math.min(0.42, 2.0 / n);
+            q.style.top = y - 29 + "px"; q.style.left = sEdge - 40 + "px";
+            const x0 = sEdge - 40 + q.offsetWidth;
+            tl.fromTo(q, { opacity: 0, x: -50, scale: 0.94 }, { opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t0);
+            ey.slice(0, ne).forEach((gy) => {
+              const p = document.createElementNS(NS, "path");
+              p.setAttribute("d", "M" + x0 + " " + y + " C " + (x0 + 80) + " " + y + ", " + (gx - 110) + " " + gy + ", " + gx + " " + gy);
+              p.setAttribute("fill", "none"); p.setAttribute("stroke", VIOLET); p.setAttribute("stroke-width", "2.5"); p.setAttribute("stroke-linecap", "round"); p.setAttribute("opacity", "0.6");
+              $("#qlines").appendChild(p);
+              const L = p.getTotalLength();
+              gsap.set(p, { strokeDasharray: L, strokeDashoffset: L });
+              tl.to(p, { strokeDashoffset: 0, duration: 0.4, ease: "power2.inOut" }, t0 + 0.2);
+              tl.to(p, { opacity: 0, duration: 0.35 }, a.t1 - 0.75);
+            });
+            tl.to(q, { opacity: 0, x: 30, duration: 0.3, ease: "power2.in" }, a.t1 - 0.8 + i * 0.04);
+          });
+          engs.forEach((e) => tl.to(e.querySelector(".tile"), { boxShadow: "0 0 0 12px rgba(94,75,246,0.14), 0 30px 60px -26px rgba(44,32,120,0.5)", duration: 0.25, yoyo: true, repeat: 3 }, a.t1 - 1.9));
+          for (let i = 0; i < 6; i++) {
+            const d = document.createElement("i"); d.className = "dot"; $("#dots").appendChild(d);
+            const gy = ey[i % ne];
+            tl.fromTo(d, { x: gx, y: gy + 10, opacity: 0 }, { x: MED.x + MED.s * (SCREEN.x + 900 + i * 40), y: MED.y + MED.s * (SCREEN.y + 260 + i * 80), opacity: 1, duration: 0.6, ease: "power2.inOut" }, a.t1 - 1.4 + i * 0.1);
+            tl.to(d, { opacity: 0, scale: 0.4, duration: 0.2 }, a.t1 - 0.8 + i * 0.1);
+          }
+        }
+
+        const OPS = {
+          cam: (a) => { const f = frameFor(a.to); tl.to(cam, { x: f.x, y: f.y, scale: f.s, duration: a.dur, ease: a.ease || "power2.inOut", force3D: false }, a.t); camF = f; },
+          veils: (a) => tl.to(a.only ? "#veil" + a.only : ["#veilT", "#veilB"], { opacity: a.v, duration: a.dur || 0.5 }, a.t),
+          bug: (a) => {
+            tl.fromTo("#bug", { opacity: 0 }, { opacity: 1, duration: 0.35 }, a.t);
+            tl.fromTo("#bug img", { clipPath: "inset(100% 0 0 0)", y: 8 }, { clipPath: "inset(0% 0 0 0)", y: 0, duration: 0.6, ease: "power3.out" }, a.t);
+            tl.fromTo("#bug span", { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, a.t + 0.2);
+            tl.to("#bug", { opacity: 0, duration: 0.3 }, a.t1);
+          },
+          engines: (a) => {
+            const EP = { 6: [[-380, 40], [-500, 400], [-360, 760], [1970, 20], [2090, 390], [1950, 750]], 4: [[-400, 120], [-400, 640], [1990, 100], [1990, 620]], 3: [[-400, 120], [-400, 640], [2010, 380]], 2: [[-440, 380], [2030, 380]], 1: [[2030, 380]] };
+            const es = $$("#engines .weng"), P = EP[es.length] || EP[6];
+            es.forEach((e, i) => {
+              const [x, y] = P[i], side = x < 0 ? -1 : 1;
+              e.style.left = x + "px"; e.style.top = y + "px";
+              tl.fromTo(e, { opacity: 0, scale: 0.4, x: 880 - 85 - x, y: 470 - 85 - y }, { opacity: 1, scale: 1, x: 0, y: 0, duration: 0.85, ease: "power3.out" }, a.t + (i % 3) * 0.09 + (side > 0 ? 0.05 : 0));
+              tl.to(e, { y: -14 + (i % 3) * 8, duration: Math.max(0.4, a.t1 - a.t - 1.0), ease: "sine.inOut" }, a.t + 0.85);
+              tl.to(e, { opacity: 0, x: side * 200, duration: 0.45, ease: "power2.in" }, a.t1 - 0.45 + (i % 3) * 0.04);
+            });
+          },
+          streak: (a) => { tl.fromTo("#streak", { x: -300, opacity: 0 }, { x: 1600, opacity: a.o || 1, duration: 1.7, ease: "power1.inOut", immediateRender: false }, a.t); tl.to("#streak", { opacity: 0, duration: 0.25 }, a.t + 1.7); },
+          eyebrow: (a) => { tl.fromTo("#eb2", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, a.t); tl.to("#eb2", { opacity: 0, duration: 0.28 }, a.t1); },
+          cursorShow: (a) => tl.to(cur, { opacity: a.v, duration: 0.2 }, a.t),
+          cursorTo: (a) => { const p = toScreen(a.target, a.fx == null ? 0.3 : a.fx, a.fy == null ? 0.55 : a.fy); tl.to(cur, { x: p.x + (a.dx || 0), duration: a.dur, ease: "power2.inOut" }, a.t); tl.to(cur, { y: p.y + (a.dy || 0), duration: a.dur, ease: "sine.inOut" }, a.t); },
+          click: (a) => click(a.t),
+          focus: (a) => { tl.set(el(a.target), { boxShadow: a.on ? "inset 0 0 0 2px rgba(84,64,236,0.55)" : "inset 0 0 0 1px #d3cec4" }, a.t); tl.set("#caret" + a.n, { opacity: a.on ? 1 : 0, x: 16 }, a.t + 0.02); },
+          type: (a) => {
+            const chars = $$("#typed" + a.n + " span"), caret = "#caret" + a.n;
+            tl.set("#ph" + a.n, { opacity: 0 }, a.times[0]);
+            chars.forEach((c, i) => { tl.set(c, { opacity: 1 }, a.times[i]); tl.set(caret, { x: c.offsetLeft + c.offsetWidth + 1 }, a.times[i]); });
+          },
+          toggle: (a) => { const b = el(a.target); tl.set(b, { attr: { class: a.cls } }, a.t); tl.fromTo(b, { scale: 0.96 }, { scale: 1, duration: 0.2, immediateRender: false }, a.t); },
+          press: (a) => {
+            const b = $("#btn");
+            tl.to(b, { y: 1, scale: 0.975, duration: 0.07, ease: "power1.out" }, a.t - 0.03);
+            tl.to(b, { y: 0, scale: 1, duration: 0.2, ease: "power2.out" }, a.t + 0.07);
+            tl.set(b, { opacity: 0.75 }, a.t + 0.08);
+            tl.set("#spin", { display: "inline-block" }, a.t + 0.08);
+            tl.fromTo("#spin", { rotation: 0 }, { rotation: 360 * Math.ceil(a.t1 - a.t), duration: Math.ceil(a.t1 - a.t), ease: "none", transformOrigin: "50% 50%", immediateRender: false }, a.t + 0.08);
+            tl.set(b, { opacity: 1 }, a.t1);
+            tl.set("#spin", { display: "none" }, a.t1);
+          },
+          fine: (a) => { tl.to("#fine", { opacity: 1, duration: 0.3 }, a.t); tl.to("#fine", { opacity: 0, duration: 0.3 }, a.t1); },
+          screenFx: (a) => { tl.to("#screen", { filter: "blur(" + a.blur + "px)", duration: 0.5 }, a.t); tl.to("#dim", { opacity: a.dim, duration: 0.5 }, a.t); },
+          dim: (a) => tl.to("#dim", { opacity: a.v, duration: a.dur || 0.4 }, a.t),
+          scroll: (a) => { const s = a.to === 0 ? 0 : scrollFor(a.to, a.top || 90); tl.to(scroller, { y: -Z * s, duration: a.dur, ease: "power2.inOut" }, a.t); S = s; },
+          reveal: (a) => {
+            tl.set("#res", { opacity: 1 }, a.t);
+            const kids = $$(a.sel || "#res > * > *").filter((n) => !n.classList.contains("hide0")).slice(0, 14);
+            tl.fromTo(kids, { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.07, immediateRender: false }, a.t);
+          },
+          gate: (a) => {
+            tl.set(scroller, { filter: "blur(9px)" }, a.t);
+            tl.set(scroller, { filter: "blur(0px)" }, 0);
+            tl.fromTo("#gateWrap", { opacity: 0 }, { opacity: 1, duration: 0.4, immediateRender: false }, a.t + 0.1);
+            tl.fromTo("#gateCard", { y: 18, scale: 1.22 }, { y: 0, scale: 1.3, duration: 0.6, ease: "power3.out", immediateRender: false }, a.t + 0.1);
+            tl.to("#unlock", { scale: 0.97, duration: 0.07 }, a.t1 - 0.03);
+            tl.to("#unlock", { scale: 1, duration: 0.15 }, a.t1 + 0.05);
+            tl.to("#gateWrap", { opacity: 0, duration: 0.3, ease: "power2.in" }, a.t1 + 0.12);
+            tl.to(scroller, { filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, a.t1 + 0.15);
+          },
+          // a page state change with no layout jump: a collapsed body grows open, a tab panel cross-fades
+          show: (a) => {
+            (a.show || []).forEach((k) => { const n = el(k); tl.to(n, n.classList.contains("over") ? { opacity: 1, duration: 0.3 } : { maxHeight: n.scrollHeight + 40, opacity: 1, duration: 0.55, ease: "power2.inOut" }, a.t); });
+            (a.hide || []).forEach((k) => tl.to(el(k), { opacity: 0, duration: 0.25 }, a.t));
+            (a.cls || []).forEach(([k, c]) => tl.set(el(k), { attr: { class: c } }, a.t));
+          },
+          lift: lift,
+          fan: fan,
+          end: (a) => {
+            const E = a.t;
+            tl.to("#veilB", { opacity: 0, duration: 0.4 }, E);
+            tl.to(cam, { filter: "blur(3px)", opacity: 0.85, duration: 0.6, ease: "power2.inOut" }, E);
+            tl.to(cam, { scale: 0.53, x: 960 - 0.53 * 880, y: 625 - 0.53 * 500, duration: D - E, ease: "none", force3D: false }, E);
+            tl.fromTo("#endFrost", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }, E + 0.05);
+            tl.fromTo("#endBloom", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1.06, duration: 2.4, ease: "power2.out" }, E + 0.05);
+            tl.fromTo("#endMark", { opacity: 0, scale: 0.86, clipPath: "inset(100% 0 0 0)" }, { opacity: 1, scale: 1, clipPath: "inset(0% 0 0 0)", duration: 0.7, ease: "power3.out" }, E + 0.1);
+            tl.fromTo("#endSuper", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, E + 0.3);
+            tl.fromTo("#endSmall", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, E + 0.85);
+            tl.fromTo("#endUrl", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, E + 1.3);
+            tl.to(["#endMark", "#endSuper", "#endSmall", "#endUrl"], { y: -10, duration: D - E - 1.4, ease: "sine.inOut" }, E + 1.4);
+          },
+        };
+        DATA.acts.forEach((a) => OPS[a.op](a));
+        window.__timelines["main"] = tl;
+      }
+      tl.set({}, {}, D);
+      document.fonts.ready.then(build);
+    </script>
+  </body>
+</html>

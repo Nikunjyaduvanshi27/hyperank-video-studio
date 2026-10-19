@@ -1,0 +1,9 @@
+{"beats": [
+ {"type": "hook", "super": "From data to |AI.|", "vo": "Every enterprise has data. The hard part is turning it into AI that works.", "tts": "Every enterprise has data. The hard part is turning it into A-I that works."},
+ {"type": "name", "super": "Meet |Celebal.|", "vo": "Celebal Technologies is a strategic partner for data and AI solutions.", "tts": "Celebal Technologies is a strategic partner for data and A-I solutions."},
+ {"type": "strengths", "super": "Data. Cloud. |AI.|", "vo": "Generative AI, enterprise analytics, lakehouse migrations and industry data models, built full cycle.", "tts": "Generative A-I, enterprise analytics, lakehouse migrations, and industry data models, built full cycle."},
+ {"type": "partners", "super": "Partner |first.|", "vo": "Delivered on the platforms you already trust. Microsoft, Databricks, AWS, SAP and more.", "tts": "Delivered on the platforms you already trust. Microsoft, Databricks, A-W-S, S-A-P, and more."},
+ {"type": "industries", "super": "Every |industry.|", "vo": "With deep expertise across nine industries, from banking to energy to healthcare.", "tts": "With deep expertise across nine industries, from banking, to energy, to healthcare."},
+ {"type": "awards", "super": "Award |winning.|", "vo": "And recognized as a partner of the year by Microsoft and Databricks.", "tts": "And recognized as a partner of the year by Microsoft and Databricks."},
+ {"type": "close", "vo": "Celebal Technologies. Your strategic partner for data and AI.", "tts": "Celebal Technologies. Your strategic partner for data and A-I."}
+]}

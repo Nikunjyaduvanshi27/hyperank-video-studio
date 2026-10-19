@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+  hr-logo-sting: hyperank logo sting (~2s, 1920x1080).
+  Three orbit rings ping open from the centre, the official H mark settles,
+  the serif wordmark rises letter by letter, the nav tagline lands last, then
+  the lockup holds still. No exit: the host cuts or crossfades.
+  Copy: "See what AI says about your brand" is the site's nav tagline.
+  Mount: copy to <project>/compositions/, fonts + mark live in <project>/assets/.
+-->
+<html lang="en" data-composition-id="hr-logo-sting" data-composition-duration="2">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Instrument Serif"; src: url("assets/fonts/InstrumentSerif-400.woff2") format("woff2"); font-weight: 400; font-style: normal; }
+        @font-face { font-family: "JetBrains Mono"; src: url("assets/fonts/JetBrainsMono-var.woff2") format("woff2"); font-weight: 100 800; font-style: normal; }
+
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size;
+          background: #f0eee9;
+          color: #1f1e1b;
+        }
+        .hrs-glow {
+          position: absolute; left: 50%; top: 50%;
+          width: 90cqw; height: 160cqh; margin: -80cqh 0 0 -45cqw;
+          background: radial-gradient(closest-side, rgba(123, 107, 248, 0.24), rgba(123, 107, 248, 0.08) 50%, rgba(123, 107, 248, 0) 100%);
+        }
+        .hrs-grain {
+          position: absolute; inset: 0; opacity: 0.35; mix-blend-mode: multiply;
+          background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 0 0.10 0 0 0 0.09 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");
+        }
+        .hrs-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+        .hrs-ring { fill: none; stroke: #b7aefb; stroke-width: 1.5; }
+
+        .hrs-stage { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .hrs-lockup { display: flex; align-items: center; gap: 2.1cqw; }
+        .hrs-mark { display: block; height: 17cqh; width: auto; filter: drop-shadow(0 18px 36px rgba(94, 75, 246, 0.35)); }
+        .hrs-word { overflow: hidden; padding: 0 0.2em 0.14em 0; margin-bottom: -0.14em; }
+        .hrs-word span {
+          display: inline-block;
+          font-family: "Instrument Serif", serif; font-weight: 400;
+          font-size: 9.4cqw; line-height: 1.05; letter-spacing: -0.02em; color: #1f1e1b;
+        }
+        .hrs-tag {
+          margin-top: 3.4cqh;
+          font-family: "JetBrains Mono", monospace; font-weight: 500;
+          font-size: 1.04cqw; letter-spacing: 0.22em; text-transform: uppercase; color: #4d3eca;
+        }
+      </style>
+
+      <div data-hf-id="hf-jbsv" id="root" data-composition-id="hr-logo-sting" data-width="1920" data-height="1080" data-duration="2">
+        <div data-hf-id="hf-06l2" class="hrs-glow" id="hr-logo-sting-glow" data-layout-allow-overflow=""></div>
+        <div data-hf-id="hf-pzxv" class="hrs-grain"></div>
+        <svg data-hf-id="hf-e55r" class="hrs-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <circle data-hf-id="hf-0nbe" class="hrs-ring" cx="960" cy="540" r="250" opacity="0.75" />
+          <circle data-hf-id="hf-sp7i" class="hrs-ring" cx="960" cy="540" r="400" opacity="0.5" />
+          <circle data-hf-id="hf-jd97" class="hrs-ring" cx="960" cy="540" r="560" opacity="0.3" />
+        </svg>
+        <div data-hf-id="hf-8hs0" class="hrs-stage">
+          <div data-hf-id="hf-w3gs" class="hrs-lockup">
+            <img data-hf-id="hf-36i1" class="hrs-mark" id="hr-logo-sting-mark" src="assets/hyperank-mark.png" alt="hyperank">
+            <div data-hf-id="hf-5x63" class="hrs-word" id="hr-logo-sting-word" data-layout-allow-overflow="" aria-label="hyperank.ai"></div>
+          </div>
+          <div data-hf-id="hf-od5l" class="hrs-tag" id="hr-logo-sting-tag">See what AI says about your brand</div>
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+      <script>
+        (function () {
+          var ID = "hr-logo-sting";
+          var root = document.querySelector('#root[data-composition-id="' + ID + '"]') || document.querySelector('[data-composition-id="' + ID + '"]');
+          var word = root.querySelector(".hrs-word");
+          "hyperank.ai".split("").forEach(function (ch) {
+            var s = document.createElement("span");
+            s.textContent = ch;
+            word.appendChild(s);
+          });
+          var letters = word.querySelectorAll("span");
+          var rings = root.querySelectorAll(".hrs-ring");
+          var SETTLE = "power4.out";
+
+          var tl = gsap.timeline({ paused: true });
+          tl.fromTo("#" + ID + "-glow", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 1.2, ease: "sine.inOut" }, 0);
+          tl.fromTo(rings, { scale: 0.55, opacity: 0, svgOrigin: "960 540" }, { scale: 1, opacity: function (i) { return [0.75, 0.5, 0.3][i]; }, duration: 1.1, ease: SETTLE, stagger: 0.08 }, 0.1);
+          tl.fromTo("#" + ID + "-mark", { opacity: 0, scale: 0.82, y: 16 }, { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: SETTLE }, 0.15);
+          tl.fromTo(letters, { yPercent: 110 }, { yPercent: 0, duration: 0.6, ease: SETTLE, stagger: 0.03 }, 0.32);
+          tl.fromTo("#" + ID + "-tag", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.95);
+
+          window.__timelines[ID] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!--
+{
+ "lead": 0.3, "tail": 0.7, "cam0": "HOLD",
+ "cues": {"wipe": "0.4", "p0": "w(1, 'roundups') - 0.1", "p1": "w(1, 'comparisons') - 0.1", "p2": "w(1, 'persona') - 0.1", "p3": "w(1, 'listicles') - 0.1",
+          "p4": "w(1, 'how') - 0.1", "p5": "w(1, 'articles') - 0.1", "eng": "w(1, 'engineered') - 0.12", "h0": "w(1, 'engineered') + 0.55", "h1": "w(1, 'picks') - 0.05", "h2": "w(1, 'cite') - 0.15"},
+ "supers": [{"t": "0.45", "text": "@"}],
+ "sfx": [["whoosh", "wipe", 0.2], ["roll", "p0", 0.14], ["roll", "p1", 0.13], ["roll", "p2", 0.13], ["roll", "p3", 0.13], ["roll", "p4", 0.13], ["roll", "p5", 0.13],
+         ["whoosh", "eng", 0.24], ["tick", "h0", 0.12], ["tick", "h1", 0.12], ["tick", "h2", 0.12]]
+}
+-->
+{{LAPTOP_OPEN}}
+<div class="pg" data-page="src"><img src="assets/img/site/screen-sources-__CUT__.png" alt="" /></div>
+<div class="pg" data-page="content"><img src="assets/img/site/screen-content-__CUT__.png" alt="" /></div>
+{{LAPTOP_CLOSE}}
+<div class="arc" id="ARC"></div>
+<div class="bigW" id="BIG"><div class="bigp">
+  <div class="lab"></div><div class="tt"></div>
+  <div class="ps" data-i="0"><em>Direct answer</em><span></span></div>
+  <div class="ps" data-i="1"><em>Clear facts</em><span></span></div>
+  <div class="ps" data-i="2"><em>Sourced stat</em><span></span></div>
+</div></div>
+<div class="supers"></div>
+<style>
+  .arc { position: absolute; inset: 0; perspective: 1600px; perspective-origin: 50% 46%; }
+  .pc { position: absolute; left: 0; top: 0; width: 252px; height: 322px; box-sizing: border-box; padding: 26px 24px 22px; border-radius: 22px; background: #fff; display: flex; flex-direction: column;
+    box-shadow: inset 0 0 0 1px rgba(23, 22, 28, 0.07), 0 40px 70px -34px rgba(44, 32, 120, 0.5), 0 10px 22px -12px rgba(26, 23, 20, 0.18); opacity: 0; }
+  .pc .lab { font-size: 22px; font-weight: 600; color: var(--violet); letter-spacing: -0.005em; }
+  .pc .tt { margin-top: 12px; font-size: 27px; line-height: 33px; font-weight: 620; letter-spacing: -0.022em; color: var(--ink); }
+  .pc .dom { margin-top: auto; font-size: 22px; color: #8d8998; }
+  .bigW { position: absolute; left: 400px; top: 210px; width: 1120px; opacity: 0; }
+  .bigp { border-radius: 30px; background: #fff; padding: 40px 52px 38px; box-shadow: inset 0 0 0 1px rgba(23, 22, 28, 0.07), 0 70px 120px -50px rgba(44, 32, 120, 0.5), 0 18px 34px -16px rgba(26, 23, 20, 0.2); }
+  .bigp .lab { font-size: 23px; font-weight: 600; color: var(--violet); }
+  .bigp .tt { margin: 10px 0 26px; font-size: 42px; line-height: 50px; font-weight: 640; letter-spacing: -0.03em; color: var(--ink); }
+  .bigp .ps { margin-top: 18px; }
+  .bigp .ps em { display: block; font-style: normal; font-size: 22px; font-weight: 600; color: var(--violet); opacity: 0; }
+  .bigp .ps span { --hl: 0%; font-size: 29px; line-height: 42px; font-weight: 450; color: var(--ink2); letter-spacing: -0.012em;
+    background: linear-gradient(rgba(94, 75, 246, 0.16), rgba(94, 75, 246, 0.16)) no-repeat 0 85% / var(--hl) 78%; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+</style>
+<script>
+    const { tl, q, qa, C } = S, CT = DATA.CT;
+    S.page(C.wipe, "content", 0.6);
+    // ---------- six formats fan out of the screen in a shallow arc, one on each word ----------
+    const arc = q("#ARC"), cards = CT.pages.map(([lab, title], i) => {
+      const el = document.createElement("div"); el.className = "pc";
+      el.innerHTML = '<div class="lab"></div><div class="tt"></div><div class="dom">yourbrand.com</div>';
+      el.querySelector(".lab").textContent = lab; el.querySelector(".tt").textContent = title;
+      arc.appendChild(el); return el;
+    });
+    S.dof(C.p0 - 0.3, 5, 0.7);
+    S.dim(C.p0 - 0.3, 0.1, 0.7);
+    cards.forEach((el, i) => {
+      const u = (i - 2.5) / 2.5, cx = 960 + u * 640, cy = 560 + 52 * u * u, t = C["p" + i];
+      gsap.set(el, { x: 960 - 126, y: 520 - 161, scale: 0.32, rotationY: 0, transformOrigin: "50% 50%" });
+      tl.set(el, { opacity: 1 }, t);
+      tl.to(el, { x: cx - 126, y: cy - 161, scale: 1 - 0.05 * (1 - u * u), rotationY: -u * 24, z: 60 * u * u, duration: 0.9, ease: "back.out(1.2)" }, t);
+      tl.to(el, { y: cy - 161 - 10, duration: C.eng - t - 0.9, ease: "sine.inOut" }, t + 0.9);
+    });
+    // ---------- "engineered": the arc collapses into one page, its passages inked one by one ----------
+    const big = q("#BIG");
+    big.querySelector(".lab").textContent = CT.pages[0][0];
+    big.querySelector(".tt").textContent = CT.page.title;
+    [CT.page.answer, CT.page.facts, CT.page.stat].forEach((t, i) => (big.querySelectorAll(".ps span")[i].textContent = t));
+    cards.forEach((el, i) => tl.to(el, { x: 960 - 126, y: 560 - 161, scale: 0.6, rotationY: 0, z: 0, opacity: 0, duration: 0.6, ease: "power3.in" }, C.eng + Math.abs(i - 2.5) * 0.04));
+    tl.fromTo(big, { opacity: 0, scale: 0.72, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.9, ease: "back.out(1.2)", immediateRender: true }, C.eng + 0.35);
+    S.dof(C.eng + 0.3, 7, 0.6);
+    S.dim(C.eng + 0.3, 0.14, 0.6);
+    qa("#BIG .ps").forEach((p, i) => {
+      const t = C["h" + i];
+      tl.to(p.querySelector("em"), { opacity: 1, duration: 0.35 }, t);
+      tl.to(p.querySelector("span"), { "--hl": "100%", color: "#1d1b26", duration: 0.65, ease: "power2.inOut" }, t);
+    });
+    tl.to(big, { y: -8, duration: S.D - C.eng - 1.3, ease: "sine.inOut" }, C.eng + 1.25);
+</script>

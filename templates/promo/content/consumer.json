@@ -1,0 +1,264 @@
+{
+ "cut": "consumer",
+ "script": "script-consumer.json",
+ "out": "out/promo-consumer.mp4",
+ "typed": [
+  "Best skincare for oily skin?",
+  "Best coffee machine for a small kitchen?",
+  "What are the best running shoes for flat feet?"
+ ],
+ "cloud": [
+  "Best mattress for back pain?",
+  "Which stroller for city walks?",
+  "Best sunscreen for sensitive skin?",
+  "Which air fryer for a family of four?",
+  "Best office chair for long days?",
+  "Best yoga mat for hot yoga?",
+  "Which carry-on fits most airlines?",
+  "Best headphones for the gym?"
+ ],
+ "intro": "For flat feet, these three come up again and again:",
+ "rows": [
+  {
+   "name": "Nike",
+   "why": "Stability models with structured support",
+   "src": "runnersworld.com"
+  },
+  {
+   "name": "ASICS",
+   "why": "Gel cushioning and arch support",
+   "src": "reddit.com/r/RunningShoeGeeks"
+  },
+  {
+   "name": "Brooks",
+   "why": "GuideRails support for overpronation",
+   "src": "runrepeat.com"
+  }
+ ],
+ "you": "Your brand",
+ "tiles": [
+  [
+   "AI answers about you",
+   "Unknown"
+  ],
+  [
+   "Mentioned by ChatGPT",
+   "Unknown"
+  ]
+ ],
+ "site": {
+  "“best AI visibility platform”": "“best running shoes for wide feet”",
+  "“alternatives to Profound”": "“best running shoes for flat feet”",
+  "“how to track ChatGPT mentions”": "“stability shoes for marathon training”",
+  "“AI visibility platform pricing”": "“Brooks alternatives for overpronation”",
+  "4/6 mentioned": "Named",
+  "2/6 mentioned": "Not named",
+  "5/6 mentioned": "Named first",
+  "3/6 mentioned": "Outdated",
+  "Named first: your docs": "Named first: your product page",
+  "Quotes a price you retired: old-pricing-page": "Quotes a discontinued model: old-collection-page",
+  "Best AI visibility platforms in 2026": "Running shoes for flat feet, tested on the road",
+  "hyperank vs Profound: what to pick": "Your brand vs Brooks: which stability shoe?",
+  "7 signs an AI engine is misquoting you": "Best running shoes for flat feet, compared",
+  "Profound": "Nike",
+  "Otterly": "ASICS",
+  "Athena": "Brooks",
+  "g2.com": "runnersworld.com",
+  "reddit.com/r/SaaS": "reddit.com/r/RunningShoeGeeks",
+  "capterra.com": "runrepeat.com"
+ },
+ "cc": {
+  "names": {
+   "Lumen": "Your brand",
+   "lumenhq.com": "yourbrand.com",
+   "Northbeam": "Nike",
+   "Tasklane": "ASICS",
+   "Orbitly": "Brooks"
+  },
+  "text": {
+   "Your brand was named in 42% of the answers sampled this week, up from 31% twelve weeks ago.": "Your brand was named in 14% of the answers sampled this week.",
+   "Your brand leads on 4 of 7 engines": "Nike is named most often",
+   "client portals with approvals": "Stability shoes for wide feet",
+   "Gantt charts for small teams, explained": "How to choose shoes for flat feet",
+   "Our 20-person agency outgrew spreadsheets": "Finally found shoes for my flat feet",
+   "r/agency": "r/running",
+   "What a 20-person agency learned from its sprint retro": "What 500 runners told us about arch support"
+  },
+  "sov": [
+   [
+    "Your brand",
+    9
+   ],
+   [
+    "Nike",
+    34
+   ],
+   [
+    "ASICS",
+    29
+   ],
+   [
+    "Brooks",
+    19
+   ],
+   [
+    "Others",
+    9
+   ]
+  ],
+  "you": [
+   14,
+   11,
+   16,
+   12,
+   9,
+   15,
+   8
+  ],
+  "named": 14,
+  "claim": "Your brand still sells the Stride 1",
+  "engine": "ChatGPT",
+  "fact": "Today: discontinued, replaced by the Stride 2"
+ },
+ "stat1": {
+  "value": 900,
+  "from": 640,
+  "suffix": "M",
+  "land": "900",
+  "source": "Source: OpenAI, Scaling AI for everyone, February 2026. Weekly active users."
+ },
+ "stat2": {
+  "type": "bars",
+  "bars": [
+   [
+    "With an AI summary",
+    8,
+    1
+   ],
+   [
+    "Without",
+    15,
+    0
+   ]
+  ],
+  "land": "8",
+  "source": "Source: Pew Research Center, July 2025. 900 US adults, 68,879 Google searches."
+ },
+ "losses": [
+  [
+   "Website visits",
+   "No change",
+   "visit"
+  ],
+  [
+   "Add to cart",
+   "No change",
+   "cart"
+  ],
+  [
+   "Sales",
+   "No record",
+   "sale"
+  ]
+ ],
+ "pages": [
+  [
+   "Roundup",
+   "Best running shoes for flat feet, compared"
+  ],
+  [
+   "Comparison",
+   "Your brand vs Brooks: which stability shoe?"
+  ],
+  [
+   "Persona page",
+   "Running shoes for flat-footed marathoners"
+  ],
+  [
+   "Listicle",
+   "7 signs your shoes lack arch support"
+  ],
+  [
+   "How-to",
+   "How to choose a stability running shoe"
+  ],
+  [
+   "Article",
+   "What flat feet need from a running shoe"
+  ]
+ ],
+ "page": {
+  "title": "Best running shoes for flat feet, compared",
+  "answer": "For flat feet, choose a stability shoe with a firm medial post and a wide, steady base.",
+  "facts": "Compare: arch support, heel counter, midsole firmness, toe box width.",
+  "stat": "More than 900 million people use ChatGPT every week (OpenAI, 2026)."
+ },
+ "reddit": {
+  "sub": "r/RunningShoeGeeks",
+  "title": "Best daily trainer for flat feet?",
+  "reply": "Try Your brand's stability line. Their fit guide explains the arch support.",
+  "cite": "yourbrand.com/flat-feet-guide"
+ },
+ "linkedin": {
+  "who": "Running coach",
+  "post": "My athletes keep asking about shoes for flat feet. What are you recommending?",
+  "reply": "Your brand's stability guide covers fit and arch support well.",
+  "cite": "yourbrand.com/flat-feet-guide"
+ },
+ "landing": {
+  "head": "Stability running shoes, built for flat feet.",
+  "sub": "A firm, steady ride from the first mile to the last.",
+  "cta": "Shop the stability line",
+  "toast1": "Order placed",
+  "toast2": "New customer",
+  "via": "Referred by ChatGPT",
+  "nav": [
+   "Shop",
+   "Stability",
+   "Fit guide"
+  ],
+  "cta2": "Read the fit guide",
+  "steps": [
+   [
+    "Support",
+    "A firm medial post for flat arches"
+   ],
+   [
+    "Stability",
+    "A wide, steady base on every stride"
+   ],
+   [
+    "Comfort",
+    "A cushioned heel for long runs"
+   ]
+  ]
+ },
+ "clients": [
+  [
+   "Trailline Outdoor",
+   "T",
+   "#2f7d6b"
+  ],
+  [
+   "Kova Skincare",
+   "K",
+   "#c0622f"
+  ],
+  [
+   "Brightbrew Coffee",
+   "B",
+   "#3a6fd8"
+  ]
+ ],
+ "win_why": "Stability running shoes built for flat feet",
+ "say": [
+  "nike",
+  "asics",
+  "brooks"
+ ],
+ "s14": {
+  "book": "buy",
+  "cl": "customer"
+ },
+ "strike": "discontinued"
+}

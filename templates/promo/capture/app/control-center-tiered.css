@@ -1,0 +1,103 @@
+/*
+ * Control Center, tiered layout: lead row, KPI tabs, compact AI block, action
+ * inbox. Ported from the reworked command-center-tiered-charts reference.
+ */
+
+/* lead row: hero and trend sit at the same height */
+.cct-lead { align-items: stretch; }
+.cct-lead .ccx-hero-v b { font-size: 52px; }
+
+/* compact AI block: KPIs stacked | stacked columns | ranked bars */
+.ccx-split3 { display: grid; grid-template-columns: minmax(0, 200px) minmax(0, 520px) minmax(0, 1fr); gap: 28px; align-items: start; }
+.ccx-kpis.is-stack { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 0; margin: 0; border: 0; }
+@media (max-width: 1180px) { .ccx-split3 { grid-template-columns: minmax(0, 1fr); } .ccx-kpis.is-stack { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* compact AI block: keep the verdict line clear of the three columns */
+.ccx-verdict + .ccx-split3 { margin-top: 12px; }
+
+/* KPI tabs: the tab is the headline of what it opens */
+.ckt-bar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 12px; }
+.ckt-tab {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "l s" "v s" "f f" "h h";
+  gap: 4px 10px;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+  border: 1px solid #e7e4dc;
+  border-radius: 12px;
+  background: #fff;
+  padding: 12px 14px 11px;
+  transition: border-color 150ms, background-color 150ms, box-shadow 150ms;
+}
+.ckt-tab:hover { border-color: #cfc9fc; background: #fcfbff; }
+.ckt-tab:focus-visible { outline: 2px solid #5e4bf6; outline-offset: 2px; }
+.ckt-tab.is-on { border-color: #5e4bf6; background: linear-gradient(170deg, #f5f3ff, #fff 70%); box-shadow: 0 0 0 1px #5e4bf6 inset; }
+.ckt-tab.is-on::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  width: 12px;
+  height: 12px;
+  transform: translateX(-50%) rotate(45deg);
+  background: #fff;
+  border-right: 2px solid #5e4bf6;
+  border-bottom: 2px solid #5e4bf6;
+}
+.ckt-l { grid-area: l; font: 600 9.5px/1.2 var(--font-sans), system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: #767161; }
+.ckt-tab.is-on .ckt-l { color: #4d3eca; }
+.ckt-v { grid-area: v; display: flex; align-items: baseline; gap: 8px; }
+.ckt-v b { font: 600 26px/1 var(--font-sans), system-ui, sans-serif; letter-spacing: -0.02em; color: #1f1e1b; }
+.ckt-v em { font-style: normal; font-size: 11px; }
+.ckt-s { grid-area: s; align-self: end; display: flex; }
+.ckt-f { grid-area: f; font: 500 9.5px/1.3 ui-monospace, SFMono-Regular, monospace; color: #a8a292; }
+.ckt-h { grid-area: h; margin-top: 4px; padding-top: 7px; border-top: 1px solid #f3f1ec; font: 500 10px/1.3 ui-monospace, SFMono-Regular, monospace; color: #8d887a; }
+.ckt-panel[hidden] { display: none; }
+@media (max-width: 1000px) { .ckt-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ckt-tab.is-on::after { display: none; } }
+
+/* action inbox: one list, worst first */
+.cai { grid-column: span var(--span, 12); border: 1px solid #e7e4dc; border-radius: 14px; background: #fff; overflow: hidden; }
+.cai-h, .cai-r { display: grid; grid-template-columns: 118px minmax(0, 1fr) 60px minmax(0, 1.4fr) 190px; gap: 14px; align-items: center; padding: 0 16px; }
+.cai-h { padding-top: 11px; padding-bottom: 9px; border-bottom: 1px solid #efece5; background: #faf9f7; font: 600 8.5px/1 var(--font-sans), system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: #a8a292; }
+.cai-h > :nth-child(3) { text-align: right; padding-right: 18px; }
+.cai-r { min-height: 46px; border-bottom: 1px solid #f3f1ec; transition: background-color 150ms; }
+.cai-r:last-child { border-bottom: 0; }
+.cai-r:hover { background: #fcfbff; }
+.cai-sev { display: inline-flex; align-items: center; gap: 7px; font: 700 9px/1 var(--font-sans), system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+.cai-sev i { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.cai-r.is-critical .cai-sev { color: #a8402f; }
+.cai-r.is-critical .cai-sev i { background: #dc5a4b; }
+.cai-r.is-warning .cai-sev { color: #8a6516; }
+.cai-r.is-warning .cai-sev i { background: #c08a1e; }
+.cai-r.is-opportunity .cai-sev { color: #4d3eca; }
+.cai-r.is-opportunity .cai-sev i { background: #5e4bf6; }
+.cai-q { font: 600 12.5px/1.3 var(--font-sans), system-ui, sans-serif; color: #1f1e1b; }
+.cai-top { font-size: 12px; color: #5a564b; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cai-top em { font-style: normal; margin-left: 8px; font: 500 10.5px/1 ui-monospace, SFMono-Regular, monospace; color: #a8a292; }
+.cai-n { padding-right: 18px; text-align: right; font: 600 15px/1 var(--font-sans), system-ui, sans-serif; color: #1f1e1b; font-variant-numeric: tabular-nums; }
+.cai .cai-cta { justify-self: end; align-self: center; margin: 0; white-space: nowrap; }
+@media (max-width: 900px) {
+  .cai-h { display: none; }
+  .cai-r { grid-template-columns: 1fr auto; grid-template-areas: "sev n" "q q" "top top" "cta cta"; gap: 4px 10px; padding: 12px 14px; }
+  .cai-sev { grid-area: sev; } .cai-q { grid-area: q; } .cai-top { grid-area: top; } .cai-n { grid-area: n; } .cai-cta { grid-area: cta; justify-self: start; margin-top: 4px; }
+}
+
+/* operations tiles: sans figures, matching every other number on the board */
+.cct-wrap .cc-val { font-family: var(--font-sans), system-ui, sans-serif; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: normal; }
+.cct-wrap .cc-m .cc-val { font-size: 19px; }
+
+/* Product additions on top of the reference design ----------------------- */
+
+/* Each inbox row is a link to the queue it summarises. */
+a.cai-r { text-decoration: none; color: inherit; }
+a.cai-r:focus-visible { outline: 2px solid #5e4bf6; outline-offset: -2px; }
+
+/* A queue with nothing waiting stays listed, so you can see it was checked,
+   but reads as settled rather than urgent. */
+.cai-r.is-clear .cai-sev { color: #8d887a; }
+.cai-r.is-clear .cai-sev i { background: #d6d2c7; }
+.cai-r.is-clear .cai-q, .cai-r.is-clear .cai-n { color: #8d887a; font-weight: 500; }
+.cai-r.is-clear .cai-cta { background: #fff; color: #5a564b; border-color: #e7e4dc; }

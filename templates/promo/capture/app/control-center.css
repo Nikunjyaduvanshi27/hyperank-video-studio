@@ -1,0 +1,129 @@
+/*
+ * Control Center. Namespaced under cc- so nothing collides with the rest of
+ * the dashboard. Ported from the command-center-tiered reference design.
+ */
+
+.cc-up { font: 600 11.5px/1 var(--font-sans), system-ui, sans-serif; color: #2e9e6b; }
+.cc-down { font: 600 11.5px/1 var(--font-sans), system-ui, sans-serif; color: #dc5a4b; }
+.cc-cta { align-self: flex-start; font: 600 11px/1 var(--font-sans), system-ui, sans-serif; padding: 7px 10px; border-radius: 8px; color: #fff; background: linear-gradient(180deg, #7b6bf8 0%, #5e4bf6 55%, #5442ee 100%); border: 1px solid #4d3eca; }
+.cc-chiprow { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.cc-chip { border: 1px solid #d6d2c7; border-radius: 999px; padding: 5px 10px; background: #fff; font: 500 11.5px/1 var(--font-sans), system-ui, sans-serif; color: #5a564b; }
+.cc-chip.is-on { background: #efedfe; border-color: #cfc9fc; color: #4d3eca; }
+.cc-chip.is-quality { margin-left: auto; background: #e2f1ea; border-color: #abd8c4; color: #21724d; font-weight: 600; }
+
+.cc-wrap { display: flex; flex-direction: column; gap: 22px; }
+.cc-zone-h { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+.cc-zone-h b { font: 600 10px/1 var(--font-sans), system-ui, sans-serif; letter-spacing: 0.1em; text-transform: uppercase; color: #a8a292; }
+.cc-zone-h em { font-family: var(--font-display), Georgia, serif; font-style: normal; font-size: 18px; color: #2e2c25; }
+.cc-zone-h span { margin-left: auto; font: 500 10.5px/1 ui-monospace, SFMono-Regular, monospace; color: #a8a292; }
+
+.cc-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 10px; }
+
+.cc-tile { grid-column: span var(--span, 3); border: 1px solid #e7e4dc; border-radius: 12px; background: #fff; padding: 11px 12px 9px; display: flex; flex-direction: column; gap: 6px; min-width: 0; position: relative; }
+.cc-tile.is-lg { border-color: #cfc9fc; background: linear-gradient(160deg, #efedfe, #fff 70%); }
+.cc-tile.is-legacy::after { content: "older accounts"; position: absolute; top: 9px; right: 10px; font: 600 8.5px/1 var(--font-sans), system-ui, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: #8a6516; background: #fbf1dc; padding: 3px 5px; border-radius: 4px; }
+.cc-head { display: flex; align-items: baseline; gap: 8px; min-height: 12px; }
+.cc-title { font: 600 9.5px/1.2 var(--font-sans), system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: #767161; }
+.cc-area { margin-left: auto; font: 500 9.5px/1 ui-monospace, SFMono-Regular, monospace; color: #a8a292; }
+.cc-tile.is-legacy .cc-area { display: none; }
+.cc-val { font-family: var(--font-display), Georgia, serif; font-size: 27px; line-height: 1; color: #1f1e1b; font-variant-numeric: tabular-nums; }
+.cc-tile.is-lg .cc-val { font-size: 44px; }
+.cc-row1 { display: flex; align-items: flex-end; gap: 10px; justify-content: space-between; }
+.cc-lab { font: 500 10.5px/1.3 ui-monospace, SFMono-Regular, monospace; color: #767161; }
+.cc-sub { font: 500 10.5px/1.4 ui-monospace, SFMono-Regular, monospace; color: #767161; }
+.cc-up { font: 600 11px/1 var(--font-sans), system-ui, sans-serif; color: #2e9e6b; }
+.cc-down { font: 600 11px/1 var(--font-sans), system-ui, sans-serif; color: #dc5a4b; }
+.cc-open { margin-top: auto; align-self: flex-end; font: 600 10px/1 var(--font-sans), system-ui, sans-serif; color: #5e4bf6; }
+
+.cc-metrics { display: grid; grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr)); gap: 6px 10px; }
+.cc-m { display: flex; flex-direction: column; gap: 3px; }
+.cc-m .cc-val { font-size: 20px; }
+.cc-tile.is-status .cc-val { font-size: 17px; }
+
+.cc-rows { display: flex; flex-direction: column; }
+.cc-r { display: grid; grid-template-columns: 1fr auto; gap: 8px; padding: 5px 0; border-bottom: 1px solid #f3f1ec; font-size: 12px; color: #2e2c25; align-items: center; }
+.cc-r:last-child { border-bottom: 0; }
+.cc-r.is-hi { font-weight: 600; color: #4d3eca; }
+.cc-r .n { font: 500 11px/1 ui-monospace, SFMono-Regular, monospace; color: #5a564b; font-variant-numeric: tabular-nums; text-align: right; }
+.cc-r .n.is-down { color: #dc5a4b; }
+.cc-r .n.is-up { color: #2e9e6b; }
+.cc-tag { font: 600 8.5px/1 var(--font-sans), system-ui, sans-serif; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 5px; border-radius: 4px; background: #fbe9e6; color: #9e4136; margin-left: 6px; }
+.cc-tbl { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+.cc-tbl th { text-align: left; font: 600 8.5px/1 var(--font-sans), system-ui, sans-serif; letter-spacing: 0.07em; text-transform: uppercase; color: #a8a292; padding: 0 0 5px; }
+.cc-tbl td { padding: 5px 0; border-top: 1px solid #f3f1ec; color: #2e2c25; font-variant-numeric: tabular-nums; }
+.cc-tbl td:not(:first-child), .cc-tbl th:not(:first-child) { text-align: right; font-family: ui-monospace, SFMono-Regular, monospace; font-size: 11px; }
+.cc-tbl tr.is-down td:last-child { color: #dc5a4b; }
+.cc-tbl tr.is-up td:last-child { color: #2e9e6b; }
+
+.cc-qcount { font: 700 10px/1 var(--font-sans), system-ui, sans-serif; padding: 3px 6px; border-radius: 999px; }
+.cc-qcount.is-risk { background: #fbe9e6; color: #9e4136; }
+.cc-qcount.is-gap { background: #fbf1dc; color: #8a6516; }
+.cc-qcount.is-write { background: #efedfe; color: #4d3eca; }
+
+.cc-meter { height: 8px; border-radius: 6px; background: #e7e4dc; overflow: hidden; }
+.cc-meter i { display: block; height: 100%; border-radius: 6px; background: linear-gradient(90deg, #968af9, #5e4bf6); }
+.cc-seg { display: flex; height: 22px; border-radius: 7px; overflow: hidden; gap: 2px; }
+.cc-seg i { display: grid; place-items: center; font: 600 10px/1 ui-monospace, SFMono-Regular, monospace; color: #fff; }
+.cc-mx { display: grid; grid-template-columns: 1fr repeat(3, 44px); gap: 4px; align-items: center; font-size: 11.5px; }
+.cc-mx .h { font: 600 8.5px/1 var(--font-sans), system-ui, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: #a8a292; text-align: right; }
+.cc-mx .c { text-align: right; font: 500 11px/1 ui-monospace, SFMono-Regular, monospace; padding: 4px 0; border-radius: 5px; }
+.cc-mxc0 { background: #e7e4fe; color: #4d3eca; font-weight: 700; }
+.cc-mxc1 { background: #e2f1ea; color: #21724d; }
+.cc-mxc2 { background: #fbf1dc; color: #8a6516; }
+.cc-cov { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.cc-cov > div { border: 1px solid #e7e4dc; border-radius: 12px; background: #fff; padding: 12px; display: flex; flex-direction: column; gap: 4px; }
+.cc-cov b { font-family: var(--font-display), Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1; color: #1f1e1b; }
+.cc-cov span { font: 500 10.5px/1.4 ui-monospace, SFMono-Regular, monospace; color: #767161; }
+
+@media (max-width: 1180px) { .cc-tile { grid-column: span min(var(--span, 3), 6); } .cc-tile.is-wide { grid-column: span 12; } }
+@media (max-width: 700px) { .cc-tile, .cc-tile.is-wide { grid-column: span 12; } .cc-metrics { --cols: 2 !important; } }
+
+.cc-alerts { display: flex; flex-direction: column; gap: 6px; }
+.cc-alert { display: flex; align-items: center; gap: 12px; padding: 9px 12px; border-radius: 10px; font-size: 12.5px; border: 1px solid; }
+.cc-alert span { flex: 1; }
+.cc-alert b { font: 600 11px/1 var(--font-sans), system-ui, sans-serif; white-space: nowrap; }
+.cc-alert.is-warn { background: #fbf1dc; border-color: #efdcb4; color: #6b4d10; }
+.cc-alert.is-bad { background: #fbe9e6; border-color: #f3c9c2; color: #7d3329; }
+.cc-alerts-note { font: 500 10px/1 ui-monospace, SFMono-Regular, monospace; color: #a8a292; }
+
+.cc-summary { font-size: 15px; line-height: 1.5; color: #2e2c25; max-width: 90ch; margin: 2px 0 0; }
+.cc-summary b { font-weight: 600; color: #1f1e1b; }
+.cc-strip { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: center; padding: 9px 14px; border: 1px solid #e7e4dc; border-radius: 10px; background: #fff; font: 500 11.5px/1.3 ui-monospace, SFMono-Regular, monospace; color: #2e2c25; }
+.cc-strip em { font-style: normal; font: 600 9px/1 var(--font-sans), system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: #a8a292; margin-right: 8px; }
+.cc-strip-m { display: inline-block; width: 46px; height: 6px; border-radius: 4px; background: #e7e4dc; overflow: hidden; vertical-align: middle; margin-left: 8px; }
+.cc-strip-m i { display: block; height: 100%; background: #5e4bf6; }
+.cc-act { margin-top: auto; align-self: flex-end; }
+.cc-summary .cc-up, .cc-summary .cc-down { font-size: inherit; font-weight: 600; }
+
+/* Product additions on top of the reference design ----------------------- */
+
+/* Tiles are links: the whole card is the hit target, not just "Open →". */
+a.cc-tile { text-decoration: none; color: inherit; transition: box-shadow 160ms cubic-bezier(0.4, 0, 0.2, 1), transform 160ms cubic-bezier(0.4, 0, 0.2, 1); }
+a.cc-tile:hover { transform: translateY(-1px); box-shadow: 0 1px 2px rgba(80, 78, 68, 0.05), 0 16px 34px -22px rgba(43, 35, 113, 0.5); }
+
+/* A tile with nothing to show says so rather than showing a zero. */
+.cc-tile.is-empty { background: #faf9f6; }
+.cc-tile.is-empty .cc-area { opacity: 0.6; }
+.cc-note { font: 500 11px/1.45 var(--font-sans), system-ui, sans-serif; color: #767161; margin: 2px 0 auto; }
+.cc-note b { color: #5a564b; font-weight: 600; }
+
+.cc-alert a { color: inherit; text-decoration: none; }
+.cc-alert b { white-space: nowrap; }
+
+.cc-strip a { color: inherit; text-decoration: none; }
+.cc-summary a { color: #4d3eca; text-decoration: none; font-weight: 600; }
+
+/* Ops tab buttons reuse the chip shape. */
+button.cc-chip { cursor: pointer; font-family: inherit; }
+
+/*
+ * The skin repaints every <span> inside a hovered link (see the "Links and
+ * icons" rule in styles/ai-visibility-skin.css). Our filled CTA is white on
+ * indigo, so that rule made the label vanish into its own background. These
+ * mirror that selector's shape so they win on specificity rather than !important.
+ */
+.hpr-skin a:not([class*="bg-"]):not([role="button"]):hover span.cc-cta { color: #fff; }
+.hpr-skin a:not([class*="bg-"]):not([role="button"]):hover span.cc-qcount.is-risk { color: #9e4136; }
+.hpr-skin a:not([class*="bg-"]):not([role="button"]):hover span.cc-qcount.is-gap { color: #8a6516; }
+.hpr-skin a:not([class*="bg-"]):not([role="button"]):hover span.cc-qcount.is-write { color: #4d3eca; }
+.hpr-skin a:not([class*="bg-"]):not([role="button"]):hover span.cc-tag { color: #9e4136; }

@@ -1,0 +1,474 @@
+<!--
+{
+ "s01": {
+  "lead": 0.25,
+  "tail": 0.5,
+  "cues": {
+   "fan": "w(1, 'could') - 0.15"
+  },
+  "supers": [
+   {
+    "t": [
+     "0.35",
+     "w(0, 'asking') - 0.05"
+    ],
+    "text": "@",
+    "split": 3,
+    "out": "D - 0.42"
+   }
+  ],
+  "sfx": [
+   [
+    "air",
+    "0",
+    0.5
+   ],
+   [
+    "click2",
+    "1.55",
+    0.12
+   ],
+   [
+    "click2",
+    "3.3",
+    0.12
+   ],
+   [
+    "whoosh",
+    "fan",
+    0.24
+   ]
+  ],
+  "typing": [
+   [
+    "0.12",
+    "1.35",
+    0.15
+   ],
+   [
+    "1.82",
+    "3.17",
+    0.15
+   ],
+   [
+    "3.56",
+    "5.5",
+    0.15
+   ]
+  ]
+ },
+ "s02": {
+  "lead": 0.35,
+  "holds": {
+   "0": 0.45
+  },
+  "tail": 0.35,
+  "cues": {
+   "send": "0.3",
+   "r0": "2.05"
+  },
+  "supers": [
+   {
+    "t": [
+     "w(1, 'you') - 0.12",
+     "w(2, 'or') - 0.05"
+    ],
+    "text": "@",
+    "split": 1,
+    "out": "D - 0.42"
+   }
+  ],
+  "sfx": [
+   [
+    "click2",
+    "send",
+    0.3
+   ],
+   [
+    "whoosh",
+    "send + 0.15",
+    0.24
+   ],
+   [
+    "roll",
+    "r0",
+    0.16
+   ],
+   [
+    "roll",
+    "r0 + 0.48",
+    0.15
+   ],
+   [
+    "roll",
+    "r0 + 0.96",
+    0.14
+   ],
+   [
+    "tick",
+    "w(1, 'you') - 0.05",
+    0.16
+   ],
+   [
+    "tick",
+    "w(2, 'competitor') - 0.05",
+    0.15
+   ]
+  ]
+ },
+ "s03": {
+  "lead": 0.3,
+  "tail": 0.6,
+  "supers": [
+   {
+    "t": [
+     "w(0, 'you') - 0.12",
+     "w(0, 'know') - 0.05"
+    ],
+    "text": "@",
+    "split": 2,
+    "out": "D - 0.4"
+   }
+  ],
+  "sfx": [
+   [
+    "impact4",
+    "w(0, 'know') - 0.05",
+    0.16
+   ],
+   [
+    "whoosh",
+    "w(1, 'analytics') - 0.25",
+    0.22
+   ]
+  ]
+ },
+ "s04": {
+  "lead": 0.3,
+  "tail": 0.35,
+  "cues": {
+   "land": "w(0, CT['stat1']['land']) - 0.05"
+  },
+  "supers": [
+   {
+    "t": "land - 0.15",
+    "text": "@",
+    "out": "D - 0.4"
+   }
+  ],
+  "sfx": [
+   [
+    "whoosh",
+    "0.05",
+    0.22
+   ],
+   [
+    "impact",
+    "land",
+    0.24
+   ]
+  ]
+ },
+ "s05": {
+  "lead": 0.3,
+  "tail": 0.4,
+  "cues": {
+   "land": "w(0, CT['stat2']['land']) - 0.08"
+  },
+  "supers": [
+   {
+    "t": "land - 0.1",
+    "text": "@",
+    "out": "D - 0.4"
+   }
+  ],
+  "sfx": [
+   [
+    "roll",
+    "land - 0.3",
+    0.2
+   ],
+   [
+    "impact4",
+    "land + 0.3",
+    0.18
+   ]
+  ]
+ },
+ "s06": {
+  "lead": 0.3,
+  "tail": 0.5,
+  "supers": [
+   {
+    "t": "w(0, 'never') - 0.1",
+    "text": "@"
+   }
+  ],
+  "sfx": [
+   [
+    "whoosh",
+    "0.1",
+    0.2
+   ],
+   [
+    "tick",
+    "w(1, CT['losses'][0][2]) - 0.05",
+    0.16
+   ],
+   [
+    "tick",
+    "w(1, CT['losses'][1][2]) - 0.05",
+    0.15
+   ],
+   [
+    "tick",
+    "w(1, CT['losses'][2][2]) - 0.05",
+    0.15
+   ]
+  ]
+ }
+}
+-->
+<div class="world">
+  <div class="ly" id="qm"><div class="c qmark">?</div></div>
+  <div class="ly mk" id="mGemini"><div class="c tile"><img src="assets/img/logos/gemini.svg" alt="" /></div></div>
+  <div class="ly mk" id="mGoogle"><div class="c tile"><img src="assets/img/logos/google-ai-overviews.png" alt="" /></div></div>
+  <div class="ly mk" id="mClaude"><div class="c tile"><img src="assets/img/logos/claude.svg" alt="" /></div></div>
+  <div class="ly mk" id="mPerplexity"><div class="c tile"><img src="assets/img/logos/perplexity.svg" alt="" /></div></div>
+  <div class="ly mk" id="mCopilot"><div class="c tile"><img src="assets/img/logos/copilot-mark.svg" alt="" style="width: 60px; height: 60px; border-radius: 14px" /></div></div>
+  <div class="ly mk" id="mMeta"><div class="c tile"><img src="assets/img/logos/metaai.svg" alt="" /></div></div>
+  <div id="cloud"></div>
+  <div class="ly" id="Lloss0"><div class="c loss"><div class="k"></div><div class="v"></div><svg viewBox="0 0 340 90"></svg></div></div>
+  <div class="ly" id="Lloss1"><div class="c loss"><div class="k"></div><div class="v"></div><svg viewBox="0 0 340 90"></svg></div></div>
+  <div class="ly" id="Lloss2"><div class="c loss"><div class="k"></div><div class="v"></div><svg viewBox="0 0 340 90"></svg></div></div>
+  <div class="ly gl" id="Lcard"><div class="c top">{{CARD:card:blur}}</div></div>
+  <div class="ly gl" id="Lcmp"><div class="c">{{COMPOSER:cmp:@typed}}</div></div>
+  <div class="ly" id="Lstat"><div class="c stat"></div></div>
+  <div class="ly" id="Lsl"><div class="c slist"><div class="k"></div><div class="slot"></div></div></div>
+  <div class="ly" id="Lbars"><div class="c bars"></div></div>
+  <div class="ly" id="tA"><div class="c tileA"><div class="k"></div><div class="v"><i>?</i><span></span></div></div></div>
+  <div class="ly" id="tB"><div class="c tileA"><div class="k"></div><div class="v"><i>?</i><span></span></div></div></div>
+</div>
+<div class="srcline" id="src1"></div>
+<div class="srcline" id="src2"></div>
+<div class="supers"></div>
+<script>
+    const { tl, q, qa } = S, SC = DATA.SC, CT = DATA.CT, has = (id) => !!SC[id];
+    const norm = (s) => s.toLowerCase().replace(/[^a-z0-9%]/g, "");
+    const sc = (id) => { const s = SC[id]; return { ...s, w: (i, word, k) => { k = k || 0; for (const [x, t] of s.W[i]) if (norm(x).startsWith(norm(word)) && k-- === 0) return s.B[i] + t; throw new Error(id + ": no word " + word); } }; };
+    const C = S.Composer(q("#cmp")), K = S.Card(q("#card"));
+    const L = { cmp: q("#Lcmp"), card: q("#Lcard"), stat: q("#Lstat"), sl: q("#Lsl"), bars: q("#Lbars") };
+    // place by where a layer should land on screen (perspective 1400, origin y 507.6, anchor y 540)
+    const toWorld = (sx, sy, z) => { const f = 1400 / (1400 - z); return [(sx - 960) / f, (sy - 507.6) / f - 32.4, z]; };
+    // planes: engine marks near and crisp at the sides, two far ones as soft colour; the question mark deep behind the answer
+    const MK = { mClaude: [300, 330, -60, 3], mPerplexity: [1625, 360, -100, 3], mCopilot: [285, 735, -160, 4], mMeta: [1640, 745, -40, 3], mGemini: [540, 175, -1000, 12], mGoogle: [1390, 165, -1200, 14] };
+    for (const k in MK) { const [x, y, z] = toWorld(MK[k][0], MK[k][1], MK[k][2]); S.place(q("#" + k), { x, y, z }); S.lay(q("#" + k), 0, { z: z + MK[k][3] * DATA.D, y: y + (MK[k][1] > 500 ? -16 : 16) }, DATA.D, "none"); }
+    S.place(q("#qm"), { x: 0, y: 30, z: -1500 });
+    S.place(L.cmp, { x: 0, y: 0, z: 0, s: 1.12 });
+    S.place(L.card, { x: 0, y: 13, z: 0 });
+    gsap.set([q("#qm"), q("#tA"), q("#tB"), L.stat, L.sl, L.bars, q("#src1"), q("#src2")].concat(qa('[id^="Lloss"]')), { opacity: 0 });
+
+    // the composer and the answer stay centred as one group; it rises as the answer grows
+    const card = q("#card"), H = card.offsetHeight, rowsTop = q("#card .rows").offsetTop, RH = K.rows[0].offsetHeight;
+    const group = (vis) => { const top = 560 - (104 + 28 + vis) / 2; return { cy: top + 52 - 540, ty: top + 132 - 540 }; };
+    function settle(t, vis, dur) { const g = group(vis); S.lay(L.cmp, t, { y: g.cy, s: 1 }, dur, "power3.inOut"); S.lay(L.card, t, { y: g.ty }, dur, "power3.inOut"); }
+
+    // the category questions, one glass pill per plane, placed clear of the super and caption bands
+    const CP = [[560, 285, -110], [1380, 300, -420], [430, 765, -640], [1500, 770, -90], [880, 870, -1000], [1300, 890, -780], [700, 215, -1300], [1225, 200, -1600]].map((v) => toWorld(...v));
+    const pills = CT.cloud.slice(0, CP.length).map((txt) => {
+      const ly = document.createElement("div"); ly.className = "ly qp"; ly.innerHTML = '<div class="c qpill"></div>'; ly.firstChild.textContent = txt;
+      q("#cloud").appendChild(ly); S.place(ly, { x: 0, y: 0, z: -220, s: 0.5 }); gsap.set(ly, { opacity: 0 }); return ly;
+    });
+
+    // ---------- s01: a buyer asks about your category. It could be anything. ----------
+    if (has("s01")) {
+      const s = sc("s01"), t0 = s.t0;
+      S.camTo(0, { yaw: -2.2 }, 0.01);
+      S.camTo(0.01, { yaw: 0.4 }, s.D + 0.6, "sine.inOut");
+      let t = C.type(t0 + 0.12, 0, 26);
+      t = C.clear(t + 0.2, 0);
+      t = C.type(t + 0.07, 1, 26);
+      t = C.clear(t + 0.13, 1);
+      const te = C.type(t + 0.06, 2, 24);
+      C.blink(te + 0.05, t0 + s.D + 0.6);
+      // "it could be anything": the questions fan out from behind the composer onto their planes, the camera eases back to take them in
+      S.camTo(s.C.fan - 0.15, { pitch: -0.8 }, 1.4, "power2.inOut");
+      pills.forEach((p, i) => {
+        tl.set(p, { opacity: 1 }, s.C.fan + i * 0.05);
+        S.lay(p, s.C.fan + i * 0.05, { x: CP[i][0], y: CP[i][1], z: CP[i][2], s: 1 }, 0.95, "expo.out");
+        S.lay(p, s.C.fan + i * 0.05 + 0.95, { z: CP[i][2] + 60 }, s.D, "none");
+      });
+    } else C.shown(2);
+
+    // ---------- s02: the answer thinks, then streams; its names stay out of focus ----------
+    if (has("s02")) {
+      const s = sc("s02"), ts = s.C.send;
+      C.send(ts);
+      C.caret(ts, 0);
+      S.camTo(ts + 0.05, { yaw: 2.0, pitch: 0.6 }, s.D + 0.4, "sine.inOut");  // the camera leads
+      pills.forEach((p, i) => { tl.to(p, { opacity: 0, duration: 1.1, ease: "power2.in" }, ts + 0.1 + i * 0.03); S.lay(p, ts + 0.1 + i * 0.03, { z: CP[i][2] - 700 }, 1.3, "power2.in"); });
+      const clip = (vis, side) => "inset(-120px " + (side || 0) + "px " + Math.max(0, H - vis) + "px " + (side || 0) + "px round 32px)";
+      K.hide();
+      gsap.set(card, { clipPath: clip(0) });
+      const tc = ts + 0.55, vIntro = rowsTop + 4;
+      settle(ts + 0.2, vIntro, 0.95);
+      tl.fromTo(card, { y: -16 }, { y: 0, duration: 0.9, ease: "back.out(1.2)", immediateRender: false }, tc);
+      tl.to(card, { clipPath: clip(vIntro + 52), duration: 0.7, ease: "power3.out" }, tc);
+      K.stream(tc + 0.05, 0.8);
+      // thinking: one thin line with a travelling light, until the first row arrives
+      const r0 = s.C.r0, th = document.createElement("div"); th.className = "think"; th.innerHTML = "<i></i>"; q("#card .rows").appendChild(th);
+      gsap.set(th, { opacity: 0 }); gsap.set(th.firstChild, { xPercent: -100 });
+      tl.to(th, { opacity: 1, duration: 0.3 }, tc + 0.85);
+      tl.to(th.firstChild, { xPercent: 250, duration: 0.8, ease: "sine.inOut", repeat: Math.max(1, Math.round((r0 - tc - 0.85) / 0.8)) }, tc + 0.85);
+      tl.to(th, { opacity: 0, duration: 0.25 }, r0 - 0.05);
+      K.rows.forEach((r, i) => {
+        const t = r0 + i * 0.48, vis = i < 2 ? rowsTop + (i + 1) * RH + 8 : H;
+        K.row(t, i, 0.75);
+        tl.to(card, { clipPath: clip(vis), duration: 0.6, ease: "power3.out" }, t);
+        settle(t, vis, 0.6);
+      });
+      tl.to(card, { clipPath: "inset(-120px -140px -170px -140px round 32px)", duration: 0.7, ease: "power2.out" }, r0 + 1.6);
+      // "is it you?" and "or your competitor?": the hidden names glow on the words
+      K.pulse(s.w(1, "you") - 0.3, 0);
+      K.pulse(s.w(2, "competitor") - 0.32, 1);
+      K.pulse(s.w(2, "competitor") - 0.14, 2);
+    } else if (has("s03") || has("s04")) {
+      const g = group(H); S.place(L.cmp, { y: g.cy, s: 1 }); S.place(L.card, { y: g.ty }); K.full(); C.caret(0, 0);
+    } else K.hide();
+
+    // ---------- s03: you don't know; nothing in your analytics will tell you ----------
+    if (has("s03")) {
+      const s = sc("s03"), t0 = s.t0, tk = s.w(0, "know"), gy = group(H).ty + H / 2;
+      S.camTo(t0, { yaw: -0.8, pitch: 0 }, s.D + 0.4, "sine.inOut");
+      tl.set(q("#qm"), { opacity: 1 }, t0);
+      tl.fromTo(q("#qm .qmark"), { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: 1.4, ease: "power2.out", immediateRender: false }, tk - 0.9);
+      S.lay(q("#qm"), tk - 0.9, { z: -760, y: gy * 1.1 }, 1.6, "power3.out");
+      const ta = s.w(1, "analytics") - 0.3;
+      [["#tA", -1240, -590], ["#tB", 1240, 590]]  /* at least 80 px inside the frame */.forEach(([id, x0, x1], i) => {
+        const el = q(id); el.querySelector(".k").textContent = CT.tiles[i][0]; el.querySelector(".v span").textContent = CT.tiles[i][1];
+        S.place(el, { x: x0, y: gy - 20, z: 110 });
+        tl.set(el, { opacity: 1 }, ta + i * 0.16);
+        S.lay(el, ta + i * 0.16, { x: x1 }, 1.0, "expo.out");
+        tl.fromTo(el.querySelector(".c"), { rotationY: x0 < 0 ? 18 : -18 }, { rotationY: x0 < 0 ? 6 : -6, duration: 1.2, ease: "back.out(1.2)", immediateRender: false }, ta + i * 0.16);
+      });
+      S.camTo(ta + 0.25, { zf: 110, ap: 62 }, 0.9, "power2.inOut");
+      C.caret(t0 + 0.4, 1);
+      C.blink(t0 + 0.4, t0 + s.D + 0.75);
+    }
+
+    // ---------- the stat: digits roll like an odometer (a pure function of the value) ----------
+    const stat = q("#Lstat .c"), S1 = CT.stat1, LH = 300;
+    const nd = String(S1.value).length;
+    stat.innerHTML = Array.from({ length: nd }, () => '<span class="dg"><span class="strip">' + "01234567890".split("").map((d) => "<span>" + d + "</span>").join("") + "</span></span>").join("") + '<span class="sx">' + S1.suffix + "</span>";
+    const strips = qa("#Lstat .strip");
+    function setVal(v) {
+      let lower = v % 10;  // the ones digit rolls continuously; each higher digit turns over during the last tenth of the one below
+      gsap.set(strips[nd - 1], { y: -lower * LH });
+      for (let p = 1; p < nd; p++) {
+        const x = Math.floor(v / Math.pow(10, p)) % 10 + Math.max(0, lower - 9);
+        gsap.set(strips[nd - 1 - p], { y: -x * LH });
+        lower = x;
+      }
+    }
+    setVal(S1.from);
+    // each digit window takes the width of the digit that lands in it, so "51%" sets as one word
+    const dw = {}, probe = document.createElement("span");
+    probe.style.cssText = "position:absolute;visibility:hidden;white-space:nowrap"; stat.appendChild(probe);
+    for (const d of "0123456789") { probe.textContent = d; dw[d] = probe.offsetWidth; }
+    probe.remove();
+    const fit = (v, t) => { const str = String(Math.round(v)).padStart(nd, "0"); qa("#Lstat .dg").forEach((g, i) => (t == null ? gsap.set(g, { width: dw[str[i]] }) : tl.set(g, { width: dw[str[i]] }, t))); };
+    fit(S1.value);
+    const roll = (t, from, to, dur, ease) => { const o = { v: from }; tl.to(o, { v: to, duration: dur, ease: ease || "power3.out", onUpdate: () => setVal(o.v) }, t); };
+
+    // ---------- s04: the first stat ----------
+    if (has("s04")) {
+      const s = sc("s04"), t0 = s.t0;
+      // the answer drifts back out of focus; the analytics leave
+      S.lay(L.cmp, t0, { z: -900, y: -420 }, 1.3, "power2.inOut");
+      S.lay(L.card, t0, { z: -1100, y: -230 }, 1.3, "power2.inOut");
+      tl.to([L.cmp, L.card], { opacity: 0.35, duration: 1.2, ease: "power1.inOut" }, t0);
+      tl.to([q("#tA"), q("#tB"), q("#qm")], { opacity: 0, duration: 0.5, ease: "power2.in" }, t0);
+      S.lay(q("#tA"), t0, { x: -1300 }, 0.7, "power2.in"); S.lay(q("#tB"), t0, { x: 1300 }, 0.7, "power2.in");
+      S.camTo(t0, { zf: 0, ap: 26, yaw: 1.0 }, 1.0, "power2.inOut");
+      // the number comes forward out of depth, already counting
+      S.place(L.stat, { x: 0, y: 10, z: -420, s: 0.92 });
+      tl.set(L.stat, { opacity: 1 }, t0);
+      tl.fromTo(L.stat, { opacity: 0 }, { opacity: 1, duration: 0.5, immediateRender: false }, t0);
+      S.lay(L.stat, t0, { z: 60, s: 1 }, 1.2, "expo.out");
+      roll(t0, S1.from, S1.value, Math.max(0.8, s.C.land - t0), "power3.out");
+      q("#src1").textContent = S1.source;
+      tl.to(q("#src1"), { opacity: 1, duration: 0.6 }, t0 + 0.5);
+    } else if (has("s05")) { S.place(L.stat, { z: 60 }); gsap.set(L.stat, { opacity: 1 }); setVal(S1.value); }
+
+    // ---------- s05: the second stat ----------
+    if (has("s05")) {
+      const s = sc("s05"), t0 = s.t0, S2 = CT.stat2;
+      tl.to([L.cmp, L.card], { opacity: 0, duration: 0.6 }, t0);
+      if (S2.type === "roll") {
+        S.lay(L.stat, t0, { y: -150, s: 0.78 }, 0.85, "power3.inOut");
+        roll(s.C.land - 0.55, S1.value, S2.value, 0.85, "power2.inOut");
+        fit(S2.value, s.C.land - 0.12);  // the windows change size mid-roll, while the digits are moving
+        const box = q("#Lsl .c"); box.querySelector(".k").textContent = S2.label;
+        box.querySelector(".slot").innerHTML = '<span class="vchip old"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7" stroke="#6e6a79" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>' + S2.out + '<i class="strike"></i></span>' +
+          '<span class="vchip new"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M12 3l1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9z" fill="#5e4bf6"/></svg>' + S2.in + "</span>";
+        S.place(L.sl, { x: 0, y: 210, z: 0 });
+        tl.set(L.sl, { opacity: 1 }, t0 + 0.3);
+        tl.fromTo(L.sl.querySelector(".c"), { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.9, ease: "back.out(1.2)", immediateRender: false }, t0 + 0.3);
+        const old = box.querySelector(".old"), nw = box.querySelector(".new"), to = s.w(0, S2.outWord) - 0.1, tn = to + 0.62;  // the new chip takes the empty slot straight away
+        gsap.set(nw, { opacity: 0, x: 90 });
+        tl.to(old.querySelector(".strike"), { scaleX: 1, duration: 0.35, ease: "power2.inOut" }, to);
+        tl.to(old, { x: -70, opacity: 0, filter: "blur(6px)", duration: 0.55, ease: "power2.in" }, to + 0.4);
+        tl.to(nw, { x: 0, opacity: 1, duration: 0.85, ease: "back.out(1.2)" }, tn);
+      } else {
+        // bars: the number leaves, two clean bars grow side by side
+        tl.to(L.stat, { opacity: 0, duration: 0.45, ease: "power2.in" }, t0);
+        S.lay(L.stat, t0, { y: -200, z: -200 }, 0.6, "power2.in");
+        const bx = q("#Lbars .c");
+        bx.innerHTML = S2.bars.map(([l, v, on]) => '<div class="bar ' + (on ? "on" : "off") + '"><div class="v">' + v + '%</div><div class="col" style="height:' + Math.round(v / Math.max(...S2.bars.map((b) => b[1])) * 300) + 'px"></div><div class="l">' + l + "</div></div>").join("");
+        S.place(L.bars, { x: 0, y: 40, z: 0 });
+        tl.set(L.bars, { opacity: 1 }, t0 + 0.2);
+        qa("#Lbars .bar").forEach((b, i) => {
+          const tb = i === 0 ? s.C.land - 0.2 : s.w(0, String(S2.bars[1][1])) - 0.2;
+          tl.fromTo(b.querySelector(".col"), { scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "back.out(1.2)", immediateRender: true }, tb);
+          tl.fromTo(b.querySelectorAll(".v, .l"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out", immediateRender: true }, tb + 0.2);
+        });
+      }
+      if (S2.source !== S1.source) { q("#src2").textContent = S2.source; tl.to(q("#src1"), { opacity: 0, duration: 0.3 }, t0); tl.to(q("#src2"), { opacity: 1, duration: 0.5 }, t0 + 0.3); }
+    }
+
+    // ---------- s06: the loss nobody sees; each signal flat-lines in turn, focus follows ----------
+    if (has("s06")) {
+      const s = sc("s06"), t0 = s.t0;
+      tl.to([L.stat, L.sl, L.bars, q("#src1"), q("#src2"), L.cmp, L.card], { opacity: 0, duration: 0.6, ease: "power2.in" }, t0);
+      S.lay(L.stat, t0, { z: -700 }, 0.8, "power2.in"); S.lay(L.sl, t0, { z: -700 }, 0.8, "power2.in"); S.lay(L.bars, t0, { z: -700 }, 0.8, "power2.in");
+      const POS = [toWorld(450, 560, -40), toWorld(960, 535, -300), toWorld(1470, 560, -560)];
+      CT.losses.forEach(([k, v, word], i) => {
+        const ly = q("#Lloss" + i), el = ly.querySelector(".c");
+        el.querySelector(".k").textContent = k; el.querySelector(".v").textContent = v;
+        const svg = el.querySelector("svg");
+        svg.innerHTML = '<line x1="0" x2="340" y1="20" y2="20" stroke="rgba(23,22,28,0.06)"/><line x1="0" x2="340" y1="86" y2="86" stroke="rgba(23,22,28,0.08)"/>' +
+          '<path d="M2 60 H330" stroke="#a9a5b3" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="330" cy="60" r="7" fill="#a9a5b3"/>';
+        const path = svg.querySelector("path"), dot = svg.querySelector("circle");
+        gsap.set(path, { strokeDasharray: 330, strokeDashoffset: 330 }); gsap.set(dot, { opacity: 0 }); gsap.set(el.querySelector(".v"), { opacity: 0 });
+        S.place(ly, { x: POS[i][0], y: POS[i][1], z: POS[i][2] - 500 });
+        tl.set(ly, { opacity: 1 }, t0 + 0.2 + i * 0.12);
+        tl.fromTo(ly, { opacity: 0 }, { opacity: 1, duration: 0.6, immediateRender: false }, t0 + 0.2 + i * 0.12);
+        S.lay(ly, t0 + 0.2 + i * 0.12, { z: POS[i][2] }, 1.1, "expo.out");
+        const tw = s.w(1, word) - 0.12;
+        S.camTo(tw - 0.15, { zf: POS[i][2], ap: 70 }, 0.55, "power2.inOut");
+        tl.to(path, { strokeDashoffset: 0, duration: 0.7, ease: "power2.inOut" }, tw);
+        tl.to(dot, { opacity: 1, duration: 0.2 }, tw + 0.62);
+        tl.fromTo(el.querySelector(".v"), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", immediateRender: false }, tw + 0.1);
+      });
+      S.camTo(t0, { yaw: -1.4 }, s.D, "sine.inOut");
+    }
+
+    // ---------- the stage clears to white for the reveal ----------
+    if (DATA.clear != null) {
+      const c = DATA.clear;
+      tl.to(qa(".ly"), { opacity: 0, duration: 0.55, ease: "power2.in", stagger: 0.015 }, c);
+      S.camTo(c, { cz: "+=380", ap: 90 }, 0.7, "power2.in");
+      tl.to([q(".supers"), q("#src1"), q("#src2")], { opacity: 0, duration: 0.3 }, c);
+      tl.to(q(".scene"), { opacity: 0, duration: 0.3, ease: "power1.inOut" }, DATA.D - 0.32);
+    }
+</script>

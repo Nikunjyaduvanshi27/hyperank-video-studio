@@ -1,0 +1,100 @@
+<!--
+{
+ "lead": 0.3, "tail": 0.55, "cam0": "HOLD",
+ "cues": {"ty": "0.25", "send": "B[1] - 0.05", "strip": "B[2] - 0.35", "k0": "w(2, 'audit') - 0.1", "k1": "w(2, 'fix') - 0.1", "k2": "w(2, 'publish') - 0.1", "k3": "w(2, 'name') - 0.1",
+          "mem": "B[4] - 0.25", "seat": "w(4, 'member') - 0.15", "ag": "w(5, 'agency') - 0.15"},
+ "supers": [{"t": "0.4", "text": "@"}],
+ "typing": [["ty", "ty + 1.1", 0.15]],
+ "sfx": [["click2", "send", 0.28], ["whoosh", "strip", 0.2], ["tick", "k0", 0.14], ["tick", "k1", 0.14], ["tick", "k2", 0.14], ["tick", "k3", 0.14],
+         ["whoosh", "mem", 0.2], ["roll", "seat", 0.22], ["whoosh", "ag", 0.2]]
+}
+-->
+{{LAPTOP_OPEN}}
+<div class="pg" data-page="an"><img src="assets/img/site/screen-analytics-__CUT__.png" alt="" /></div>
+{{LAPTOP_CLOSE}}
+<div class="vc" id="Vc">{{COMPOSER:cmp:No team for this?}}</div>
+<div class="weeks" id="WK"></div>
+<div class="ws" id="WS"></div>
+<div class="memW" id="MEM"><div class="mem">
+  <div class="h">Workspace members</div>
+  <div class="mr"><i style="background:#5b6b8f">O</i><b>Owner</b><em>Admin</em></div>
+  <div class="mr"><i style="background:#2f7d6b">M</i><b>Marketing lead</b><em>Editor</em></div>
+  <div class="mr"><i style="background:#c0622f">C</i><b>Content writer</b><em>Editor</em></div>
+  <div class="mr hr"><i><img src="assets/img/hyperank-mark.png" alt="" /></i><b>hyperank team</b><em>Team seat</em></div>
+</div></div>
+<div class="supers"></div>
+<style>
+  .vc { position: absolute; left: 360px; top: 448px; }
+  .weeks { position: absolute; inset: 0; }
+  .wk { position: absolute; top: 450px; width: 330px; height: 214px; padding: 26px 26px 22px; border-radius: 24px; background: #fff; box-sizing: border-box; opacity: 0;
+    box-shadow: inset 0 0 0 1px rgba(23, 22, 28, 0.07), 0 44px 80px -40px rgba(44, 32, 120, 0.5), 0 12px 26px -14px rgba(26, 23, 20, 0.18); overflow: hidden; }
+  .wk .bar { position: absolute; left: 0; top: 0; width: 100%; height: 6px; background: var(--violet); transform-origin: 0 50%; transform: scaleX(0); }
+  .wk .n { font-size: 23px; font-weight: 560; color: var(--ink3); }
+  .wk .t { margin-top: 10px; font-size: 32px; line-height: 38px; font-weight: 640; letter-spacing: -0.025em; color: var(--ink); }
+  .wk .ok { position: absolute; left: 26px; bottom: 22px; width: 40px; height: 40px; border-radius: 50%; background: rgba(23, 22, 28, 0.06); display: flex; align-items: center; justify-content: center; }
+  .wk .ok svg { opacity: 0; }
+  .memW { position: absolute; left: 570px; top: 250px; width: 780px; opacity: 0; }
+  .mem { border-radius: 28px; background: #fff; padding: 32px 38px 24px; box-shadow: inset 0 0 0 1px rgba(23, 22, 28, 0.07), 0 70px 120px -48px rgba(44, 32, 120, 0.55), 0 18px 34px -16px rgba(26, 23, 20, 0.22); }
+  .mem .h { font-size: 32px; font-weight: 650; letter-spacing: -0.03em; margin-bottom: 10px; }
+  .mem .mr { position: relative; display: flex; align-items: center; gap: 18px; height: 84px; }
+  .mem .mr + .mr { box-shadow: inset 0 1px 0 rgba(23, 22, 28, 0.07); }
+  .mem .mr i { flex: none; width: 50px; height: 50px; border-radius: 50%; color: #fff; font-style: normal; font-size: 23px; font-weight: 640; display: flex; align-items: center; justify-content: center; }
+  .mem .mr i img { width: 30px; height: 28px; }
+  .mem .mr b { font-size: 28px; font-weight: 580; letter-spacing: -0.02em; }
+  .mem .mr em { margin-left: auto; font-style: normal; font-size: 22px; font-weight: 560; color: var(--ink2); height: 40px; line-height: 40px; padding: 0 16px; border-radius: 12px; background: rgba(23, 22, 28, 0.05); }
+  .mem .mr.hr { margin: 0 -14px; padding: 0 14px; border-radius: 18px; background: #f2f0ff; box-shadow: inset 0 0 0 1.5px rgba(94, 75, 246, 0.5); }
+  .mem .mr.hr i { background: #fff; box-shadow: inset 0 0 0 1px rgba(94, 75, 246, 0.3); }
+  .mem .mr.hr b { color: var(--vink); }
+  .mem .mr.hr em { background: var(--violet); color: #fff; }
+  .ws { position: absolute; inset: 0; }
+  .wsc { position: absolute; width: 460px; padding: 28px 30px; border-radius: 26px; background: #fff; box-sizing: border-box; opacity: 0;
+    box-shadow: inset 0 0 0 1px rgba(23, 22, 28, 0.07), 0 50px 90px -40px rgba(44, 32, 120, 0.5); }
+  .wsc .hd { display: flex; align-items: center; gap: 16px; }
+  .wsc .hd i { width: 50px; height: 50px; border-radius: 14px; color: #fff; font-style: normal; font-size: 24px; font-weight: 650; display: flex; align-items: center; justify-content: center; }
+  .wsc .hd b { font-size: 28px; font-weight: 620; letter-spacing: -0.02em; }
+  .wsc .k { margin-top: 22px; font-size: 23px; color: var(--ink3); }
+  .wsc .v { margin-top: 4px; font-size: 44px; font-weight: 660; letter-spacing: -0.035em; color: var(--ink); }
+</style>
+<script>
+    const { tl, q, qa, C } = S, CT = DATA.CT;
+    const cmp = S.Composer(q("#cmp"));
+    S.dof(0, 8, 0.01);
+    S.dim(0, 0.06, 0.01);
+    // ---------- no team for this? ----------
+    S.arrive(0, q("#Vc"), { y: 24 });
+    const te = cmp.type(C.ty, 0, 15);
+    cmp.blink(te + 0.05, C.send);
+    cmp.send(C.send);
+    S.leave(C.send + 0.15, q("#Vc"), { y: -50 });
+    // ---------- every week, real work, under your name ----------
+    const WEEKS = [["Week 1", "Audit and baseline"], ["Week 2", "Sources fixed"], ["Week 3", "Pages published"], ["Week 4", "Report sent"]];
+    const x0 = 960 - (4 * 330 + 3 * 26) / 2;
+    const weeks = WEEKS.map(([n, t], i) => {
+      const el = document.createElement("div"); el.className = "wk"; el.style.left = x0 + i * 356 + "px";
+      el.innerHTML = '<i class="bar"></i><div class="n">' + n + '</div><div class="t">' + t + '</div><div class="ok"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>';
+      q("#WK").appendChild(el);
+      S.arrive(C.strip + i * 0.08, el, { y: 50 });
+      const t0 = C["k" + i];
+      tl.to(el.querySelector(".bar"), { scaleX: 1, duration: 0.55, ease: "power3.out" }, t0);
+      tl.to(el.querySelector(".ok"), { backgroundColor: "#5e4bf6", duration: 0.3 }, t0 + 0.15);
+      tl.to(el.querySelector(".ok svg"), { opacity: 1, duration: 0.2 }, t0 + 0.2);
+      S.leave(C.mem - 0.75 + i * 0.04, el, { y: 40 });  // the strip is gone before the members card arrives
+      return el;
+    });
+    // ---------- an extra team member ----------
+    const hr = q("#MEM .hr");
+    S.arrive(C.mem, q("#MEM"), { y: 50 });
+    tl.fromTo(hr, { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.8, ease: "back.out(1.2)", immediateRender: true }, C.seat);
+    // ---------- running an agency: every client in one place, fanned out behind ----------
+    const VALS = [12, 18, 9], FAN = [[-470, 360, -6], [470, 360, 6], [0, 150, 0]];
+    CT.clients.forEach(([name, ini, col], i) => {
+      const el = document.createElement("div"); el.className = "wsc";
+      el.innerHTML = '<div class="hd"><i style="background:' + col + '">' + ini + "</i><b></b></div><div class=\"k\">Share of voice</div><div class=\"v\">" + VALS[i] + "%</div>";
+      el.querySelector(".hd b").textContent = name;
+      q("#WS").appendChild(el);
+      Object.assign(el.style, { left: 960 - 230 + "px", top: 330 + "px" });
+      tl.fromTo(el, { opacity: 0, x: 0, y: 0, scale: 0.8, rotation: 0, filter: "blur(0px)" },
+        { opacity: 1, x: FAN[i][0], y: FAN[i][1] - 330 + 40, scale: i === 2 ? 0.82 : 0.88, rotation: FAN[i][2], filter: "blur(" + (i === 2 ? 3 : 1.5) + "px)", duration: 1.0, ease: "back.out(1.2)", immediateRender: true }, C.ag + i * 0.1);
+    });
+    tl.to(q("#MEM"), { y: -8, duration: S.D - C.mem - 1, ease: "sine.inOut" }, C.mem + 0.9);
+</script>

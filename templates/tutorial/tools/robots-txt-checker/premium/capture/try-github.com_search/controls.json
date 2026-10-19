@@ -1,0 +1,40 @@
+[
+ {
+  "tag": "INPUT",
+  "type": "text",
+  "name": "",
+  "ph": "https://hyperank.ai",
+  "text": "",
+  "label": "Page or site URL*",
+  "value": "",
+  "r": {
+   "x": 176,
+   "y": 430.375,
+   "width": 534,
+   "height": 48,
+   "top": 430.375,
+   "right": 710,
+   "bottom": 478.375,
+   "left": 176
+  }
+ },
+ {
+  "tag": "BUTTON",
+  "type": "submit",
+  "name": "",
+  "ph": "",
+  "text": "View robots.txt",
+  "label": "",
+  "value": "",
+  "r": {
+   "x": 176,
+   "y": 529.875,
+   "width": 160.609375,
+   "height": 48,
+   "top": 529.875,
+   "right": 336.609375,
+   "bottom": 577.875,
+   "left": 176
+  }
+ }
+]

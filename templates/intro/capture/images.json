@@ -1,0 +1,835 @@
+[
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/common/images/ct-logo.webp",
+  "alt": "Celebal Technologies",
+  "w": 3840,
+  "h": 1278,
+  "y": 10
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/before.png",
+  "alt": "before icon",
+  "w": 56,
+  "h": 48,
+  "y": 24
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/after.png",
+  "alt": "after icon",
+  "w": 56,
+  "h": 48,
+  "y": 24
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Hero%20Section/home_arrow.png",
+  "alt": "arrow",
+  "w": 112,
+  "h": 112,
+  "y": 521
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Hero%20Section/home_db.png",
+  "alt": "Databricks",
+  "w": 384,
+  "h": 61,
+  "y": 674
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Hero%20Section/home_ms.png",
+  "alt": "Microsoft",
+  "w": 275,
+  "h": 67,
+  "y": 673
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Hero%20Section/home_sigma.png",
+  "alt": "Sigma",
+  "w": 209,
+  "h": 64,
+  "y": 673
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Hero%20Section/home_sap.png",
+  "alt": "SAP",
+  "w": 169,
+  "h": 85,
+  "y": 671
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Hero%20Section/home_aws.png",
+  "alt": "AWS",
+  "w": 145,
+  "h": 144,
+  "y": 663
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/before.png",
+  "alt": "before icon",
+  "w": 56,
+  "h": 48,
+  "y": 1035
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/after.png",
+  "alt": "after icon",
+  "w": 56,
+  "h": 48,
+  "y": 1035
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/home_arrow.png",
+  "alt": "Previous",
+  "w": 128,
+  "h": 128,
+  "y": 1359
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/home_arrow.png",
+  "alt": "Next",
+  "w": 128,
+  "h": 128,
+  "y": 1359
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/service_partners/databricks.webp",
+  "alt": "databricks",
+  "w": 657,
+  "h": 156,
+  "y": 1427
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/service_partners/microsoft.webp",
+  "alt": "microsoft",
+  "w": 657,
+  "h": 156,
+  "y": 1427
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/service_partners/fivetran.webp",
+  "alt": "fivetran",
+  "w": 657,
+  "h": 156,
+  "y": 1427
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/service_partners/prophecy.webp",
+  "alt": "prophecy",
+  "w": 657,
+  "h": 156,
+  "y": 1427
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/service_partners/aws-updated.webp",
+  "alt": "aws-updated",
+  "w": 1921,
+  "h": 1161,
+  "y": 1427
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/service_partners/sap.webp",
+  "alt": "sap",
+  "w": 596,
+  "h": 208,
+  "y": 1427
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/service_partners/sigma.webp",
+  "alt": "sigma",
+  "w": 788,
+  "h": 208,
+  "y": 1427
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/service_partners/databricks.webp",
+  "alt": "databricks",
+  "w": 657,
+  "h": 156,
+  "y": 1427
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/service_partners/microsoft.webp",
+  "alt": "microsoft",
+  "w": 657,
+  "h": 156,
+  "y": 1427
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/service_partners/fivetran.webp",
+  "alt": "fivetran",
+  "w": 657,
+  "h": 156,
+  "y": 1427
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/service_partners/prophecy.webp",
+  "alt": "prophecy",
+  "w": 657,
+  "h": 156,
+  "y": 1427
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/service_partners/aws-updated.webp",
+  "alt": "aws-updated",
+  "w": 1921,
+  "h": 1161,
+  "y": 1427
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/service_partners/sap.webp",
+  "alt": "sap",
+  "w": 596,
+  "h": 208,
+  "y": 1427
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/service_partners/sigma.webp",
+  "alt": "sigma",
+  "w": 788,
+  "h": 208,
+  "y": 1427
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/home_arrow.png",
+  "alt": "Previous",
+  "w": 128,
+  "h": 128,
+  "y": 1612
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/home_arrow.png",
+  "alt": "Next",
+  "w": 128,
+  "h": 128,
+  "y": 1612
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/solution_partners/confluent.webp",
+  "alt": "confluent",
+  "w": 657,
+  "h": 156,
+  "y": 1680
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/solution_partners/nvindia.webp",
+  "alt": "nvindia",
+  "w": 657,
+  "h": 156,
+  "y": 1680
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/solution_partners/shell.webp",
+  "alt": "shell",
+  "w": 657,
+  "h": 156,
+  "y": 1680
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/solution_partners/collibra.webp",
+  "alt": "collibra",
+  "w": 657,
+  "h": 156,
+  "y": 1680
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/solution_partners/intel.webp",
+  "alt": "intel",
+  "w": 657,
+  "h": 156,
+  "y": 1680
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/solution_partners/hewlett.webp",
+  "alt": "hewlett",
+  "w": 657,
+  "h": 156,
+  "y": 1680
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/solution_partners/itransform.webp",
+  "alt": "itransform",
+  "w": 657,
+  "h": 156,
+  "y": 1680
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/solution_partners/lightspeed.webp",
+  "alt": "lightspeed",
+  "w": 657,
+  "h": 156,
+  "y": 1680
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/solution_partners/confluent.webp",
+  "alt": "confluent",
+  "w": 657,
+  "h": 156,
+  "y": 1680
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/solution_partners/nvindia.webp",
+  "alt": "nvindia",
+  "w": 657,
+  "h": 156,
+  "y": 1680
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/solution_partners/shell.webp",
+  "alt": "shell",
+  "w": 657,
+  "h": 156,
+  "y": 1680
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/solution_partners/collibra.webp",
+  "alt": "collibra",
+  "w": 657,
+  "h": 156,
+  "y": 1680
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/solution_partners/intel.webp",
+  "alt": "intel",
+  "w": 657,
+  "h": 156,
+  "y": 1680
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/solution_partners/hewlett.webp",
+  "alt": "hewlett",
+  "w": 657,
+  "h": 156,
+  "y": 1680
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/solution_partners/itransform.webp",
+  "alt": "itransform",
+  "w": 657,
+  "h": 156,
+  "y": 1680
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/HomePage/Valued%20partners/solution_partners/lightspeed.webp",
+  "alt": "lightspeed",
+  "w": 657,
+  "h": 156,
+  "y": 1680
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Industry%20expertise/exp1.webp",
+  "alt": "Power, Utilities, & Energies",
+  "w": 2012,
+  "h": 3660,
+  "y": 1969
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Industry%20expertise/exp2.webp",
+  "alt": "Retail & Consumer Packaged Goods",
+  "w": 2012,
+  "h": 3593,
+  "y": 1969
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Industry%20expertise/exp3-updated.webp",
+  "alt": "Banking, Financial Services, and Insurance",
+  "w": 3648,
+  "h": 5472,
+  "y": 1969
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Industry%20expertise/exp4.webp",
+  "alt": "Communications, Media, and Entertainment",
+  "w": 2012,
+  "h": 3652,
+  "y": 1969
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Industry%20expertise/exp5.webp",
+  "alt": "Oil & Gas",
+  "w": 2012,
+  "h": 3652,
+  "y": 1969
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Industry%20expertise/exp6.webp",
+  "alt": "Manufacturing",
+  "w": 2012,
+  "h": 3652,
+  "y": 1969
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Industry%20expertise/exp7.webp",
+  "alt": "Health & Life Sciences",
+  "w": 2012,
+  "h": 3652,
+  "y": 1969
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Industry%20expertise/exp8.webp",
+  "alt": "Renewables",
+  "w": 2012,
+  "h": 3652,
+  "y": 1969
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Industry%20expertise/exp9.webp",
+  "alt": "Information Technology Enabled Services",
+  "w": 2012,
+  "h": 3652,
+  "y": 1969
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/before.png",
+  "alt": "before icon",
+  "w": 56,
+  "h": 48,
+  "y": 2121
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/after.png",
+  "alt": "after icon",
+  "w": 56,
+  "h": 48,
+  "y": 2121
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/before.png",
+  "alt": "before icon",
+  "w": 56,
+  "h": 48,
+  "y": 2324
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/after.png",
+  "alt": "after icon",
+  "w": 56,
+  "h": 48,
+  "y": 2324
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/before.png",
+  "alt": "before icon",
+  "w": 56,
+  "h": 48,
+  "y": 2395
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/after.png",
+  "alt": "after icon",
+  "w": 56,
+  "h": 48,
+  "y": 2395
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/before.png",
+  "alt": "before icon",
+  "w": 56,
+  "h": 48,
+  "y": 2446
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/after.png",
+  "alt": "after icon",
+  "w": 56,
+  "h": 48,
+  "y": 2446
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/before.png",
+  "alt": "before icon",
+  "w": 56,
+  "h": 48,
+  "y": 2517
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/after.png",
+  "alt": "after icon",
+  "w": 56,
+  "h": 48,
+  "y": 2517
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/before.png",
+  "alt": "before icon",
+  "w": 56,
+  "h": 48,
+  "y": 2608
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/after.png",
+  "alt": "after icon",
+  "w": 56,
+  "h": 48,
+  "y": 2608
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/before.png",
+  "alt": "before icon",
+  "w": 56,
+  "h": 48,
+  "y": 2679
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/after.png",
+  "alt": "after icon",
+  "w": 56,
+  "h": 48,
+  "y": 2679
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/before.png",
+  "alt": "before icon",
+  "w": 56,
+  "h": 48,
+  "y": 2750
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/after.png",
+  "alt": "after icon",
+  "w": 56,
+  "h": 48,
+  "y": 2750
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/before.png",
+  "alt": "before icon",
+  "w": 56,
+  "h": 48,
+  "y": 2821
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/after.png",
+  "alt": "after icon",
+  "w": 56,
+  "h": 48,
+  "y": 2821
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/home_arrow.png",
+  "alt": "",
+  "w": 128,
+  "h": 128,
+  "y": 2837
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/home_arrow.png",
+  "alt": "",
+  "w": 128,
+  "h": 128,
+  "y": 2837
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award0.png",
+  "alt": "Azure AI Platform",
+  "w": 1016,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award1.webp",
+  "alt": "Global AI",
+  "w": 1017,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award2.webp",
+  "alt": "Data & AI Governance",
+  "w": 1017,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award3.webp",
+  "alt": "Regional System Integration",
+  "w": 1017,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award4%20.webp",
+  "alt": "Migration Partner",
+  "w": 1017,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award5.webp",
+  "alt": "Top Consumption Partner",
+  "w": 1017,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award6.webp",
+  "alt": "Consulting Partner \u2013 Elite",
+  "w": 1017,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award7.webp",
+  "alt": "Partner of the Year",
+  "w": 1017,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award8.webp",
+  "alt": "Advanced Tier Service",
+  "w": 1017,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award0.png",
+  "alt": "Azure AI Platform",
+  "w": 1016,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award1.webp",
+  "alt": "Global AI",
+  "w": 1017,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award2.webp",
+  "alt": "Data & AI Governance",
+  "w": 1017,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award3.webp",
+  "alt": "Regional System Integration",
+  "w": 1017,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award4%20.webp",
+  "alt": "Migration Partner",
+  "w": 1017,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award5.webp",
+  "alt": "Top Consumption Partner",
+  "w": 1017,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award6.webp",
+  "alt": "Consulting Partner \u2013 Elite",
+  "w": 1017,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award7.webp",
+  "alt": "Partner of the Year",
+  "w": 1017,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/awards/award8.webp",
+  "alt": "Advanced Tier Service",
+  "w": 1017,
+  "h": 968,
+  "y": 2942
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Our%20Distinctive%20strength/go-forward-icon.svg",
+  "alt": "forward",
+  "w": 33,
+  "h": 32,
+  "y": 3846
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Our%20Distinctive%20strength/plus-icon.svg",
+  "alt": "open",
+  "w": 33,
+  "h": 33,
+  "y": 3845
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Our%20Distinctive%20strength/plus-icon.svg",
+  "alt": "open",
+  "w": 33,
+  "h": 33,
+  "y": 3845
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Our%20Distinctive%20strength/plus-icon.svg",
+  "alt": "open",
+  "w": 33,
+  "h": 33,
+  "y": 3845
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Our%20Distinctive%20strength/go-forward-icon.svg",
+  "alt": "forward",
+  "w": 33,
+  "h": 32,
+  "y": 0
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Our%20Distinctive%20strength/go-forward-icon.svg",
+  "alt": "forward",
+  "w": 33,
+  "h": 32,
+  "y": 0
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Our%20Distinctive%20strength/go-forward-icon.svg",
+  "alt": "forward",
+  "w": 33,
+  "h": 32,
+  "y": 0
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/Our%20Distinctive%20strength/go-forward-icon.svg",
+  "alt": "forward",
+  "w": 33,
+  "h": 32,
+  "y": 0
+ },
+ {
+  "src": "https://celabalshblob.blob.core.windows.net/mediacont/news-event-outer-card/confluent-partner-award-2026-2.jpg",
+  "alt": "Celebal Technologies Named ECO System Synergy Partner of the Year \u2013 APAC 2026 by Confluent ",
+  "w": 4801,
+  "h": 2513,
+  "y": 4269
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/blueArrow.png",
+  "alt": "",
+  "w": 72,
+  "h": 72,
+  "y": 4727
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/clock.png",
+  "alt": "",
+  "w": 65,
+  "h": 64,
+  "y": 4728
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/news-pr/aws_pr.webp",
+  "alt": "Celebal Technologies Earns Prestigious \u201cAWS AI Services\u201d Competency",
+  "w": 960,
+  "h": 501,
+  "y": 4269
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/blueArrow.png",
+  "alt": "",
+  "w": 72,
+  "h": 72,
+  "y": 4727
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/clock.png",
+  "alt": "",
+  "w": 65,
+  "h": 64,
+  "y": 4728
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/trust3_banner.webp",
+  "alt": "Celebal Technologies and Trust3 AI Join Forces to Revolutionize Trust-Driven Autonomous AI for Enterprises",
+  "w": 5120,
+  "h": 2760,
+  "y": 4269
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/blueArrow.png",
+  "alt": "",
+  "w": 72,
+  "h": 72,
+  "y": 4727
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/clock.png",
+  "alt": "",
+  "w": 65,
+  "h": 64,
+  "y": 4728
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/before.png",
+  "alt": "before icon",
+  "w": 56,
+  "h": 48,
+  "y": 4852
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/after.png",
+  "alt": "after icon",
+  "w": 56,
+  "h": 48,
+  "y": 4852
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/HomePage/footer-bg.webp",
+  "alt": "footer background img",
+  "w": 3543,
+  "h": 1205,
+  "y": 4959
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/common/images/ct-logo-white.webp",
+  "alt": "Celebal Technologies",
+  "w": 448,
+  "h": 150,
+  "y": 5474
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/fi_3550091%201.png",
+  "alt": "",
+  "w": 31,
+  "h": 31,
+  "y": 5572
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/fi_3550091.png",
+  "alt": "",
+  "w": 31,
+  "h": 31,
+  "y": 5575
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/common/images/ct-logo-white.webp",
+  "alt": "Celebal Technologies",
+  "w": 448,
+  "h": 150,
+  "y": 0
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/fi_3550091%201.png",
+  "alt": "",
+  "w": 31,
+  "h": 31,
+  "y": 0
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets/fi_3550091.png",
+  "alt": "",
+  "w": 31,
+  "h": 31,
+  "y": 0
+ },
+ {
+  "src": "https://ctwebsite2025.blob.core.windows.net/media/celebalwebsite2025/assets_webp/common-icons/glassdoor-icon.svg",
+  "alt": "glassdoor",
+  "w": 18,
+  "h": 18,
+  "y": 6145
+ }
+]

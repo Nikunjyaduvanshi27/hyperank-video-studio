@@ -1,0 +1,1 @@
+hyperank-mark.png: the violet H mark, trimmed from https://www.hyperank.ai/_next/static/media/hyperanklogo.0cefb69b.png (official asset, transparent PNG). Do not recolor or redraw.

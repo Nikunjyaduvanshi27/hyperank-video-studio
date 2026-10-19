@@ -1,0 +1,287 @@
+<!doctype html>
+<!--
+  hr-engine-fanout: the hyperank signature move (~4s, 1920x1080).
+  One buyer question fans out along six hairline connectors to six engine
+  answer cards. A violet trace runs one connector, the citation ignites in
+  violet italic serif, and the other five answers recede.
+  Copy: hero eyebrow, engine list and "Recommends Competitor X" are verbatim
+  hyperank.ai copy; the question is the site's demo question.
+  Variables: question (string), cited (string, the name that gets cited).
+  Mount: copy to <project>/compositions/, fonts + mark live in <project>/assets/.
+-->
+<html
+  lang="en"
+  data-composition-id="hr-engine-fanout"
+  data-composition-duration="4"
+  data-composition-variables='[
+    { "id": "question", "type": "string", "label": "Buyer question", "default": "Best AI visibility platform for agencies?" },
+    { "id": "cited", "type": "string", "label": "Cited name", "default": "hyperank.ai" }
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Instrument Serif"; src: url("assets/fonts/InstrumentSerif-400.woff2") format("woff2"); font-weight: 400; font-style: normal; }
+        @font-face { font-family: "Instrument Serif"; src: url("assets/fonts/InstrumentSerif-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; }
+        @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-var.woff2") format("woff2"); font-weight: 100 900; font-style: normal; }
+        @font-face { font-family: "JetBrains Mono"; src: url("assets/fonts/JetBrainsMono-var.woff2") format("woff2"); font-weight: 100 800; font-style: normal; }
+
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size;
+          background: #f0eee9;
+          color: #1f1e1b;
+          font-family: "Inter", sans-serif;
+        }
+        .hrf-layer { position: absolute; inset: 0; }
+        .hrf-glow {
+          position: absolute;
+          left: -19cqw; top: -45cqh;
+          width: 76cqw; height: 190cqh;
+          background: radial-gradient(closest-side, rgba(123, 107, 248, 0.22), rgba(123, 107, 248, 0.08) 55%, rgba(123, 107, 248, 0) 100%);
+        }
+        .hrf-grain {
+          position: absolute; inset: 0; opacity: 0.35; mix-blend-mode: multiply;
+          background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 0 0.10 0 0 0 0.09 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");
+        }
+        .hrf-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+        .hrf-ring { fill: none; stroke: #b7aefb; stroke-width: 1.5; }
+        .hrf-wire { fill: none; stroke: #d6d2c7; stroke-width: 2; }
+        .hrf-wire-lit { fill: none; stroke: #5e4bf6; stroke-width: 3.5; stroke-linecap: round; }
+        .hrf-wire-end { fill: #ffffff; stroke: #d6d2c7; stroke-width: 2; }
+
+        .hrf-eyebrow {
+          position: absolute; left: 5cqw; top: 8.9cqh;
+          font-family: "JetBrains Mono", monospace; font-weight: 500;
+          font-size: 1.04cqw; letter-spacing: 0.22em; text-transform: uppercase; color: #4d3eca;
+        }
+        .hrf-foot {
+          position: absolute; left: 5cqw; bottom: 8.4cqh;
+          display: flex; align-items: center; gap: 0.6cqw;
+          font-family: "Instrument Serif", serif; font-size: 1.75cqw; letter-spacing: -0.02em; color: #1f1e1b;
+        }
+        .hrf-foot img { width: 1.7cqw; height: auto; display: block; }
+
+        .hrf-qwrap { position: absolute; left: 5cqw; top: 0; bottom: 0; width: 33.3cqw; display: flex; align-items: center; }
+        .hrf-q {
+          width: 100%;
+          padding: 2.3cqw 2.5cqw 2.5cqw;
+          background: #ffffff;
+          border: 1px solid #e7e4dc;
+          border-radius: 16px;
+          box-shadow: 0 4px 8px rgba(28, 23, 74, 0.07), 0 44px 80px -32px rgba(28, 23, 74, 0.36);
+        }
+        .hrf-q-label {
+          font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 0.94cqw;
+          letter-spacing: 0.22em; text-transform: uppercase; color: #767161;
+          display: flex; align-items: center; gap: 0.6cqw;
+        }
+        .hrf-q-label i { display: block; width: 0.55cqw; height: 0.55cqw; border-radius: 50%; background: #5e4bf6; }
+        .hrf-q-mask { overflow: hidden; margin-top: 1.2cqw; padding-bottom: 0.4cqw; }
+        .hrf-q-text {
+          display: block;
+          font-family: "Instrument Serif", serif; font-weight: 400;
+          font-size: 4.1cqw; line-height: 1.02; letter-spacing: -0.02em; color: #1f1e1b;
+        }
+
+        .hrf-node {
+          position: absolute; width: 1.6cqw; height: 1.6cqw; margin: -0.8cqw 0 0 -0.8cqw;
+          border-radius: 50%; background: #5e4bf6;
+          box-shadow: 0 0 0 0.45cqw #e7e4fe, 0 10px 24px -10px rgba(94, 75, 246, 0.75);
+        }
+
+        .hrf-card {
+          position: absolute; width: 33.3cqw; height: 10.75cqh; margin-top: -5.37cqh;
+          padding: 1.5px; border-radius: 14px;
+          background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(183, 174, 251, 0.6) 44%, rgba(28, 23, 74, 0.18));
+          box-shadow: 0 2px 4px rgba(28, 23, 74, 0.1), 0 24px 48px -22px rgba(28, 23, 74, 0.45), 0 0 44px -18px rgba(94, 75, 246, 0.7);
+        }
+        .hrf-card-in {
+          position: relative; height: 100%; border-radius: 13px; overflow: hidden;
+          background: rgba(255, 255, 255, 0.82);
+          display: flex; align-items: center; gap: 1.1cqw; padding: 0 1.3cqw 0 1.1cqw;
+        }
+        .hrf-lit-border {
+          position: absolute; inset: -1.5px; border-radius: 14px; border: 2.5px solid #5e4bf6; opacity: 0;
+          box-shadow: 0 0 90px -8px rgba(94, 75, 246, 0.65);
+        }
+        .hrf-idx {
+          flex: none; width: 3cqw; height: 3cqw; border-radius: 50%;
+          display: grid; place-items: center; background: #ffffff; border: 1px solid #e7e4dc;
+          font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 0.94cqw; color: #5a564b;
+          box-shadow: 0 6px 18px -6px rgba(28, 23, 74, 0.35);
+        }
+        .hrf-copy { flex: 1; min-width: 0; }
+        .hrf-head { display: flex; align-items: center; justify-content: space-between; gap: 1cqw; }
+        .hrf-name { font-weight: 600; font-size: 1.56cqw; letter-spacing: -0.01em; color: #1f1e1b; line-height: 1.15; }
+        .hrf-line-mask { position: relative; overflow: hidden; height: 2.3cqw; margin-top: 0.15cqw; }
+        .hrf-line { display: block; position: absolute; left: 0; top: 0; white-space: nowrap; font-weight: 500; font-size: 1.2cqw; line-height: 2.2cqw; color: #2e2c25; }
+        .hrf-line-cite { color: #2e2c25; }
+        .hrf-line-cite em { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; font-size: 1.95cqw; color: #5e4bf6; letter-spacing: -0.01em; }
+        .hrf-chip {
+          flex: none; position: relative; padding: 0.5cqw 0.9cqw; border-radius: 999px;
+          border: 1.5px solid #d6d2c7; background: #faf9f7;
+          font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 0.83cqw;
+          letter-spacing: 0.12em; text-transform: uppercase; color: #434036;
+        }
+        .hrf-chip-lit {
+          position: absolute; inset: -1.5px; border-radius: 999px; background: #5e4bf6; color: #ffffff;
+          display: flex; align-items: center; justify-content: center; gap: 0.45cqw; opacity: 0;
+        }
+        .hrf-chip-lit i { display: block; width: 0.45cqw; height: 0.45cqw; border-radius: 50%; background: #cfc9fc; }
+      </style>
+
+      <div id="root" data-composition-id="hr-engine-fanout" data-width="1920" data-height="1080" data-duration="4">
+        <div class="hrf-layer" id="hr-engine-fanout-bg">
+          <div class="hrf-glow" data-layout-allow-overflow></div>
+          <div class="hrf-grain"></div>
+        </div>
+
+        <svg class="hrf-svg" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true">
+          <g id="hr-engine-fanout-rings"></g>
+          <g id="hr-engine-fanout-wires"></g>
+        </svg>
+
+        <div class="hrf-eyebrow" id="hr-engine-fanout-eyebrow">Six engines · one question</div>
+
+        <div class="hrf-qwrap">
+          <div class="hrf-q" id="hr-engine-fanout-q">
+            <div class="hrf-q-label"><i></i>The buyer asks</div>
+            <div class="hrf-q-mask" data-layout-allow-overflow><span class="hrf-q-text" id="hr-engine-fanout-qtext">Best AI visibility platform for agencies?</span></div>
+          </div>
+        </div>
+
+        <div id="hr-engine-fanout-cards"></div>
+        <div class="hrf-node" id="hr-engine-fanout-node"></div>
+
+        <div class="hrf-foot" id="hr-engine-fanout-foot"><img src="assets/hyperank-mark.png" alt="" />hyperank.ai</div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+      <script>
+        (function () {
+          var ID = "hr-engine-fanout";
+          var root = document.querySelector('#root[data-composition-id="' + ID + '"]') || document.querySelector('[data-composition-id="' + ID + '"]');
+          var vars = window.__hyperframes && window.__hyperframes.getVariables ? window.__hyperframes.getVariables() : {};
+          var question = vars.question || "Best AI visibility platform for agencies?";
+          var cited = vars.cited || "hyperank.ai";
+          root.querySelector(".hrf-q-text").textContent = question;
+
+          // Layout constants in the 1920x1080 frame (pre-calculated, never measured at tween time).
+          var W = 1920, H = 1080, NS = "http://www.w3.org/2000/svg";
+          var ORIGIN = { x: 736, y: 540 };
+          var CARD_W = 640, HERO = 2;
+          var ROWS = [196, 334, 472, 610, 748, 886];
+          var ARC = [96, 36, 0, 0, 36, 96];
+          var BASE_LEFT = 1088;
+          var ENGINES = [
+            ["Gemini", "Recommends Competitor C", "review site"],
+            ["Claude", "Recommends Competitor B", "forum thread"],
+            ["ChatGPT", "Recommends Competitor A", "comparison page"],
+            ["Perplexity", "Recommends Competitor A", "forum thread"],
+            ["Grok", "Recommends Competitor B", "comparison page"],
+            ["Google AI Overviews", "Recommends Competitor D", "review site"],
+          ];
+          var ORDER = [2, 3, 1, 4, 0, 5]; // center-out fan
+
+          var node = root.querySelector(".hrf-node");
+          node.style.left = (ORIGIN.x / W) * 100 + "cqw";
+          node.style.top = (ORIGIN.y / H) * 100 + "cqh";
+
+          var rings = root.querySelector("#" + ID + "-rings");
+          [300, 470, 640].forEach(function (r, i) {
+            var c = document.createElementNS(NS, "circle");
+            c.setAttribute("cx", ORIGIN.x); c.setAttribute("cy", ORIGIN.y); c.setAttribute("r", r);
+            c.setAttribute("class", "hrf-ring"); c.setAttribute("opacity", [0.7, 0.5, 0.32][i]);
+            rings.appendChild(c);
+          });
+
+          var wires = root.querySelector("#" + ID + "-wires");
+          var deck = root.querySelector("#" + ID + "-cards");
+          var cards = [], paths = [], ends = [], lens = [];
+          ENGINES.forEach(function (e, i) {
+            var left = BASE_LEFT + ARC[i], y = ROWS[i];
+            var d = "M" + ORIGIN.x + "," + ORIGIN.y + " C" + (ORIGIN.x + 170) + "," + ORIGIN.y + " " + (left - 190) + "," + y + " " + (left - 6) + "," + y;
+            var p = document.createElementNS(NS, "path");
+            p.setAttribute("d", d); p.setAttribute("class", "hrf-wire");
+            wires.appendChild(p);
+            var len = p.getTotalLength();
+            p.style.strokeDasharray = len; lens.push(len); paths.push(p);
+            var dot = document.createElementNS(NS, "circle");
+            dot.setAttribute("cx", left - 6); dot.setAttribute("cy", y); dot.setAttribute("r", 6); dot.setAttribute("class", "hrf-wire-end");
+            wires.appendChild(dot); ends.push(dot);
+
+            var card = document.createElement("div");
+            card.className = "hrf-card";
+            card.style.left = (left / W) * 100 + "cqw";
+            card.style.top = (y / H) * 100 + "cqh";
+            card.innerHTML =
+              '<div class="hrf-card-in">' +
+              '<div class="hrf-idx">0' + (i + 1) + "</div>" +
+              '<div class="hrf-copy"><div class="hrf-head"><div class="hrf-name"></div>' +
+              '<div class="hrf-chip" data-layout-allow-overlap data-layout-allow-occlusion><span class="hrf-chip-txt"></span>' +
+              (i === HERO ? '<span class="hrf-chip-lit"><i></i>Cited</span>' : "") + "</div></div>" +
+              '<div class="hrf-line-mask" data-layout-allow-overflow><span class="hrf-line hrf-line-a"></span>' +
+              (i === HERO ? '<span class="hrf-line hrf-line-cite">Cites <em></em></span>' : "") +
+              "</div></div>" +
+              "</div>" +
+              (i === HERO ? '<div class="hrf-lit-border"></div>' : "");
+            card.querySelector(".hrf-name").textContent = e[0];
+            card.querySelector(".hrf-line-a").textContent = e[1];
+            card.querySelector(".hrf-chip-txt").textContent = e[2];
+            if (i === HERO) card.querySelector(".hrf-line-cite em").textContent = cited;
+            deck.appendChild(card);
+            cards.push(card);
+          });
+
+          // The lit trace: a violet copy of the hero connector.
+          var lit = document.createElementNS(NS, "path");
+          lit.setAttribute("d", paths[HERO].getAttribute("d")); lit.setAttribute("class", "hrf-wire-lit");
+          wires.appendChild(lit);
+          var litLen = lens[HERO];
+          lit.style.strokeDasharray = litLen;
+
+          var SETTLE = "power4.out", TRACE = "power2.inOut", RECEDE = "power2.in";
+          var hero = cards[HERO];
+          var others = cards.filter(function (_, i) { return i !== HERO; });
+          var otherWires = paths.filter(function (_, i) { return i !== HERO; }).concat(ends.filter(function (_, i) { return i !== HERO; }));
+          var byOrder = function (arr) { return ORDER.map(function (i) { return arr[i]; }); };
+
+          var tl = gsap.timeline({ paused: true });
+          // Build: ground and question
+          tl.fromTo(rings, { scale: 0.9, opacity: 0, svgOrigin: ORIGIN.x + " " + ORIGIN.y }, { scale: 1, opacity: 1, duration: 1.4, ease: SETTLE }, 0.1);
+          tl.fromTo("#" + ID + "-eyebrow", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.9, ease: SETTLE }, 0.15);
+          tl.fromTo("#" + ID + "-q", { opacity: 0, x: -48 }, { opacity: 1, x: 0, duration: 0.7, ease: SETTLE }, 0.2);
+          tl.fromTo("#" + ID + "-qtext", { yPercent: 105 }, { yPercent: 0, duration: 0.8, ease: SETTLE }, 0.32);
+          tl.fromTo("#" + ID + "-foot", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.inOut" }, 0.4);
+          tl.fromTo(node, { scale: 0 }, { scale: 1, duration: 0.32, ease: SETTLE }, 0.7);
+          // Fan-out: wires trace, then cards land, center-out
+          tl.fromTo(byOrder(paths), { strokeDashoffset: function (i) { return lens[ORDER[i]]; } }, { strokeDashoffset: 0, duration: 0.5, ease: TRACE, stagger: 0.07 }, 0.8);
+          tl.fromTo(byOrder(ends), { opacity: 0 }, { opacity: 1, duration: 0.18, stagger: 0.07 }, 1.2);
+          tl.fromTo(byOrder(cards), { opacity: 0, x: 64, scale: 0.96 }, { opacity: 1, x: 0, scale: 1, duration: 0.56, ease: SETTLE, stagger: 0.07 }, 1.14);
+          // Signature: the trace runs the hero wire, the citation ignites
+          tl.fromTo(lit, { strokeDashoffset: litLen }, { strokeDashoffset: 0, duration: 0.45, ease: TRACE }, 2.1);
+          tl.fromTo(node, { boxShadow: "0 0 0 0.45cqw #e7e4fe, 0 10px 24px -10px rgba(94,75,246,0.75)" }, { boxShadow: "0 0 0 0.9cqw #cfc9fc, 0 10px 34px -6px rgba(94,75,246,0.9)", duration: 0.45, ease: SETTLE, immediateRender: false }, 2.1);
+          tl.fromTo(hero, { x: 0, scale: 1 }, { x: -14, scale: 1.035, duration: 0.6, ease: SETTLE, immediateRender: false }, 2.52);
+          tl.fromTo(hero.querySelector(".hrf-lit-border"), { opacity: 0 }, { opacity: 1, duration: 0.4, ease: SETTLE }, 2.52);
+          tl.set(hero.querySelector(".hrf-idx"), { backgroundColor: "#5e4bf6", borderColor: "#5e4bf6", color: "#ffffff" }, 2.56);
+          tl.fromTo(hero.querySelector(".hrf-line-a"), { yPercent: 0, opacity: 1 }, { yPercent: -110, opacity: 0, duration: 0.25, ease: RECEDE }, 2.52);
+          tl.fromTo(hero.querySelector(".hrf-line-cite"), { yPercent: 110, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.5, ease: SETTLE }, 2.64);
+          tl.fromTo(hero.querySelector(".hrf-chip-lit"), { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.36, ease: SETTLE }, 2.6);
+          tl.fromTo(hero.querySelector(".hrf-chip-txt"), { opacity: 1 }, { opacity: 0, duration: 0.12 }, 2.6);
+          tl.fromTo(others, { opacity: 1, scale: 1 }, { opacity: 0.78, scale: 0.985, duration: 0.5, ease: "sine.inOut", immediateRender: false }, 2.64);
+          tl.fromTo(otherWires, { opacity: 1 }, { opacity: 0.35, duration: 0.5, ease: "sine.inOut", immediateRender: false }, 2.64);
+          // Breathe: rings open slightly through the hold
+          tl.fromTo(rings, { scale: 1, svgOrigin: ORIGIN.x + " " + ORIGIN.y }, { scale: 1.035, duration: 2.5, ease: "sine.inOut", immediateRender: false }, 1.5);
+
+          window.__timelines[ID] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
